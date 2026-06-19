@@ -1,0 +1,69 @@
+# https://git-scm.com/docs/gitattributes
+# https://docs.github.com/en/repositories/working-with-files/managing-files/customizing-how-changed-files-appear-on-github
+
+##################################################################
+# CODE & TEXT (Force LF)
+##################################################################
+# Ensure scripts and settings always use Unix-style line endings
+*.cs          text eol=lf
+*.shader      text eol=lf
+*.cginc       text eol=lf
+*.hlsl        text eol=lf
+*.glsl        text eol=lf
+*.md          text eol=lf
+*.json        text eol=lf
+*.xml         text eol=lf
+*.txt         text eol=lf
+*.md          text eol=lf
+
+##################################################################
+# Unity Objects
+##################################################################
+# Unity / binary assets
+*.unity        -text filter=lfs diff=lfs merge=lfs  linguist-generated=true
+*.prefab       -text linguist-generated=true
+*.asset        -text linguist-generated=true
+*.mat          -text linguist-generated=true
+*.controller   -text linguist-generated=true
+*.playable     -text linguist-generated=true
+*.anim         -text filter=lfs diff=lfs merge=lfs  linguist-generated=true
+*.meta         text eol=lf linguist-generated=true
+##################################################################
+# Media & Binaries (Use LFS)
+##################################################################
+
+# Images
+*.[pP][nN][gG]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[jJ][pP][gG]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[jJ][pP][eE][gG]     -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[tT][gG][aA]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[tT][iI][fF]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[tT][iI][fF][fF]     -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[pP][sS][dD]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[pP][sS][bB]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[eE][xX][rR]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+
+# Audio
+*.[mM][pP]3            -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[oO][gG][gG]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[wW][aA][vV]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+
+# Models
+*.[fF][bB][xX]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[bB][lL][eE][nN][dD] -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.[oO][bB][jJ]         -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+
+# Other Binaries
+*.a                    -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.dll                  -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.so                   -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.pdf                  -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+*.zip                  -text filter=lfs diff=lfs merge=lfs linguist-generated=true
+
+##################################################################
+# EXCEPTIONS
+##################################################################
+# These are binary files that should not be LFS (usually small)
+# or Unity internal binary formats.
+*.bytes                -text
+*.mesh                 -text
