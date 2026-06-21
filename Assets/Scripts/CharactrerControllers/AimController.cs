@@ -9,7 +9,7 @@ namespace Assets.Scripts.CharactrerControllers
         [SerializeField, Tooltip("Can be used to disable aiming indicator for enemy AI")] 
         private bool displayIndicator = true;
         [SerializeField, Tooltip("Default is (-1.0) for clockwise rotation, (1.0) for counter-clockwise")] 
-        private float rotationDir = -1.0;
+        private float rotationDir = -1f;
 
         public Vector3 CurrentAimDirection => transform.forward;
 
