@@ -39,7 +39,7 @@ public class PlayerInputController : MonoBehaviour, InputSystem_Actions.IPlayerA
     public Vector2 MovementDirection = Vector2.zero;
     public void OnMove(InputAction.CallbackContext ctx)
     {
-        MovementDirection = ctx.ReadValue<Vector2>();
+        MovementDirection = ctx.ReadValue<Vector2>().normalized;
     }
 
     public void FixedUpdate()
