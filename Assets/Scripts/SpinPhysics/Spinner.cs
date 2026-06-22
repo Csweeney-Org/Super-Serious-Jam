@@ -19,9 +19,10 @@ namespace Assets.Scripts.SpinPhysics
             SpinSpeed = newSpeed;
             RotationVector = new Vector3(0, newSpeed * Time.deltaTime, 0);
         }
+
         private void Update()
         {
-            this.transform.Rotate(RotationVector);
+            this.transform.Rotate(RotationVector * Time.deltaTime);
         }
     }
 }
