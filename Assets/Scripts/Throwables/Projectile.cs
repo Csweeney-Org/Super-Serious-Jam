@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     public MeshFilter MeshFilter;
     public void LaunchFrom(Vector3 launchPosition, Vector3 forward)
     {
-        RB.MovePosition(launchPosition);
+        RB.position = launchPosition; //This can have unpredictable results if we teleport this inside of another collider. 
         foreach (Collider col in Colliders)
         {
             col.enabled = true;
