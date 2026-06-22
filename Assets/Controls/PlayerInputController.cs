@@ -10,18 +10,19 @@ public class PlayerInputController : MonoBehaviour, InputSystem_Actions.IPlayerA
         playerControls = new InputSystem_Actions();
         playerControls.Player.SetCallbacks(this);
     }
+    public void FixedUpdate()
+    {
+        if (MovementDirection == Vector2.zero) return;
+        playerCharacter.ApplyMovementForce(new Vector3(MovementDirection.x, 0, MovementDirection.y));
+    }
 
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
-    private void OnDisable()
-    {
-        playerControls.Disable();
-    }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
+        if (context.performed)
+        {
+            playerCharacter.Inventory.ThrowItemFromInventory();
+        }
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -42,9 +43,19 @@ public class PlayerInputController : MonoBehaviour, InputSystem_Actions.IPlayerA
         MovementDirection = ctx.ReadValue<Vector2>().normalized;
     }
 
-    public void FixedUpdate()
+
+    private void OnEnable()
     {
-        playerCharacter.ApplyForce(new Vector3(MovementDirection.x, 0, MovementDirection.y), magnitude: Time.fixedDeltaTime * 10f);
+        playerControls.Enable();
+    }
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
+    private void OnDestroy()
+    {
+        playerControls.Dispose();
     }
     public void OnValidate()
     {

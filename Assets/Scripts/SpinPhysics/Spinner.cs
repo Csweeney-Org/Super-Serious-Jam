@@ -17,11 +17,12 @@ namespace Assets.Scripts.SpinPhysics
         public void SetSpinSpeed(float newSpeed)
         {
             SpinSpeed = newSpeed;
-            RotationVector = new Vector3(0, newSpeed * Time.fixedDeltaTime, 0);
+            RotationVector = new Vector3(0, newSpeed, 0);
         }
+
         private void Update()
         {
-            this.transform.Rotate(RotationVector);
+            this.transform.Rotate(RotationVector * Time.deltaTime);
         }
     }
 }
