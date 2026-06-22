@@ -11,6 +11,8 @@ public class ThrowableInventory : MonoBehaviour
     public AimController aimController;
     private Queue<ItemPickup> throwableQueue = new Queue<ItemPickup>();
     [field: SerializeField] private ProjectilePool projectilePool;
+    // Open question: do we want to sart from 0 weight or assign a base weight (initialize different enemies)
+    [field: SerializeField] public float TotalWeight { get; private set; } = 0f;
 
     private void Start()
     {
@@ -27,6 +29,9 @@ public class ThrowableInventory : MonoBehaviour
         }
 
         throwableQueue.Enqueue(newItem);
+        // Assumes weight property exists in BoingData
+        TotalWeight += newItem.Weight;
+
         //Set transform of the picked up Item as a child of this unit
         int index = throwableQueue.Count - 1;
         newItem.transform.SetParent(CarryPositions[index]);
@@ -42,8 +47,14 @@ public class ThrowableInventory : MonoBehaviour
     public void ThrowItemFromInventory()
     {
         if (throwableQueue.Count == 0) return;
-        projectilePool.GetProjectileForItem(throwableQueue.Dequeue())
-            .LaunchFrom(this.transform.position + aimController.CurrentAimDirection, aimController.CurrentAimDirection);
+
+        ItemPickup thrownItem = throwableQueue.Dequeue();
+        TotalWeight -= thrownItem.Weight;
+        // Safety check to avoid negative values entering damage calculation
+        if (TotalWeight < 0f) TotalWeight = 0f;
+
+        projectilePool.GetProjectileForItem(thrownItem)
+            .LaunchFrom(this.transform.position + 2*aimController.CurrentAimDirection, aimController.CurrentAimDirection);
         //Fire from slightly ahead of thrower to prevent early self collisions
         //ReorganizeQueue();
     }
@@ -51,6 +62,7 @@ public class ThrowableInventory : MonoBehaviour
     private void ReorganizeQueue()
     {
         //Aeryj: I am not sure what this function was doing sorry, please let me know :)
+        //Enzo: I believe it was for flipping the order of items to be thrown
         ItemPickup[] objects = throwableQueue.ToArray();
         for (int i = 0; i < objects.Length; i++)
         {

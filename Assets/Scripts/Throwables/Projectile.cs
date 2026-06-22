@@ -64,6 +64,9 @@ public class Projectile : MonoBehaviour
         //RB.linearVelocity = Vector3.zero;
         //RB.angularVelocity = Vector3.zero;
 
+        //TODO: Add differentiation between player/enemy and walls/environment (no damage)
+        hitUnit.TakeDamage(BoingProperties.Damage);
+
         Vector3 directionRandom = new Vector3(
             Random.Range(-1f, 1f),
             1f,

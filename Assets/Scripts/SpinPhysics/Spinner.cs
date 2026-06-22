@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.SpinPhysics
 {
-    internal class Spinner : MonoBehaviour
+    public class Spinner : MonoBehaviour
     {
         [field: SerializeField, Description("Angular speed in degrees per second")]
         public float SpinSpeed { get; private set; }
