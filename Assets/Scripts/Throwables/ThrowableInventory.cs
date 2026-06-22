@@ -1,7 +1,7 @@
+using Assets.Scripts.CharactrerControllers;
 using Assets.Scripts.Throwables;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.CharactrerControllers;
 
 public class ThrowableInventory : MonoBehaviour
 {
@@ -43,7 +43,7 @@ public class ThrowableInventory : MonoBehaviour
     {
         if (throwableQueue.Count == 0) return;
         projectilePool.GetProjectileForItem(throwableQueue.Dequeue())
-            .LaunchFrom(this.transform.position + this.transform.forward, aimController.CurrentAimDirection);
+            .LaunchFrom(this.transform.position + aimController.CurrentAimDirection, aimController.CurrentAimDirection);
         //Fire from slightly ahead of thrower to prevent early self collisions
         //ReorganizeQueue();
     }
