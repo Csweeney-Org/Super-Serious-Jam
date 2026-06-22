@@ -1,12 +1,14 @@
 using Assets.Scripts.Throwables;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.CharactrerControllers;
 
 public class ThrowableInventory : MonoBehaviour
 {
     [Header("Espacios donde se guardan")]
     public Transform[] CarryPositions;
     public SpinCharacterController Owner;
+    public AimController aimController;
     private Queue<ItemPickup> throwableQueue = new Queue<ItemPickup>();
     [field: SerializeField] private ProjectilePool projectilePool;
 
@@ -41,7 +43,7 @@ public class ThrowableInventory : MonoBehaviour
     {
         if (throwableQueue.Count == 0) return;
         projectilePool.GetProjectileForItem(throwableQueue.Dequeue())
-            .LaunchFrom(this.transform.position + this.transform.forward, this.transform.forward);
+            .LaunchFrom(this.transform.position + this.transform.forward, aimController.CurrentAimDirection);
         //Fire from slightly ahead of thrower to prevent early self collisions
         //ReorganizeQueue();
     }
@@ -65,6 +67,10 @@ public class ThrowableInventory : MonoBehaviour
         if (Owner == null)
         {
             Debug.LogError($"Inventory {gameObject.name} does not have an owner ");
+        }
+        if (aimController == null)
+        {
+            aimController = gameObject.GetComponentInChildren<AimController>();
         }
     }
 }
