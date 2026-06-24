@@ -9,24 +9,25 @@ public class Projectile : MonoBehaviour
     public Rigidbody RB;
     public Collider[] Colliders;
     public MeshFilter MeshFilter;
+
     private ItemPickup linkedItem;
-    private bool hasDealtDamage = false;
     private SpinCharacterController shooterUnit;
-    
+    private ProjectilePool parentPool;
+
+    private bool Launched;
+
     public void LaunchFrom(Vector3 launchPosition, Vector3 forward, SpinCharacterController shooter)
     {
         shooterUnit = shooter;
-        hasDealtDamage = false;
 
         RB.position = launchPosition; //This can have unpredictable results if we teleport this inside of another collider. 
         foreach (Collider col in Colliders)
             col.enabled = true;
-        
+
         RB.isKinematic = false;
-        RB.useGravity = true;
         RB.linearVelocity = Vector3.zero;
         RB.angularVelocity = Vector3.zero;
-
+        Launched = true;
         RB.AddForce(forward * LaunchForce); // ForceMode.Impulse makes weirdly fast push
     }
     public void SetupForItem(ItemPickup item)
@@ -34,8 +35,11 @@ public class Projectile : MonoBehaviour
         linkedItem = item;
         BoingProperties = item.BoingProperties;
         this.MeshFilter.sharedMesh = item.Mesh.sharedMesh;
-        // Hide original item during projectile phase
-        linkedItem.gameObject.SetActive(false);
+    }
+    public Projectile RegisterWithPool(ProjectilePool pool)
+    {
+        parentPool = pool;
+        return this;
     }
     public void EnableItemColliders()
     {
@@ -54,29 +58,29 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (hasDealtDamage) 
-            return;
+        if (!Launched) return;
         //All human/AI player objects will have an inventory I guess
         SpinCharacterController collidedUnit = collision.gameObject.GetComponentInParent<SpinCharacterController>();
 
         // Prevent selfcollision
-        if (collidedUnit != null && collidedUnit == shooterUnit)
-            return;
+        if (collidedUnit != null)
+        {
+            if (collidedUnit == shooterUnit) return;
+            BOING(collidedUnit);
 
-        if (collidedUnit == null)
+        }
+        else if (collidedUnit == null)
         {
             //Collided with something that is not a player/npc -> drop as item
             DropItemAndExpire();
             return;
         }
 
-        BOING(collidedUnit);
     }
 
     private void BOING(SpinCharacterController hitUnit)
     {
-        print("BOING!");
-        hasDealtDamage = true;
+        print($"BOING! {gameObject.name} has hit {hitUnit.name}");
 
         //RB.linearVelocity = Vector3.zero;
         //RB.angularVelocity = Vector3.zero;
@@ -106,8 +110,6 @@ public class Projectile : MonoBehaviour
         {
             //TODO: This item could live on for another collision
             BoingProperties = BoingData.WithoutBounce(BoingProperties);
-            // Time before physics get deactivated
-            Invoke(nameof(DropItemAndExpire), 1f); 
         }
         else
         {
@@ -118,21 +120,14 @@ public class Projectile : MonoBehaviour
 
     private void DropItemAndExpire()
     {
+        Launched = false;
         // Move original object ro current location
         if (linkedItem != null)
         {
-            linkedItem.transform.SetParent(null); 
-            linkedItem.transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z); 
-            linkedItem.gameObject.SetActive(true); 
+            linkedItem.transform.SetParent(null);
+            linkedItem.DeployToPosition(new Vector3(transform.position.x, 0, transform.position.z));
         }
-
-        // Disable projectile (Return to pool)
-        foreach (Collider col in Colliders) { col.enabled = false; }
-        RB.linearVelocity = Vector3.zero;
-        RB.isKinematic = true;
-        
-        // TODO: not sure about returning to pool
-        gameObject.SetActive(false); 
+        parentPool.ReturnProjectile(this);
     }
 
 }

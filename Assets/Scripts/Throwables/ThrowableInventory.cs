@@ -54,7 +54,8 @@ public class ThrowableInventory : MonoBehaviour
         if (TotalWeight < 0f) TotalWeight = 0f;
 
         projectilePool.GetProjectileForItem(thrownItem)
-            .LaunchFrom(this.transform.position + 2*aimController.CurrentAimDirection, aimController.CurrentAimDirection, Owner);
+            .LaunchFrom(this.transform.position + 2 * aimController.CurrentAimDirection, aimController.CurrentAimDirection, Owner);
+        thrownItem.HideItem();
         //Fire from slightly ahead of thrower to prevent early self collisions
         //ReorganizeQueue();
     }

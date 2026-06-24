@@ -10,7 +10,7 @@ public class ProjectilePool : MonoBehaviour
     private void Awake()
     {
         Pool = new ObjectPool<Projectile>(
-            createFunc: () => GameObject.Instantiate<Projectile>(ProjectilePrefab),
+            createFunc: CreateProjectile,
             actionOnGet: (proj) => { },
             actionOnRelease: (proj) => { },
             actionOnDestroy: (proj) => { },
@@ -22,14 +22,23 @@ public class ProjectilePool : MonoBehaviour
     {
         var projectile = Pool.Get();
         projectile.SetupForItem(item);
+        projectile.gameObject.SetActive(true);
         return projectile;
     }
     public void ReturnProjectile(Projectile returningProjectile)
     {
+        returningProjectile.RB.position = new Vector3(-100, -100, -100);
+        returningProjectile.gameObject.SetActive(false);
         Pool.Release(returningProjectile);
     }
     public void OnValidate()
     {
         if (ProjectilePrefab == null) Debug.LogError($"Projectile Pool is missing a link to the projectile prefab");
+    }
+
+    private Projectile CreateProjectile()
+    {
+        return GameObject.Instantiate<Projectile>(ProjectilePrefab)
+            .RegisterWithPool(this);
     }
 }
