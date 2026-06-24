@@ -87,7 +87,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
 
         // Damage calculation factors in weight as damage reduction (1f + weight since it initializes with 0 weight)
         float damageReductionModifier = 1f + (Inventory.TotalWeight * WeightDefenseFactor);
-        float actualDamage = incomingDamage / damageReductionModifier;
+        float actualDamage = incomingDamage / damageReductionModifier; //TODO: change to multiplication to avoid negative values -> devision by 0
 
         CurrentToppleHealth -= actualDamage;
         Debug.Log($"{gameObject.name} took {actualDamage:F1} damage! Topple Meter: {CurrentToppleHealth:F1}");

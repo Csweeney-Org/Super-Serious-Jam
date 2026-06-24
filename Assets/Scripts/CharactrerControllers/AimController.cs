@@ -28,5 +28,10 @@ namespace Assets.Scripts.CharactrerControllers
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, transform.forward * 3f);
         }
+
+        private void ApplyAimAssist()
+        {
+            //TODO: Add slow down based on dot product to enemy
+        }
     }
 }
