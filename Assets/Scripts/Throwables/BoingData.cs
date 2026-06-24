@@ -7,13 +7,18 @@ public struct BoingData
     public float HorizontalForce;
     public float RotationForce;
     public bool CanBounce;
+    public float Damage;
+    public float Weight;
 
-    public BoingData(float bounceStrength, float horizontalForce, float rotationForce, bool canBounce)
+
+    public BoingData(float bounceStrength, float horizontalForce, float rotationForce, bool canBounce, float damage, float weight)
     {
         BounceStrength = bounceStrength;
         HorizontalForce = horizontalForce;
         RotationForce = rotationForce;
         CanBounce = canBounce;
+        Damage = damage;
+        Weight = weight;
     }
     public static BoingData WithoutBounce(BoingData oldData)
     {
@@ -21,7 +26,9 @@ public struct BoingData
             oldData.BounceStrength,
             oldData.HorizontalForce,
             oldData.RotationForce,
-            canBounce: false
+            canBounce: false,
+            oldData.Damage,
+            oldData.Weight
             );
     }
 }
