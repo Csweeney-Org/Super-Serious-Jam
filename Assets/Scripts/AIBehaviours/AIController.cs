@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.AIBehaviours.Strategies;
+using Assets.Scripts.CharactrerControllers;
 using Assets.Scripts.Throwables;
 using UnityEngine;
 using UnityEngine.AI;
@@ -48,6 +49,8 @@ namespace Assets.Scripts.AIBehaviours
             playerUnit = FindObjectsByType<SpinCharacterController>(FindObjectsSortMode.None).FirstOrDefault(unit => unit != selfUnit);
 
             EvaluateStateAndStrategy(); // Should default to Allrounder state
+            if (CurrentPath == null)
+                AssessNewTarget();
         }
         public void FixedUpdate()
         {
@@ -58,6 +61,18 @@ namespace Assets.Scripts.AIBehaviours
                 EvaluateStateAndStrategy();
                 stateEvaluationTimer = 0f;
             }
+
+            if (selfUnit == null || CurrentPath == null || CurrentPath.corners.Length == 0)
+            {
+                //Debug.Log("Path is null or no corners");
+                return;
+            }
+            // Protects from out of bounce without available items
+            if (cornersIndex >= CurrentPath.corners.Length)
+            {
+                AssessNewTarget();
+                return; 
+            }
             
             // Logic for performing movement 
             if (Vector3.Distance(selfUnit.transform.position, CurrentPath.corners[cornersIndex]) <= MaxPathingErrorDistance)
@@ -65,13 +80,10 @@ namespace Assets.Scripts.AIBehaviours
                 cornersIndex = cornersIndex + 1;//If we are close to a path node, don't worry about hitting it perfectly and start aiming for the next one
                 if (cornersIndex < CurrentPath.corners.Length)
                 {
-                    print($"{selfUnit} is sufficiently close to navMesh node {CurrentPath.corners[cornersIndex - 1]}. Now aiming for next position {CurrentPath.corners[cornersIndex]}");
+                   // print($"{selfUnit} is sufficiently close to navMesh node {CurrentPath.corners[cornersIndex - 1]}. Now aiming for next position {CurrentPath.corners[cornersIndex]}");
                 }
                 else
-                {
-                    //Ran out of nnodes to aim for -> Time to recalc priorities
                     AssessNewTarget();
-                }
             }
             selfUnit.ApplyMovementForce(CurrentPath.corners[cornersIndex] - selfUnit.transform.position);
             //TODO: Some extra cases that are not yet solved in this code.
@@ -84,21 +96,22 @@ namespace Assets.Scripts.AIBehaviours
 
         public void AssessNewTarget()
         {
+            // Protect against edge case of no items being available
+            var pointsOfInterest = navMap.SearchForPointsOfInterest();
+            if (pointsOfInterest == null || !pointsOfInterest.Any())
+            {
+                CurrentPath = null;
+                return; 
+            }
             var possibleTargetPaths = navMap.GenerateNavPathsToPointsOfInterest(navMap.SearchForPointsOfInterest());
             CurrentTarget = Strategy.Execute(possibleTargetPaths, selfUnit);
-            CurrentPath = possibleTargetPaths[CurrentTarget];
-            cornersIndex = 0;
-            //Should probably have some exception handling if any part of this fails
-
-            if (CurrentTarget is PointOfInterest<ItemPickup> itemTarget)
+            if (CurrentTarget != null && possibleTargetPaths.ContainsKey(CurrentTarget))
             {
-                print($"{selfUnit.gameObject.name} AI has selected a new item target: {itemTarget.Value.name} @ {itemTarget.Position} ");
-
+                CurrentPath = possibleTargetPaths[CurrentTarget];
+                cornersIndex = CurrentPath.corners.Length > 1 ? 1 : 0; 
             }
-            else if (CurrentTarget is PointOfInterest<SpinCharacterController> spinUnitTarget)
-            {
-                print($"{selfUnit.gameObject.name} AI has selected a new spining unit target to ram: {spinUnitTarget.Value.name} @ {spinUnitTarget.Position}");
-            }
+            else
+                CurrentPath = null;
         }
 
         private void EvaluateStateAndStrategy()
@@ -140,36 +153,33 @@ namespace Assets.Scripts.AIBehaviours
         {
             if (selfUnit.Inventory.TotalWeight <= 0) 
                 return;
-            Vector3 vectorToPlayer = playerUnit.transform.position - selfUnit.transform.position;
-            Vector3 directionToPlayer = vectorToPlayer.normalized;
 
-            // Projectiles are flying slow -> AI needs to lead it's shot
-            // Inventory already holds a reference of the aimcontroller
-            float alignment = Vector3.Dot(selfUnit.Inventory.aimController.CurrentAimDirection, directionToPlayer);
+            AimController aim = selfUnit.Inventory.aimController;
 
             switch (CurrentState)
             { // TODO: Get rid of magic numbers and include variables
                 case AIState.Strafe:
-                    if(alignment > 0.92f)
+                    // EvaluateTarget checks line of sight as well as predicting next player position
+                    if(aim.EvaluateTarget(selfUnit, playerUnit, 0.95f))
                         selfUnit.Inventory.ThrowItemFromInventory();
                     break;
                 
                 case AIState.Steamroll:
                     // Throw if player runs away
+                    Vector3 dirToPlayer = (playerUnit.transform.position - selfUnit.transform.position).normalized;
                     bool playerIsEscaping = Vector3.Dot(playerUnit.rigidBody.linearVelocity,
-                                                        directionToPlayer) > 0.5f;
-                    if (playerIsEscaping && alignment > 0.95f) 
+                                                        dirToPlayer) > 0.5f;
+                    if (playerIsEscaping && aim.EvaluateTarget(selfUnit, playerUnit, 0.95f)) 
                         selfUnit.Inventory.ThrowItemFromInventory();
                     break;
                 
                 case AIState.Allrounder:
-                    if (alignment > 0.98f) 
+                    if (aim.EvaluateTarget(selfUnit, playerUnit, 0.98f)) 
                         selfUnit.Inventory.ThrowItemFromInventory();
                     break;
                 
                 case AIState.Survival:
                     break;
-                
             }
         }
 
