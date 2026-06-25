@@ -42,7 +42,9 @@ namespace Assets.Scripts.AIBehaviours
         private float stateEvaluationTimer = 0f;
         private const float StateEvaluationInterval = 0.5f; //Not sure if that is too often
         private Vector3 lastPosition; // AI gets stuck alot, so here goes nothing
-private float stuckTimer = 0f;
+        private float stuckTimer = 0f;
+        private IPointOfInterest blacklistedTarget;
+        private float blacklistTimer = 0f;
 
         public void Start()
         {
@@ -64,10 +66,19 @@ private float stuckTimer = 0f;
                 stateEvaluationTimer = 0f;
             }
 
+            // Combat needs to be handled first -> can at least shoot if navigation is stuck
+            HandleCombat();
+
+            if (blacklistTimer > 0)
+            {
+                blacklistTimer -= Time.fixedDeltaTime;
+                if (blacklistTimer <= 0) 
+                    blacklistedTarget = null;
+            }
+
             if (selfUnit == null || CurrentPath == null || CurrentPath.corners.Length == 0 || 
                     cornersIndex >= CurrentPath.corners.Length)
             {
-                //Debug.Log("Path is null or no corners");
                 AssessNewTarget();
                 return;
             }
@@ -77,14 +88,23 @@ private float stuckTimer = 0f;
             {
                 if (Vector3.Distance(selfUnit.transform.position, lastPosition) < 0.2f)
                 {
-                    Debug.LogWarning($"{selfUnit.name} got stuck");
+                    Debug.LogWarning($"{selfUnit.name} got stuck! Nudging and picking new target.");
+                    
+                    // Blacklist offending target (will be removed after some time)
+                    blacklistedTarget = CurrentTarget;
+                    blacklistTimer = 3f;
+
+                    // If AI is stuck, slighly push & asses new target
+                    selfUnit.rigidBody.AddForce(-selfUnit.transform.forward * 5f, ForceMode.Impulse);
+
                     AssessNewTarget();
+                    stuckTimer = 0f;
+                    return; 
                 }
                 lastPosition = selfUnit.transform.position;
                 stuckTimer = 0f;
             }
             
-            // Logic for performing movement 
             if (Vector3.Distance(selfUnit.transform.position, CurrentPath.corners[cornersIndex]) <= MaxPathingErrorDistance)
             {
                 cornersIndex = cornersIndex + 1;
@@ -94,26 +114,30 @@ private float stuckTimer = 0f;
                     return;
                 }
             }
+            
             selfUnit.ApplyMovementForce(CurrentPath.corners[cornersIndex] - selfUnit.transform.position);
+            
             //TODO: Some extra cases that are not yet solved in this code.
             // 1) What happens when this unit is knocked back to be closer to the previous node
             // 2) While pickup items have static position, other spinning units are moving targets. Maybe the generic Point of Interest script actually needs to resolve position dynamically for player units
             // 3) More advanced planning involving multiple look ahead steps is left to another day to solve - if we get there :)
-
-            HandleCombat();
         }
 
         public void AssessNewTarget()
         {
-            // Protect against edge case of no items being available
             var pointsOfInterest = navMap.SearchForPointsOfInterest();
-            if (pointsOfInterest == null || !pointsOfInterest.Any())
-            {
-                CurrentPath = null;
-                return; 
-            }
-            var possibleTargetPaths = navMap.GenerateNavPathsToPointsOfInterest(navMap.SearchForPointsOfInterest());
+            if (pointsOfInterest == null || !pointsOfInterest.Any()) return;
+
+            var possibleTargetPaths = navMap.GenerateNavPathsToPointsOfInterest(pointsOfInterest);
+
+            // Ignore target that leads to dead end (getting stuck)
+            if (blacklistedTarget != null && possibleTargetPaths.ContainsKey(blacklistedTarget))
+                possibleTargetPaths.Remove(blacklistedTarget);
+            
+            if (possibleTargetPaths.Count == 0) return;
+
             CurrentTarget = Strategy.Execute(possibleTargetPaths, selfUnit);
+            
             if (CurrentTarget != null && possibleTargetPaths.ContainsKey(CurrentTarget))
             {
                 CurrentPath = possibleTargetPaths[CurrentTarget];
@@ -121,6 +145,7 @@ private float stuckTimer = 0f;
             }
             else
                 CurrentPath = null;
+            
         }
 
         private void EvaluateStateAndStrategy()
