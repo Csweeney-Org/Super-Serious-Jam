@@ -31,6 +31,11 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     private float timeSinceLastHit = 0f;
     private bool isToppled = false;
 
+    private void Start()
+    {
+        rigidBody.freezeRotation = true;
+    }
+
 /// DAMAGE & HEALTH/TOPPLE ///
     private void Update()
     {
