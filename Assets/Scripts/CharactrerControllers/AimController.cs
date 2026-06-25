@@ -31,8 +31,8 @@ namespace Assets.Scripts.CharactrerControllers
                 effectiveSpeed = indicatorSpeed;
                 
             if (displayIndicator)
-                transform.Rotate(0, rotationDir * effectiveSpeed * Time.deltaTime, 0);    
-            print($"Current speed is: {effectiveSpeed}");
+                transform.Rotate(0, rotationDir * ApplyAimAssist(indicatorSpeed) * Time.deltaTime, 0);    
+            print($"Current speed is: {ApplyAimAssist(indicatorSpeed)}");
 
         }
 
@@ -84,13 +84,24 @@ namespace Assets.Scripts.CharactrerControllers
 
         private float ApplyAimAssist(float rotationSpeed)
         {
-            if (Physics.Raycast(this.transform.position, transform.forward, out RaycastHit hit, MaxAimAssistDistance))
+            Vector3 rayStart = transform.position + (Vector3.up * 0.5f);
+            SpinCharacterController selfUnit = GetComponentInParent<SpinCharacterController>();
+
+            //TODO: Remove magic number (thickness of raycast)
+            float assistRadius = 1.5f; 
+
+            if (Physics.SphereCast(rayStart, assistRadius, transform.forward, out RaycastHit hit, MaxAimAssistDistance))
             {
-                Debug.Log("AimAssist triggers!");
-                return rotationSpeed / 2;
+                SpinCharacterController hitUnit = hit.collider.GetComponentInParent<SpinCharacterController>();
+
+                // Ensure it only triggers for characters
+                if (hitUnit != null && hitUnit != selfUnit)
+                    return rotationSpeed * 0.5f; 
+                
             }
-            else
-                return rotationSpeed;
+            
+            // Assign normal speed if anything except a character is hit
+            return rotationSpeed;
         }
     }
 }
