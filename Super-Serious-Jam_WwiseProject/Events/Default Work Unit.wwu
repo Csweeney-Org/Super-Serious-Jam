@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AF6CA181-B7B7-43B4-BBB0-ADA0ADF4E6E1}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{AF6CA181-B7B7-43B4-BBB0-ADA0ADF4E6E1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Item_Throw" ID="{FD535694-1858-4361-9C6B-A6B8421840F2}">
+					<ChildrenList>
+						<Action Name="" ID="{C12E9078-46C3-4EBF-9202-F5D62CF08833}" ShortID="589258468">
+							<PropertyList>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Quick Swish Whoosh Swoosh-49" ID="{CE1A6F1C-8402-4CAE-B0EB-A298AC8D6F32}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

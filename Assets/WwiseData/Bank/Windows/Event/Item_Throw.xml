@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="3051433909" Type="Event" GUID="{FD535694-1858-4361-9C6B-A6B8421840F2}" Language="SFX" Hash="{0BF2398D-2752-4B4B-0992-2F2315F8EB36}">
+			<ObjectPath>Item_Throw</ObjectPath>
+			<ShortName>Item_Throw</ShortName>
+			<Path>Event/Item_Throw.bnk</Path>
+			<Media>
+				<File Id="275128577" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Quick Swish Whoosh Swoosh-49.wav</ShortName>
+					<Path>Media/275128577.wem</Path>
+					<CachePath>99/{9950BD3A-BD6A-5370-49A5-25E7F685F693}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3051433909" Name="Item_Throw" ObjectPath="\Events\Default Work Unit\Item_Throw" GUID="{FD535694-1858-4361-9C6B-A6B8421840F2}" DurationType="OneShot" DurationMin="0.59639454" DurationMax="0.59639454">
+					<MediaRefs>
+						<MediaRef Id="275128577"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{8B3253D0-7349-00AB-EDCB-9E56C2ED3CFB}</FileHash>
+</SoundBanksInfo>

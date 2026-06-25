@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}" SchemaVersion="133">
+	<Containers>
+		<WorkUnit Name="Default Work Unit" ID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Quick Swish Whoosh Swoosh-49" ID="{CE1A6F1C-8402-4CAE-B0EB-A298AC8D6F32}" ShortID="11618738">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>37</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Quick Swish Whoosh Swoosh-49" ID="{7184CB45-67AF-4FBF-847F-94D79AB1BFB8}">
+							<Language>SFX</Language>
+							<AudioFile>Quick Swish Whoosh Swoosh-49.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="275128577"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="Quick Swish Whoosh Swoosh-49_01" ID="{F73B1C88-234B-4D7C-84C8-294896DD89BF}">
+							<Language>SFX</Language>
+							<AudioFile>Quick Swish Whoosh Swoosh-49.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="275128577"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{F49C2D15-647D-43FD-912D-89B2220F5707}"/>
+					</PositioningInfo>
+					<StateInfo>
+						<StatePropertyList>
+							<Property Name="EnableAttenuation"/>
+							<Property Name="Highpass"/>
+							<Property Name="Lowpass"/>
+							<Property Name="MakeUpGain"/>
+							<Property Name="Pitch"/>
+							<Property Name="Volume"/>
+						</StatePropertyList>
+					</StateInfo>
+					<ActiveSourceList>
+						<ActiveSource Name="Quick Swish Whoosh Swoosh-49_01" ID="{F73B1C88-234B-4D7C-84C8-294896DD89BF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>
