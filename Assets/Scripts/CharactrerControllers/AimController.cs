@@ -24,12 +24,7 @@ namespace Assets.Scripts.CharactrerControllers
         // CurrentAimDirection can be queried by other scripts at any time
 
         private void Update()
-        {
-            if (aimAssistActive)
-                effectiveSpeed = ApplyAimAssist(indicatorSpeed);
-            else
-                effectiveSpeed = indicatorSpeed;
-                
+        {           
             if (displayIndicator)
                 transform.Rotate(0, rotationDir * ApplyAimAssist(indicatorSpeed) * Time.deltaTime, 0);    
             print($"Current speed is: {ApplyAimAssist(indicatorSpeed)}");
@@ -64,12 +59,12 @@ namespace Assets.Scripts.CharactrerControllers
 
             // Check line of sight
             Vector3 rayStart = shooter.transform.position + (Vector3.up * 0.5f);
-            Vector3 rayDir = (target.transform.position - shooter.transform.position).normalized;
-            //TODO: Raycast function 
+            Vector3 rayDir = directionToTarget;
+            
             if (Physics.Raycast(rayStart, rayDir, out RaycastHit hit, distance))
             {
                 SpinCharacterController hitUnit = hit.collider.GetComponentInParent<SpinCharacterController>();
-                if (hitUnit != target) 
+                if (hitUnit != target && hitUnit != shooter) 
                     return false;
             }
             return true;
@@ -84,6 +79,9 @@ namespace Assets.Scripts.CharactrerControllers
 
         private float ApplyAimAssist(float rotationSpeed)
         {
+            if (!aimAssistActive)
+                return rotationSpeed;
+
             Vector3 rayStart = transform.position + (Vector3.up * 0.5f);
             SpinCharacterController selfUnit = GetComponentInParent<SpinCharacterController>();
 

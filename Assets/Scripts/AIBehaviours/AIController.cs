@@ -22,7 +22,7 @@ namespace Assets.Scripts.AIBehaviours
         public SpinCharacterController selfUnit;
         public IStrategy Strategy; //Currently this needs to be set in code until we think of a way to get it wrapped in a ScriptableObject for editor drag and drop
 
-        public float MaxPathingErrorDistance = 0.5f;
+        public float MaxPathingErrorDistance = 1.5f;
 
         [Header("AI Thresholds")]
         [Tooltip("Health percentage below which AI enters Survival state")]
@@ -41,6 +41,8 @@ namespace Assets.Scripts.AIBehaviours
         private SpinCharacterController playerUnit;
         private float stateEvaluationTimer = 0f;
         private const float StateEvaluationInterval = 0.5f; //Not sure if that is too often
+        private Vector3 lastPosition; // AI gets stuck alot, so here goes nothing
+private float stuckTimer = 0f;
 
         public void Start()
         {
@@ -62,28 +64,35 @@ namespace Assets.Scripts.AIBehaviours
                 stateEvaluationTimer = 0f;
             }
 
-            if (selfUnit == null || CurrentPath == null || CurrentPath.corners.Length == 0)
+            if (selfUnit == null || CurrentPath == null || CurrentPath.corners.Length == 0 || 
+                    cornersIndex >= CurrentPath.corners.Length)
             {
                 //Debug.Log("Path is null or no corners");
+                AssessNewTarget();
                 return;
             }
-            // Protects from out of bounce without available items
-            if (cornersIndex >= CurrentPath.corners.Length)
+
+            stuckTimer += Time.fixedDeltaTime;
+            if (stuckTimer >= 0.5f) 
             {
-                AssessNewTarget();
-                return; 
+                if (Vector3.Distance(selfUnit.transform.position, lastPosition) < 0.2f)
+                {
+                    Debug.LogWarning($"{selfUnit.name} got stuck");
+                    AssessNewTarget();
+                }
+                lastPosition = selfUnit.transform.position;
+                stuckTimer = 0f;
             }
             
             // Logic for performing movement 
             if (Vector3.Distance(selfUnit.transform.position, CurrentPath.corners[cornersIndex]) <= MaxPathingErrorDistance)
             {
-                cornersIndex = cornersIndex + 1;//If we are close to a path node, don't worry about hitting it perfectly and start aiming for the next one
-                if (cornersIndex < CurrentPath.corners.Length)
+                cornersIndex = cornersIndex + 1;
+                if (cornersIndex >= CurrentPath.corners.Length)
                 {
-                   // print($"{selfUnit} is sufficiently close to navMesh node {CurrentPath.corners[cornersIndex - 1]}. Now aiming for next position {CurrentPath.corners[cornersIndex]}");
-                }
-                else
                     AssessNewTarget();
+                    return;
+                }
             }
             selfUnit.ApplyMovementForce(CurrentPath.corners[cornersIndex] - selfUnit.transform.position);
             //TODO: Some extra cases that are not yet solved in this code.
@@ -160,7 +169,7 @@ namespace Assets.Scripts.AIBehaviours
             { // TODO: Get rid of magic numbers and include variables
                 case AIState.Strafe:
                     // EvaluateTarget checks line of sight as well as predicting next player position
-                    if(aim.EvaluateTarget(selfUnit, playerUnit, 0.95f))
+                    if(aim.EvaluateTarget(selfUnit, playerUnit, 0.85f))
                         selfUnit.Inventory.ThrowItemFromInventory();
                     break;
                 
@@ -169,12 +178,12 @@ namespace Assets.Scripts.AIBehaviours
                     Vector3 dirToPlayer = (playerUnit.transform.position - selfUnit.transform.position).normalized;
                     bool playerIsEscaping = Vector3.Dot(playerUnit.rigidBody.linearVelocity,
                                                         dirToPlayer) > 0.5f;
-                    if (playerIsEscaping && aim.EvaluateTarget(selfUnit, playerUnit, 0.95f)) 
+                    if (playerIsEscaping && aim.EvaluateTarget(selfUnit, playerUnit, 0.90f)) 
                         selfUnit.Inventory.ThrowItemFromInventory();
                     break;
                 
                 case AIState.Allrounder:
-                    if (aim.EvaluateTarget(selfUnit, playerUnit, 0.98f)) 
+                    if (aim.EvaluateTarget(selfUnit, playerUnit, 0.90f)) 
                         selfUnit.Inventory.ThrowItemFromInventory();
                     break;
                 
