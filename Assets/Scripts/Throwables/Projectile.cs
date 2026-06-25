@@ -15,10 +15,15 @@ public class Projectile : MonoBehaviour
     private ProjectilePool parentPool;
 
     private bool Launched;
+    private bool isBouncing;
 
     public void LaunchFrom(Vector3 launchPosition, Vector3 forward, SpinCharacterController shooter)
     {
         shooterUnit = shooter;
+
+        RB.constraints = RigidbodyConstraints.FreezePositionY |
+                         RigidbodyConstraints.FreezeRotationX |
+                         RigidbodyConstraints.FreezeRotationZ;
 
         RB.position = launchPosition; //This can have unpredictable results if we teleport this inside of another collider. 
         foreach (Collider col in Colliders)
@@ -58,7 +63,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!Launched) return;
+        if (!Launched || isBouncing) return;
         //All human/AI player objects will have an inventory I guess
         SpinCharacterController collidedUnit = collision.gameObject.GetComponentInParent<SpinCharacterController>();
 
@@ -72,8 +77,9 @@ public class Projectile : MonoBehaviour
         else if (collidedUnit == null)
         {
             //Collided with something that is not a player/npc -> drop as item
-            DropItemAndExpire();
-            return;
+            TriggerChaoticBounce();
+            //DropItemAndExpire();
+            //return;
         }
 
     }
@@ -121,13 +127,49 @@ public class Projectile : MonoBehaviour
     private void DropItemAndExpire()
     {
         Launched = false;
-        // Move original object ro current location
-        if (linkedItem != null)
+        isBouncing = false;
+
+        // try-catch prevents projectile script from crashing if second impact occurs
+        try
         {
-            linkedItem.transform.SetParent(null);
-            linkedItem.DeployToPosition(new Vector3(transform.position.x, 0, transform.position.z));
+            if (linkedItem != null)
+            {
+                linkedItem.transform.SetParent(null);
+                // Added small height buffer so it is less likely to clip the floor
+                Vector3 safePosition = new Vector3(transform.position.x, 0.2f, transform.position.z);
+                linkedItem.DeployToPosition(safePosition);
+            }
         }
-        parentPool.ReturnProjectile(this);
+        finally
+        {
+            if (parentPool != null)
+                parentPool.ReturnProjectile(this);
+        }
+    }
+
+    private void TriggerChaoticBounce()
+    {
+        isBouncing = true; 
+
+        Vector3 randomTumbleDir = new Vector3(
+            Random.Range(-1f, 1f),
+            // Keep at 0 or it flies off the screen
+            0f, 
+            Random.Range(-1f, 1f)
+        ).normalized;
+
+        RB.linearVelocity = Vector3.zero; 
+        
+        //TODO: remove magic numbers
+        float randomBounceForce = Random.Range(5f, 8f); 
+        RB.AddForce(randomTumbleDir * randomBounceForce, ForceMode.Impulse);
+
+        // Might just remove it, but might look good with actual objects
+        float randomSpinForce = Random.Range(-20f, 20f);
+        RB.AddTorque(Vector3.up * randomSpinForce, ForceMode.Impulse);
+
+        // Wait till it becomes an ItemPickup again
+        Invoke(nameof(DropItemAndExpire), 0.5f);
     }
 
 }
