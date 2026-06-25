@@ -27,6 +27,24 @@ namespace Assets.Scripts.Throwables
             }
         }
 
+        /// <summary>
+        /// Intended to be used after an item is thrown, but before it reappears on the map
+        /// </summary>
+        public void HideItem()
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        public void DeployToPosition(Vector3 position)
+        {
+            IsAvailableToPickUp = true;
+            PickupCollider.enabled = true;
+            this.transform.position = position;
+            this.transform.localScale = Vector3.one;
+            this.gameObject.SetActive(true);
+        }
+
+
         public void OnValidate()
         {
             PickupCollider ??= GetComponentInChildren<Collider>();

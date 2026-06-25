@@ -31,6 +31,11 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     private float timeSinceLastHit = 0f;
     private bool isToppled = false;
 
+    private void Start()
+    {
+        rigidBody.freezeRotation = true;
+    }
+
 /// DAMAGE & HEALTH/TOPPLE ///
     private void Update()
     {
@@ -87,7 +92,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
 
         // Damage calculation factors in weight as damage reduction (1f + weight since it initializes with 0 weight)
         float damageReductionModifier = 1f + (Inventory.TotalWeight * WeightDefenseFactor);
-        float actualDamage = incomingDamage / damageReductionModifier;
+        float actualDamage = incomingDamage / damageReductionModifier; //TODO: change to multiplication to avoid negative values -> devision by 0
 
         CurrentToppleHealth -= actualDamage;
         Debug.Log($"{gameObject.name} took {actualDamage:F1} damage! Topple Meter: {CurrentToppleHealth:F1}");
@@ -117,28 +122,42 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     {
         rigidBody.AddForce(direction * magnitude, ForceMode.Force);
     }
-    /// <summary>
-    /// Helper method to ApplyForce, but this is specifically for player/AI controlled movement inputs 
-    /// where the magnitude of the force should be the characters acceleration
-    /// </summary>
-    /// <param name="direction"></param>
+
     public void ApplyMovementForce(Vector3 direction)
     {
-        if (isToppled)
-            return; 
-        
-        // Adjust movement speed dynamically based on TotalWeight
+        if (isToppled) return; 
+
+        float bumperRadius = 0.5f; 
+        float lookAheadDistance = 0.5f; 
+
+        Vector3 castStart = transform.position + (Vector3.up * 0.5f);
+
+        // Should detect walls to prevent sticking to them if movement angle is slightly towards wall
+        if (Physics.SphereCast(castStart, bumperRadius, direction, out RaycastHit hit, lookAheadDistance))
+        {
+            SpinCharacterController hitUnit = hit.collider.GetComponentInParent<SpinCharacterController>();
+            if (hitUnit == null && !hit.collider.isTrigger) 
+            {
+                Vector3 wallNormal = hit.normal;
+                wallNormal.y = 0; 
+                wallNormal.Normalize();
+
+                if (Vector3.Dot(direction, wallNormal) < 0)
+                {
+                    direction = Vector3.ProjectOnPlane(direction, wallNormal).normalized;
+                }
+            }
+        }
+
         float dynamicMaxSpeed = Mathf.Max(1f, maxSpeed - (Inventory.TotalWeight * WeightSpeedPenalty));
 
-        if (rigidBody.linearVelocity.magnitude < maxSpeed || Vector3.Dot(direction, rigidBody.linearVelocity) < 0)
+        Vector3 desiredVelocity = direction.normalized * dynamicMaxSpeed;
+        Vector3 steeringForce = desiredVelocity - rigidBody.linearVelocity;
+        steeringForce.y = 0;
+
+        if (steeringForce.sqrMagnitude > 0.1f)
         {
-            //Prevent further player input driven force unless it is in a direction that will result in slower velocity
-            ApplyForce(direction, Speed);
-        }
-        else
-        {
-            //This might get spammy, enable it when you need to debug
-            //Debug.Log($"Movement has been input for controller {gameObject.name} but further movement would exceed maximum speed. Ignoring");
+            ApplyForce(steeringForce.normalized, Speed);
         }
     }
 

@@ -9,23 +9,42 @@ public class Projectile : MonoBehaviour
     public Rigidbody RB;
     public Collider[] Colliders;
     public MeshFilter MeshFilter;
-    public void LaunchFrom(Vector3 launchPosition, Vector3 forward)
+
+    private ItemPickup linkedItem;
+    private SpinCharacterController shooterUnit;
+    private ProjectilePool parentPool;
+
+    private bool Launched;
+    private bool isBouncing;
+
+    public void LaunchFrom(Vector3 launchPosition, Vector3 forward, SpinCharacterController shooter)
     {
+        shooterUnit = shooter;
+
+        RB.constraints = RigidbodyConstraints.FreezePositionY |
+                         RigidbodyConstraints.FreezeRotationX |
+                         RigidbodyConstraints.FreezeRotationZ;
+
         RB.position = launchPosition; //This can have unpredictable results if we teleport this inside of another collider. 
         foreach (Collider col in Colliders)
-        {
             col.enabled = true;
-        }
+
         RB.isKinematic = false;
         RB.linearVelocity = Vector3.zero;
         RB.angularVelocity = Vector3.zero;
-
-        RB.AddForce(forward * LaunchForce);
+        Launched = true;
+        RB.AddForce(forward * LaunchForce); // ForceMode.Impulse makes weirdly fast push
     }
     public void SetupForItem(ItemPickup item)
     {
+        linkedItem = item;
         BoingProperties = item.BoingProperties;
         this.MeshFilter.sharedMesh = item.Mesh.sharedMesh;
+    }
+    public Projectile RegisterWithPool(ProjectilePool pool)
+    {
+        parentPool = pool;
+        return this;
     }
     public void EnableItemColliders()
     {
@@ -44,22 +63,30 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!Launched || isBouncing) return;
         //All human/AI player objects will have an inventory I guess
         SpinCharacterController collidedUnit = collision.gameObject.GetComponentInParent<SpinCharacterController>();
 
-        if (collidedUnit == null)
+        // Prevent selfcollision
+        if (collidedUnit != null)
         {
-            //Collided with something that is not a player/npc
-            Debug.Log("No se encontró SpinCharacterController");
-            return;
+            if (collidedUnit == shooterUnit) return;
+            BOING(collidedUnit);
+
+        }
+        else if (collidedUnit == null)
+        {
+            //Collided with something that is not a player/npc -> drop as item
+            TriggerChaoticBounce();
+            //DropItemAndExpire();
+            //return;
         }
 
-        BOING(collidedUnit);
     }
 
     private void BOING(SpinCharacterController hitUnit)
     {
-        print("BOING!");
+        print($"BOING! {gameObject.name} has hit {hitUnit.name}");
 
         //RB.linearVelocity = Vector3.zero;
         //RB.angularVelocity = Vector3.zero;
@@ -69,7 +96,7 @@ public class Projectile : MonoBehaviour
 
         Vector3 directionRandom = new Vector3(
             Random.Range(-1f, 1f),
-            1f,
+            0.5f,
             Random.Range(-1f, 1f)
         ).normalized;
 
@@ -93,9 +120,56 @@ public class Projectile : MonoBehaviour
         else
         {
             //No bounce configure, expire this item
-            DisableItemColliders();
-            Destroy(this, 1f); //Replace with return to projectile pool
+            DropItemAndExpire();
         }
+    }
+
+    private void DropItemAndExpire()
+    {
+        Launched = false;
+        isBouncing = false;
+
+        // try-catch prevents projectile script from crashing if second impact occurs
+        try
+        {
+            if (linkedItem != null)
+            {
+                linkedItem.transform.SetParent(null);
+                // Added small height buffer so it is less likely to clip the floor
+                Vector3 safePosition = new Vector3(transform.position.x, 0.2f, transform.position.z);
+                linkedItem.DeployToPosition(safePosition);
+            }
+        }
+        finally
+        {
+            if (parentPool != null)
+                parentPool.ReturnProjectile(this);
+        }
+    }
+
+    private void TriggerChaoticBounce()
+    {
+        isBouncing = true; 
+
+        Vector3 randomTumbleDir = new Vector3(
+            Random.Range(-1f, 1f),
+            // Keep at 0 or it flies off the screen
+            0f, 
+            Random.Range(-1f, 1f)
+        ).normalized;
+
+        RB.linearVelocity = Vector3.zero; 
+        
+        //TODO: remove magic numbers
+        float randomBounceForce = Random.Range(5f, 8f); 
+        RB.AddForce(randomTumbleDir * randomBounceForce, ForceMode.Impulse);
+
+        // Might just remove it, but might look good with actual objects
+        float randomSpinForce = Random.Range(-20f, 20f);
+        RB.AddTorque(Vector3.up * randomSpinForce, ForceMode.Impulse);
+
+        // Wait till it becomes an ItemPickup again
+        Invoke(nameof(DropItemAndExpire), 0.5f);
     }
 
 }
