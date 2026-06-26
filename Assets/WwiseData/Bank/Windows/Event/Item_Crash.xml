@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="945135624" Type="Event" GUID="{47B3F079-BA98-469C-AA64-962EBC254F0D}" Language="SFX" Hash="{EE5E7D32-A646-66FC-E6D8-372CC57EBA69}">
+			<ObjectPath>Item_Crash</ObjectPath>
+			<ShortName>Item_Crash</ShortName>
+			<Path>Event/Item_Crash.bnk</Path>
+			<Media>
+				<File Id="52878928" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Gym Barbell Heavy Drop 3.wav</ShortName>
+					<Path>Media/52878928.wem</Path>
+					<CachePath>8E/{8ED7C333-1246-08E7-CA84-96BFE1526905}.wem</CachePath>
+				</File>
+				<File Id="203619646" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Broken Plastic Drop 1.wav</ShortName>
+					<Path>Media/203619646.wem</Path>
+					<CachePath>7F/{7FDB10EA-C4BD-1C6E-73F5-F15033FF3E8C}.wem</CachePath>
+				</File>
+				<File Id="991405809" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Cloths, Bags, Fabrics, Drop 3.wav</ShortName>
+					<Path>Media/991405809.wem</Path>
+					<CachePath>66/{66E914B6-9646-C4FA-0992-34AB0AEC2C40}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="945135624" Name="Item_Crash" ObjectPath="\Events\Default Work Unit\Item_Crash" GUID="{47B3F079-BA98-469C-AA64-962EBC254F0D}" DurationType="OneShot" DurationMin="0.58146" DurationMax="0.7176645">
+					<MediaRefs>
+						<MediaRef Id="52878928"/>
+						<MediaRef Id="203619646"/>
+						<MediaRef Id="991405809"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{C5C4DFA8-F2F5-42D3-2541-4C028DEAFB6D}</FileHash>
+</SoundBanksInfo>

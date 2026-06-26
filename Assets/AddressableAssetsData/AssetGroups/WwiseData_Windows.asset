@@ -15,13 +15,98 @@ MonoBehaviour:
   m_GroupName: WwiseData_Windows
   m_GUID: 90a1daabdabfa7d4a9851e366d05ccf4
   m_SerializeEntries:
+  - m_GUID: 1e757d4c488393442915bb514298f28d
+    m_Address: Assets/WwiseData/Bank/Windows/Media/305937602.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28974cd539ccf20428c25ff81f58725b
+    m_Address: Assets/WwiseData/Bank/Windows/Media/963701873.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a5457867c7c6da4a805381ea462fa80
+    m_Address: Assets/WwiseData/Bank/Windows/Media/404749359.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2af0838d19420754bb0101c81910c12a
+    m_Address: Assets/WwiseData/Bank/Windows/Media/865441247.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d179c0238bc159428ff45cb0d258a97
+    m_Address: Assets/WwiseData/Bank/Windows/Media/1018286359.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 332938962abe27145845ffc9abe9da02
+    m_Address: Assets/WwiseData/Bank/Windows/Event/Player_Damage.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ad853d5da8904b43a7f68738e2b42d7
+    m_Address: Assets/WwiseData/Bank/Windows/Media/244883385.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8dceba2f9a80a1144b5570eb6f99e808
+    m_Address: Assets/WwiseData/Bank/Windows/Event/Item_Crash.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9572ab0c82ca9fb47860b9a0edcfd0d7
+    m_Address: Assets/WwiseData/Bank/Windows/Media/203619646.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9f26e1d56103b2142bca322a2df911b5
     m_Address: Assets/WwiseData/Bank/Windows/Event/Item_Throw.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1f7162c7ae599e4c95d9d42e15bb1d8
+    m_Address: Assets/WwiseData/Bank/Windows/Media/517977471.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aac512177c6e2424da7b5f3b11b17cf1
+    m_Address: Assets/WwiseData/Bank/Windows/Media/290165397.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b3054e9e8a81c294385b92e512d6341e
     m_Address: Assets/WwiseData/Bank/Windows/Media/275128577.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba84616c3a7a57945b3e78b7a4a37791
+    m_Address: Assets/WwiseData/Bank/Windows/Media/186108226.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bcb83a659143d5f4d862c3c3aa72044e
+    m_Address: Assets/WwiseData/Bank/Windows/Event/Item_Pickup.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d26904792e13dec4eacf2d178855f8d3
+    m_Address: Assets/WwiseData/Bank/Windows/Media/113572781.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d96e8468bf1fdef4788211cd566a2c12
+    m_Address: Assets/WwiseData/Bank/Windows/Media/52878928.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2576b4c9ff4de640b9406070eefb2b9
+    m_Address: Assets/WwiseData/Bank/Windows/Media/676482530.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff6957db8b87e2b4c96098165cb2c768
+    m_Address: Assets/WwiseData/Bank/Windows/Media/991405809.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

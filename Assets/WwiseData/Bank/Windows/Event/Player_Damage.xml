@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="2074073782" Type="Event" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" Language="SFX" Hash="{57F965F3-8CCD-5A95-C7A7-6687FCFC554F}">
+			<ObjectPath>Player_Damage</ObjectPath>
+			<ShortName>Player_Damage</ShortName>
+			<Path>Event/Player_Damage.bnk</Path>
+			<Media>
+				<File Id="113572781" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 5.wav</ShortName>
+					<Path>Media/113572781.wem</Path>
+					<CachePath>35/{357784D5-391C-14F8-7734-62271E79D70E}.wem</CachePath>
+				</File>
+				<File Id="186108226" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 2.wav</ShortName>
+					<Path>Media/186108226.wem</Path>
+					<CachePath>02/{02648E1B-C524-F433-FF46-71A252D46556}.wem</CachePath>
+				</File>
+				<File Id="244883385" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 7.wav</ShortName>
+					<Path>Media/244883385.wem</Path>
+					<CachePath>21/{21CAA176-CF43-B7D7-705C-62B3B987C282}.wem</CachePath>
+				</File>
+				<File Id="517977471" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 4.wav</ShortName>
+					<Path>Media/517977471.wem</Path>
+					<CachePath>16/{166D2F1B-0388-1DFE-C4FF-BC983A2B1E3F}.wem</CachePath>
+				</File>
+				<File Id="676482530" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 3.wav</ShortName>
+					<Path>Media/676482530.wem</Path>
+					<CachePath>5C/{5C0BA8A2-F241-D6D2-CB7A-19BF6D573987}.wem</CachePath>
+				</File>
+				<File Id="963701873" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 6.wav</ShortName>
+					<Path>Media/963701873.wem</Path>
+					<CachePath>8B/{8B209670-20D7-364D-DB55-8A43251E6149}.wem</CachePath>
+				</File>
+				<File Id="1018286359" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 1.wav</ShortName>
+					<Path>Media/1018286359.wem</Path>
+					<CachePath>45/{45CF803F-D7FA-2F60-2B5B-C0DEE9B751A9}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2074073782" Name="Player_Damage" ObjectPath="\Events\Default Work Unit\Player_Damage" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.42858332" DurationMax="2.1428542">
+					<MediaRefs>
+						<MediaRef Id="113572781"/>
+						<MediaRef Id="186108226"/>
+						<MediaRef Id="244883385"/>
+						<MediaRef Id="517977471"/>
+						<MediaRef Id="676482530"/>
+						<MediaRef Id="963701873"/>
+						<MediaRef Id="1018286359"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{79789FA3-4B3F-B240-64A4-0ECE87833A6D}</FileHash>
+</SoundBanksInfo>

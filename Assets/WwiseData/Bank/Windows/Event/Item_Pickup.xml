@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="566396871" Type="Event" GUID="{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}" Language="SFX" Hash="{9DE72AA3-753D-8419-FD4A-5FDF20FF539D}">
+			<ObjectPath>Item_Pickup</ObjectPath>
+			<ShortName>Item_Pickup</ShortName>
+			<Path>Event/Item_Pickup.bnk</Path>
+			<Media>
+				<File Id="290165397" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Corporate Pop - REC.wav</ShortName>
+					<Path>Media/290165397.wem</Path>
+					<CachePath>CA/{CA464BA7-4134-B88B-332B-4FC2C41F539A}.wem</CachePath>
+				</File>
+				<File Id="305937602" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Corporate Pop - REC_2.wav</ShortName>
+					<Path>Media/305937602.wem</Path>
+					<CachePath>C8/{C86A6BB9-8455-DEA8-1C35-035D0F89FB72}.wem</CachePath>
+				</File>
+				<File Id="404749359" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Corporate Pop - REC_4.wav</ShortName>
+					<Path>Media/404749359.wem</Path>
+					<CachePath>2A/{2ACD1D6A-2D73-78B1-E66D-3CEAC554020D}.wem</CachePath>
+				</File>
+				<File Id="865441247" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Corporate Pop - REC_3.wav</ShortName>
+					<Path>Media/865441247.wem</Path>
+					<CachePath>C8/{C8EFC2C7-2D50-B80F-1F48-548E825C9189}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="566396871" Name="Item_Pickup" ObjectPath="\Events\Default Work Unit\Item_Pickup" GUID="{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.11539584" DurationMax="0.11539584">
+					<MediaRefs>
+						<MediaRef Id="290165397"/>
+						<MediaRef Id="305937602"/>
+						<MediaRef Id="404749359"/>
+						<MediaRef Id="865441247"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{55712211-CB9D-DFF9-F247-63F871F32505}</FileHash>
+</SoundBanksInfo>

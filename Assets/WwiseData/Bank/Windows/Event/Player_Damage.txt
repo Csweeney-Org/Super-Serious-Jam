@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2074073782	Player_Damage			\Default Work Unit\Player_Damage	
+

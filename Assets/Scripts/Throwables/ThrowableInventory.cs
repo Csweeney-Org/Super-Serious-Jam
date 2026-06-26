@@ -15,6 +15,8 @@ public class ThrowableInventory : MonoBehaviour
 
     // Script to add in sound effects to pull from
     public AK.Wwise.Event Item_Throw;
+    public AK.Wwise.Event Item_Crash;
+    public AK.Wwise.Event Player_Damage;
     [field: SerializeField] public float TotalWeight { get; private set; } = 0f;
 
     private void Start()

@@ -13,7 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ITEM_CRASH = 945135624U;
+        static const AkUniqueID ITEM_PICKUP = 566396871U;
         static const AkUniqueID ITEM_THROW = 3051433909U;
+        static const AkUniqueID PLAYER_DAMAGE = 2074073782U;
     } // namespace EVENTS
 
     namespace BUSSES

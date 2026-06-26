@@ -9,6 +9,74 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
+		<SoundBank Id="566396871" Type="Event" GUID="{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}" Language="SFX" Hash="{9DE72AA3-753D-8419-FD4A-5FDF20FF539D}">
+			<ObjectPath>Item_Pickup</ObjectPath>
+			<ShortName>Item_Pickup</ShortName>
+			<Path>Event/Item_Pickup.bnk</Path>
+			<Media>
+				<File Id="290165397" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Corporate Pop - REC.wav</ShortName>
+					<Path>Media/290165397.wem</Path>
+					<CachePath>CA/{CA464BA7-4134-B88B-332B-4FC2C41F539A}.wem</CachePath>
+				</File>
+				<File Id="305937602" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Corporate Pop - REC_2.wav</ShortName>
+					<Path>Media/305937602.wem</Path>
+					<CachePath>C8/{C86A6BB9-8455-DEA8-1C35-035D0F89FB72}.wem</CachePath>
+				</File>
+				<File Id="404749359" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Corporate Pop - REC_4.wav</ShortName>
+					<Path>Media/404749359.wem</Path>
+					<CachePath>2A/{2ACD1D6A-2D73-78B1-E66D-3CEAC554020D}.wem</CachePath>
+				</File>
+				<File Id="865441247" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Corporate Pop - REC_3.wav</ShortName>
+					<Path>Media/865441247.wem</Path>
+					<CachePath>C8/{C8EFC2C7-2D50-B80F-1F48-548E825C9189}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="566396871" Name="Item_Pickup" ObjectPath="\Events\Default Work Unit\Item_Pickup" GUID="{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.11539584" DurationMax="0.11539584">
+					<MediaRefs>
+						<MediaRef Id="290165397"/>
+						<MediaRef Id="305937602"/>
+						<MediaRef Id="404749359"/>
+						<MediaRef Id="865441247"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="945135624" Type="Event" GUID="{47B3F079-BA98-469C-AA64-962EBC254F0D}" Language="SFX" Hash="{EE5E7D32-A646-66FC-E6D8-372CC57EBA69}">
+			<ObjectPath>Item_Crash</ObjectPath>
+			<ShortName>Item_Crash</ShortName>
+			<Path>Event/Item_Crash.bnk</Path>
+			<Media>
+				<File Id="52878928" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Gym Barbell Heavy Drop 3.wav</ShortName>
+					<Path>Media/52878928.wem</Path>
+					<CachePath>8E/{8ED7C333-1246-08E7-CA84-96BFE1526905}.wem</CachePath>
+				</File>
+				<File Id="203619646" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Broken Plastic Drop 1.wav</ShortName>
+					<Path>Media/203619646.wem</Path>
+					<CachePath>7F/{7FDB10EA-C4BD-1C6E-73F5-F15033FF3E8C}.wem</CachePath>
+				</File>
+				<File Id="991405809" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Cloths, Bags, Fabrics, Drop 3.wav</ShortName>
+					<Path>Media/991405809.wem</Path>
+					<CachePath>66/{66E914B6-9646-C4FA-0992-34AB0AEC2C40}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="945135624" Name="Item_Crash" ObjectPath="\Events\Default Work Unit\Item_Crash" GUID="{47B3F079-BA98-469C-AA64-962EBC254F0D}" DurationType="OneShot" DurationMin="0.58146" DurationMax="0.7176645">
+					<MediaRefs>
+						<MediaRef Id="52878928"/>
+						<MediaRef Id="203619646"/>
+						<MediaRef Id="991405809"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{CDE9AC3D-2B42-1217-02C1-D64576EB9AF6}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
@@ -23,7 +91,62 @@
 				<Bus Id="2246998526" Name="Main Audio Bus" ObjectPath="\Busses\Default Work Unit\Main Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3051433909" Type="Event" GUID="{FD535694-1858-4361-9C6B-A6B8421840F2}" Language="SFX" Hash="{0BF2398D-2752-4B4B-0992-2F2315F8EB36}">
+		<SoundBank Id="2074073782" Type="Event" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" Language="SFX" Hash="{57F965F3-8CCD-5A95-C7A7-6687FCFC554F}">
+			<ObjectPath>Player_Damage</ObjectPath>
+			<ShortName>Player_Damage</ShortName>
+			<Path>Event/Player_Damage.bnk</Path>
+			<Media>
+				<File Id="113572781" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 5.wav</ShortName>
+					<Path>Media/113572781.wem</Path>
+					<CachePath>35/{357784D5-391C-14F8-7734-62271E79D70E}.wem</CachePath>
+				</File>
+				<File Id="186108226" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 2.wav</ShortName>
+					<Path>Media/186108226.wem</Path>
+					<CachePath>02/{02648E1B-C524-F433-FF46-71A252D46556}.wem</CachePath>
+				</File>
+				<File Id="244883385" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 7.wav</ShortName>
+					<Path>Media/244883385.wem</Path>
+					<CachePath>21/{21CAA176-CF43-B7D7-705C-62B3B987C282}.wem</CachePath>
+				</File>
+				<File Id="517977471" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 4.wav</ShortName>
+					<Path>Media/517977471.wem</Path>
+					<CachePath>16/{166D2F1B-0388-1DFE-C4FF-BC983A2B1E3F}.wem</CachePath>
+				</File>
+				<File Id="676482530" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 3.wav</ShortName>
+					<Path>Media/676482530.wem</Path>
+					<CachePath>5C/{5C0BA8A2-F241-D6D2-CB7A-19BF6D573987}.wem</CachePath>
+				</File>
+				<File Id="963701873" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 6.wav</ShortName>
+					<Path>Media/963701873.wem</Path>
+					<CachePath>8B/{8B209670-20D7-364D-DB55-8A43251E6149}.wem</CachePath>
+				</File>
+				<File Id="1018286359" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Ocha violation - Track 1.wav</ShortName>
+					<Path>Media/1018286359.wem</Path>
+					<CachePath>45/{45CF803F-D7FA-2F60-2B5B-C0DEE9B751A9}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2074073782" Name="Player_Damage" ObjectPath="\Events\Default Work Unit\Player_Damage" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.42858332" DurationMax="2.1428542">
+					<MediaRefs>
+						<MediaRef Id="113572781"/>
+						<MediaRef Id="186108226"/>
+						<MediaRef Id="244883385"/>
+						<MediaRef Id="517977471"/>
+						<MediaRef Id="676482530"/>
+						<MediaRef Id="963701873"/>
+						<MediaRef Id="1018286359"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3051433909" Type="Event" GUID="{FD535694-1858-4361-9C6B-A6B8421840F2}" Language="SFX" Hash="{88F639F4-08FD-A967-6F8A-14DBAA67F838}">
 			<ObjectPath>Item_Throw</ObjectPath>
 			<ShortName>Item_Throw</ShortName>
 			<Path>Event/Item_Throw.bnk</Path>
@@ -43,5 +166,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5E71A0C0-3496-7E69-944C-44248352322B}</FileHash>
+	<FileHash>{57444706-CEB5-2499-B528-0A5A3A49CF42}</FileHash>
 </SoundBanksInfo>

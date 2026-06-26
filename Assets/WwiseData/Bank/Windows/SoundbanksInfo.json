@@ -14,6 +14,141 @@
   "DialogueEvents": [],
   "SoundBanks": [
    {
+    "Id": "566396871",
+    "Type": "Event",
+    "GUID": "{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}",
+    "Language": "SFX",
+    "Hash": "{9DE72AA3-753D-8419-FD4A-5FDF20FF539D}",
+    "ObjectPath": "Item_Pickup",
+    "ShortName": "Item_Pickup",
+    "Path": "Event/Item_Pickup.bnk",
+    "Media": [
+     {
+      "Id": "290165397",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Corporate Pop - REC.wav",
+      "Path": "Media/290165397.wem",
+      "CachePath": "CA/{CA464BA7-4134-B88B-332B-4FC2C41F539A}.wem"
+     },
+     {
+      "Id": "305937602",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Corporate Pop - REC_2.wav",
+      "Path": "Media/305937602.wem",
+      "CachePath": "C8/{C86A6BB9-8455-DEA8-1C35-035D0F89FB72}.wem"
+     },
+     {
+      "Id": "404749359",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Corporate Pop - REC_4.wav",
+      "Path": "Media/404749359.wem",
+      "CachePath": "2A/{2ACD1D6A-2D73-78B1-E66D-3CEAC554020D}.wem"
+     },
+     {
+      "Id": "865441247",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Corporate Pop - REC_3.wav",
+      "Path": "Media/865441247.wem",
+      "CachePath": "C8/{C8EFC2C7-2D50-B80F-1F48-548E825C9189}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "566396871",
+      "Name": "Item_Pickup",
+      "ObjectPath": "\\Events\\Default Work Unit\\Item_Pickup",
+      "GUID": "{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.11539584",
+      "DurationMax": "0.11539584",
+      "MediaRefs": [
+       {
+        "Id": "290165397"
+       },
+       {
+        "Id": "305937602"
+       },
+       {
+        "Id": "404749359"
+       },
+       {
+        "Id": "865441247"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "Id": "945135624",
+    "Type": "Event",
+    "GUID": "{47B3F079-BA98-469C-AA64-962EBC254F0D}",
+    "Language": "SFX",
+    "Hash": "{EE5E7D32-A646-66FC-E6D8-372CC57EBA69}",
+    "ObjectPath": "Item_Crash",
+    "ShortName": "Item_Crash",
+    "Path": "Event/Item_Crash.bnk",
+    "Media": [
+     {
+      "Id": "52878928",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Gym Barbell Heavy Drop 3.wav",
+      "Path": "Media/52878928.wem",
+      "CachePath": "8E/{8ED7C333-1246-08E7-CA84-96BFE1526905}.wem"
+     },
+     {
+      "Id": "203619646",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Broken Plastic Drop 1.wav",
+      "Path": "Media/203619646.wem",
+      "CachePath": "7F/{7FDB10EA-C4BD-1C6E-73F5-F15033FF3E8C}.wem"
+     },
+     {
+      "Id": "991405809",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Cloths, Bags, Fabrics, Drop 3.wav",
+      "Path": "Media/991405809.wem",
+      "CachePath": "66/{66E914B6-9646-C4FA-0992-34AB0AEC2C40}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "945135624",
+      "Name": "Item_Crash",
+      "ObjectPath": "\\Events\\Default Work Unit\\Item_Crash",
+      "GUID": "{47B3F079-BA98-469C-AA64-962EBC254F0D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.58146",
+      "DurationMax": "0.7176645",
+      "MediaRefs": [
+       {
+        "Id": "52878928"
+       },
+       {
+        "Id": "203619646"
+       },
+       {
+        "Id": "991405809"
+       }
+      ]
+     }
+    ]
+   },
+   {
     "Id": "1355168291",
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
@@ -52,11 +187,121 @@
     ]
    },
    {
+    "Id": "2074073782",
+    "Type": "Event",
+    "GUID": "{46FB6F2B-381E-4369-90C2-FCC4F9369650}",
+    "Language": "SFX",
+    "Hash": "{57F965F3-8CCD-5A95-C7A7-6687FCFC554F}",
+    "ObjectPath": "Player_Damage",
+    "ShortName": "Player_Damage",
+    "Path": "Event/Player_Damage.bnk",
+    "Media": [
+     {
+      "Id": "113572781",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Ocha violation - Track 5.wav",
+      "Path": "Media/113572781.wem",
+      "CachePath": "35/{357784D5-391C-14F8-7734-62271E79D70E}.wem"
+     },
+     {
+      "Id": "186108226",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Ocha violation - Track 2.wav",
+      "Path": "Media/186108226.wem",
+      "CachePath": "02/{02648E1B-C524-F433-FF46-71A252D46556}.wem"
+     },
+     {
+      "Id": "244883385",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Ocha violation - Track 7.wav",
+      "Path": "Media/244883385.wem",
+      "CachePath": "21/{21CAA176-CF43-B7D7-705C-62B3B987C282}.wem"
+     },
+     {
+      "Id": "517977471",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Ocha violation - Track 4.wav",
+      "Path": "Media/517977471.wem",
+      "CachePath": "16/{166D2F1B-0388-1DFE-C4FF-BC983A2B1E3F}.wem"
+     },
+     {
+      "Id": "676482530",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Ocha violation - Track 3.wav",
+      "Path": "Media/676482530.wem",
+      "CachePath": "5C/{5C0BA8A2-F241-D6D2-CB7A-19BF6D573987}.wem"
+     },
+     {
+      "Id": "963701873",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Ocha violation - Track 6.wav",
+      "Path": "Media/963701873.wem",
+      "CachePath": "8B/{8B209670-20D7-364D-DB55-8A43251E6149}.wem"
+     },
+     {
+      "Id": "1018286359",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Ocha violation - Track 1.wav",
+      "Path": "Media/1018286359.wem",
+      "CachePath": "45/{45CF803F-D7FA-2F60-2B5B-C0DEE9B751A9}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2074073782",
+      "Name": "Player_Damage",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player_Damage",
+      "GUID": "{46FB6F2B-381E-4369-90C2-FCC4F9369650}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.42858332",
+      "DurationMax": "2.1428542",
+      "MediaRefs": [
+       {
+        "Id": "113572781"
+       },
+       {
+        "Id": "186108226"
+       },
+       {
+        "Id": "244883385"
+       },
+       {
+        "Id": "517977471"
+       },
+       {
+        "Id": "676482530"
+       },
+       {
+        "Id": "963701873"
+       },
+       {
+        "Id": "1018286359"
+       }
+      ]
+     }
+    ]
+   },
+   {
     "Id": "3051433909",
     "Type": "Event",
     "GUID": "{FD535694-1858-4361-9C6B-A6B8421840F2}",
     "Language": "SFX",
-    "Hash": "{0BF2398D-2752-4B4B-0992-2F2315F8EB36}",
+    "Hash": "{88F639F4-08FD-A967-6F8A-14DBAA67F838}",
     "ObjectPath": "Item_Throw",
     "ShortName": "Item_Throw",
     "Path": "Event/Item_Throw.bnk",
@@ -89,6 +334,6 @@
     ]
    }
   ],
-  "FileHash": "{461FB5F9-63F0-78C2-1BEB-6CF553DE512E}"
+  "FileHash": "{B0F9CB13-CD84-9EB5-3049-2CAC668006FD}"
  }
 }

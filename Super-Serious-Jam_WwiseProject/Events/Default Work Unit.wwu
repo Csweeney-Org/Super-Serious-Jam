@@ -17,6 +17,39 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Item_Crash" ID="{47B3F079-BA98-469C-AA64-962EBC254F0D}">
+					<ChildrenList>
+						<Action Name="" ID="{CE5B90CC-E638-441C-A2F7-241B6709A098}" ShortID="308842822">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Item Crash Random" ID="{CC758117-5897-4F38-83E1-E32786C55295}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Item_Pickup" ID="{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}">
+					<ChildrenList>
+						<Action Name="" ID="{4E14B5AD-28E0-4ADD-8234-24A1F44EE473}" ShortID="696040227">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Item Pickup Random" ID="{2DCE418F-7015-439B-9652-92A49F93FCAD}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Player_Damage" ID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}">
+					<ChildrenList>
+						<Action Name="" ID="{516A96F0-7978-4361-BBCD-CFDAB1146FC5}" ShortID="828056756">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_Damage" ID="{ED09AF26-53FC-4FBD-933E-201B4BAE04B2}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
