@@ -10,73 +10,28 @@
     "Type": "Event",
     "GUID": "{46FB6F2B-381E-4369-90C2-FCC4F9369650}",
     "Language": "SFX",
-    "Hash": "{57F965F3-8CCD-5A95-C7A7-6687FCFC554F}",
+    "Hash": "{460FC6D0-C957-2F5B-8D55-5BFA8A38CDFE}",
     "ObjectPath": "Player_Damage",
     "ShortName": "Player_Damage",
     "Path": "Event/Player_Damage.bnk",
     "Media": [
      {
-      "Id": "113572781",
+      "Id": "47205287",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Ocha violation - Track 5.wav",
-      "Path": "Media/113572781.wem",
-      "CachePath": "35/{357784D5-391C-14F8-7734-62271E79D70E}.wem"
+      "ShortName": "ESM_TDG_FX_hit_one_shot_magic_damage_flame_03.wav",
+      "Path": "Media/47205287.wem",
+      "CachePath": "48/{48045ED0-36FA-93BB-B89F-C09AAC9D7489}.wem"
      },
      {
-      "Id": "186108226",
+      "Id": "704774677",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Ocha violation - Track 2.wav",
-      "Path": "Media/186108226.wem",
-      "CachePath": "02/{02648E1B-C524-F433-FF46-71A252D46556}.wem"
-     },
-     {
-      "Id": "244883385",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 7.wav",
-      "Path": "Media/244883385.wem",
-      "CachePath": "21/{21CAA176-CF43-B7D7-705C-62B3B987C282}.wem"
-     },
-     {
-      "Id": "517977471",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 4.wav",
-      "Path": "Media/517977471.wem",
-      "CachePath": "16/{166D2F1B-0388-1DFE-C4FF-BC983A2B1E3F}.wem"
-     },
-     {
-      "Id": "676482530",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 3.wav",
-      "Path": "Media/676482530.wem",
-      "CachePath": "5C/{5C0BA8A2-F241-D6D2-CB7A-19BF6D573987}.wem"
-     },
-     {
-      "Id": "963701873",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 6.wav",
-      "Path": "Media/963701873.wem",
-      "CachePath": "8B/{8B209670-20D7-364D-DB55-8A43251E6149}.wem"
-     },
-     {
-      "Id": "1018286359",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 1.wav",
-      "Path": "Media/1018286359.wem",
-      "CachePath": "45/{45CF803F-D7FA-2F60-2B5B-C0DEE9B751A9}.wem"
+      "ShortName": "snd_damage.wav",
+      "Path": "Media/704774677.wem",
+      "CachePath": "DB/{DB0C3984-9DDF-B09A-86FA-F9DC5620856E}.wem"
      }
     ],
     "Events": [
@@ -85,37 +40,21 @@
       "Name": "Player_Damage",
       "ObjectPath": "\\Events\\Default Work Unit\\Player_Damage",
       "GUID": "{46FB6F2B-381E-4369-90C2-FCC4F9369650}",
-      "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.42858332",
-      "DurationMax": "2.1428542",
+      "DurationMin": "0.66152084",
+      "DurationMax": "0.66152084",
       "MediaRefs": [
        {
-        "Id": "113572781"
+        "Id": "47205287"
        },
        {
-        "Id": "186108226"
-       },
-       {
-        "Id": "244883385"
-       },
-       {
-        "Id": "517977471"
-       },
-       {
-        "Id": "676482530"
-       },
-       {
-        "Id": "963701873"
-       },
-       {
-        "Id": "1018286359"
+        "Id": "704774677"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{D33C9B46-A0E2-3A3A-5E18-0A84913C4455}"
+  "FileHash": "{40C2B0A0-2F8C-853F-6104-6F3CB249AA9B}"
  }
 }

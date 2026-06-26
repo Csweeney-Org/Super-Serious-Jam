@@ -44,7 +44,32 @@
 						<Action Name="" ID="{516A96F0-7978-4361-BBCD-CFDAB1146FC5}" ShortID="828056756">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Player_Damage" ID="{ED09AF26-53FC-4FBD-933E-201B4BAE04B2}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+									<ObjectRef Name="Player_Damage" ID="{073EE914-3D23-497C-BB7B-6B8E298B6EF3}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Spin_Loop" ID="{775B9DD1-3003-40C5-B8A2-C466473F3C04}">
+					<ChildrenList>
+						<Action Name="" ID="{C0B8F624-D71F-4D30-A1CA-25FC8F51DFAD}" ShortID="581503887">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0051DB82-BD5C-459A-8906-048A758DAAB8}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Spin_Loop" ID="{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}">
+					<ChildrenList>
+						<Action Name="" ID="{978ED1A4-DDFA-4F77-81B5-9D308C9FECD9}" ShortID="518950789">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0051DB82-BD5C-459A-8906-048A758DAAB8}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

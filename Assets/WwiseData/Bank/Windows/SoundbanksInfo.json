@@ -92,7 +92,7 @@
     "Type": "Event",
     "GUID": "{47B3F079-BA98-469C-AA64-962EBC254F0D}",
     "Language": "SFX",
-    "Hash": "{EE5E7D32-A646-66FC-E6D8-372CC57EBA69}",
+    "Hash": "{94389D47-562D-23FA-3BC2-8429D0751CB0}",
     "ObjectPath": "Item_Crash",
     "ShortName": "Item_Crash",
     "Path": "Event/Item_Crash.bnk",
@@ -116,6 +116,42 @@
       "CachePath": "7F/{7FDB10EA-C4BD-1C6E-73F5-F15033FF3E8C}.wem"
      },
      {
+      "Id": "515382230",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall.wav",
+      "Path": "Media/515382230.wem",
+      "CachePath": "A2/{A22BD5E2-11E5-C207-35F5-0E33A33E4CEC}.wem"
+     },
+     {
+      "Id": "567395332",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter.wav",
+      "Path": "Media/567395332.wem",
+      "CachePath": "8F/{8F20A5AA-CC45-98FF-21D7-FCD23932F4F4}.wem"
+     },
+     {
+      "Id": "950344998",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade.wav",
+      "Path": "Media/950344998.wem",
+      "CachePath": "05/{052F62F2-22A6-935A-1FD8-22E225926823}.wem"
+     },
+     {
+      "Id": "979411635",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact.wav",
+      "Path": "Media/979411635.wem",
+      "CachePath": "8B/{8BB903A2-141D-EBF2-CF79-B8F46F7DAB32}.wem"
+     },
+     {
       "Id": "991405809",
       "Language": "SFX",
       "Streaming": "false",
@@ -133,7 +169,7 @@
       "GUID": "{47B3F079-BA98-469C-AA64-962EBC254F0D}",
       "DurationType": "OneShot",
       "DurationMin": "0.58146",
-      "DurationMax": "0.7176645",
+      "DurationMax": "1.5219687",
       "MediaRefs": [
        {
         "Id": "52878928"
@@ -142,9 +178,43 @@
         "Id": "203619646"
        },
        {
+        "Id": "515382230"
+       },
+       {
+        "Id": "567395332"
+       },
+       {
+        "Id": "950344998"
+       },
+       {
+        "Id": "979411635"
+       },
+       {
         "Id": "991405809"
        }
       ]
+     }
+    ]
+   },
+   {
+    "Id": "1043991041",
+    "Type": "Event",
+    "GUID": "{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}",
+    "Language": "SFX",
+    "Hash": "{9670FF54-04F0-CFB5-2151-B28DF0B893FB}",
+    "ObjectPath": "Stop_Spin_Loop",
+    "ShortName": "Stop_Spin_Loop",
+    "Path": "Event/Stop_Spin_Loop.bnk",
+    "Events": [
+     {
+      "Id": "1043991041",
+      "Name": "Stop_Spin_Loop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Spin_Loop",
+      "GUID": "{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ]
    },
@@ -187,77 +257,67 @@
     ]
    },
    {
+    "Id": "1733917715",
+    "Type": "Event",
+    "GUID": "{775B9DD1-3003-40C5-B8A2-C466473F3C04}",
+    "Language": "SFX",
+    "Hash": "{FFF798DB-6304-FC7D-946C-039BBF8412F1}",
+    "ObjectPath": "Play_Spin_Loop",
+    "ShortName": "Play_Spin_Loop",
+    "Path": "Event/Play_Spin_Loop.bnk",
+    "Media": [
+     {
+      "Id": "403704571",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02.wav",
+      "Path": "Media/403704571.wem",
+      "CachePath": "8E/{8ECE7E91-52D1-85B9-498C-FBDCA5EAF49C}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1733917715",
+      "Name": "Play_Spin_Loop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Spin_Loop",
+      "GUID": "{775B9DD1-3003-40C5-B8A2-C466473F3C04}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "403704571"
+       }
+      ]
+     }
+    ]
+   },
+   {
     "Id": "2074073782",
     "Type": "Event",
     "GUID": "{46FB6F2B-381E-4369-90C2-FCC4F9369650}",
     "Language": "SFX",
-    "Hash": "{57F965F3-8CCD-5A95-C7A7-6687FCFC554F}",
+    "Hash": "{460FC6D0-C957-2F5B-8D55-5BFA8A38CDFE}",
     "ObjectPath": "Player_Damage",
     "ShortName": "Player_Damage",
     "Path": "Event/Player_Damage.bnk",
     "Media": [
      {
-      "Id": "113572781",
+      "Id": "47205287",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Ocha violation - Track 5.wav",
-      "Path": "Media/113572781.wem",
-      "CachePath": "35/{357784D5-391C-14F8-7734-62271E79D70E}.wem"
+      "ShortName": "ESM_TDG_FX_hit_one_shot_magic_damage_flame_03.wav",
+      "Path": "Media/47205287.wem",
+      "CachePath": "48/{48045ED0-36FA-93BB-B89F-C09AAC9D7489}.wem"
      },
      {
-      "Id": "186108226",
+      "Id": "704774677",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Ocha violation - Track 2.wav",
-      "Path": "Media/186108226.wem",
-      "CachePath": "02/{02648E1B-C524-F433-FF46-71A252D46556}.wem"
-     },
-     {
-      "Id": "244883385",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 7.wav",
-      "Path": "Media/244883385.wem",
-      "CachePath": "21/{21CAA176-CF43-B7D7-705C-62B3B987C282}.wem"
-     },
-     {
-      "Id": "517977471",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 4.wav",
-      "Path": "Media/517977471.wem",
-      "CachePath": "16/{166D2F1B-0388-1DFE-C4FF-BC983A2B1E3F}.wem"
-     },
-     {
-      "Id": "676482530",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 3.wav",
-      "Path": "Media/676482530.wem",
-      "CachePath": "5C/{5C0BA8A2-F241-D6D2-CB7A-19BF6D573987}.wem"
-     },
-     {
-      "Id": "963701873",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 6.wav",
-      "Path": "Media/963701873.wem",
-      "CachePath": "8B/{8B209670-20D7-364D-DB55-8A43251E6149}.wem"
-     },
-     {
-      "Id": "1018286359",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Ocha violation - Track 1.wav",
-      "Path": "Media/1018286359.wem",
-      "CachePath": "45/{45CF803F-D7FA-2F60-2B5B-C0DEE9B751A9}.wem"
+      "ShortName": "snd_damage.wav",
+      "Path": "Media/704774677.wem",
+      "CachePath": "DB/{DB0C3984-9DDF-B09A-86FA-F9DC5620856E}.wem"
      }
     ],
     "Events": [
@@ -266,31 +326,15 @@
       "Name": "Player_Damage",
       "ObjectPath": "\\Events\\Default Work Unit\\Player_Damage",
       "GUID": "{46FB6F2B-381E-4369-90C2-FCC4F9369650}",
-      "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.42858332",
-      "DurationMax": "2.1428542",
+      "DurationMin": "0.66152084",
+      "DurationMax": "0.66152084",
       "MediaRefs": [
        {
-        "Id": "113572781"
+        "Id": "47205287"
        },
        {
-        "Id": "186108226"
-       },
-       {
-        "Id": "244883385"
-       },
-       {
-        "Id": "517977471"
-       },
-       {
-        "Id": "676482530"
-       },
-       {
-        "Id": "963701873"
-       },
-       {
-        "Id": "1018286359"
+        "Id": "704774677"
        }
       ]
      }
@@ -301,7 +345,7 @@
     "Type": "Event",
     "GUID": "{FD535694-1858-4361-9C6B-A6B8421840F2}",
     "Language": "SFX",
-    "Hash": "{88F639F4-08FD-A967-6F8A-14DBAA67F838}",
+    "Hash": "{F82456C8-149F-80DE-9EA0-94D6F5A6BFF3}",
     "ObjectPath": "Item_Throw",
     "ShortName": "Item_Throw",
     "Path": "Event/Item_Throw.bnk",
@@ -334,6 +378,6 @@
     ]
    }
   ],
-  "FileHash": "{B0F9CB13-CD84-9EB5-3049-2CAC668006FD}"
+  "FileHash": "{878B94BF-B025-C4F6-58FB-496F65B34B9F}"
  }
 }

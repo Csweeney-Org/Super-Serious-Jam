@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{FD535694-1858-4361-9C6B-A6B8421840F2}",
     "Language": "SFX",
-    "Hash": "{88F639F4-08FD-A967-6F8A-14DBAA67F838}",
+    "Hash": "{F82456C8-149F-80DE-9EA0-94D6F5A6BFF3}",
     "ObjectPath": "Item_Throw",
     "ShortName": "Item_Throw",
     "Path": "Event/Item_Throw.bnk",
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{D60A439E-F3E7-A72B-FB0A-770CCE417ABC}"
+  "FileHash": "{7F23B5DF-C30C-04C1-6B73-032FB8D2FF54}"
  }
 }

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{47B3F079-BA98-469C-AA64-962EBC254F0D}",
     "Language": "SFX",
-    "Hash": "{EE5E7D32-A646-66FC-E6D8-372CC57EBA69}",
+    "Hash": "{94389D47-562D-23FA-3BC2-8429D0751CB0}",
     "ObjectPath": "Item_Crash",
     "ShortName": "Item_Crash",
     "Path": "Event/Item_Crash.bnk",
@@ -34,6 +34,42 @@
       "CachePath": "7F/{7FDB10EA-C4BD-1C6E-73F5-F15033FF3E8C}.wem"
      },
      {
+      "Id": "515382230",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall.wav",
+      "Path": "Media/515382230.wem",
+      "CachePath": "A2/{A22BD5E2-11E5-C207-35F5-0E33A33E4CEC}.wem"
+     },
+     {
+      "Id": "567395332",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter.wav",
+      "Path": "Media/567395332.wem",
+      "CachePath": "8F/{8F20A5AA-CC45-98FF-21D7-FCD23932F4F4}.wem"
+     },
+     {
+      "Id": "950344998",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade.wav",
+      "Path": "Media/950344998.wem",
+      "CachePath": "05/{052F62F2-22A6-935A-1FD8-22E225926823}.wem"
+     },
+     {
+      "Id": "979411635",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact.wav",
+      "Path": "Media/979411635.wem",
+      "CachePath": "8B/{8BB903A2-141D-EBF2-CF79-B8F46F7DAB32}.wem"
+     },
+     {
       "Id": "991405809",
       "Language": "SFX",
       "Streaming": "false",
@@ -51,13 +87,25 @@
       "GUID": "{47B3F079-BA98-469C-AA64-962EBC254F0D}",
       "DurationType": "OneShot",
       "DurationMin": "0.58146",
-      "DurationMax": "0.7176645",
+      "DurationMax": "1.5219687",
       "MediaRefs": [
        {
         "Id": "52878928"
        },
        {
         "Id": "203619646"
+       },
+       {
+        "Id": "515382230"
+       },
+       {
+        "Id": "567395332"
+       },
+       {
+        "Id": "950344998"
+       },
+       {
+        "Id": "979411635"
        },
        {
         "Id": "991405809"
@@ -67,6 +115,6 @@
     ]
    }
   ],
-  "FileHash": "{41D2FF6C-22D7-5149-6BF8-3657024A8B2E}"
+  "FileHash": "{613F4D78-5F50-CE3A-A823-6971A7D3B53D}"
  }
 }

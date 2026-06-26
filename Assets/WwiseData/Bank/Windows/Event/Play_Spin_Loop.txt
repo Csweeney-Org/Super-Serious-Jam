@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1733917715	Play_Spin_Loop			\Default Work Unit\Play_Spin_Loop	
+

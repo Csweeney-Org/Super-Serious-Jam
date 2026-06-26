@@ -16,7 +16,9 @@ namespace AK
         static const AkUniqueID ITEM_CRASH = 945135624U;
         static const AkUniqueID ITEM_PICKUP = 566396871U;
         static const AkUniqueID ITEM_THROW = 3051433909U;
+        static const AkUniqueID PLAY_SPIN_LOOP = 1733917715U;
         static const AkUniqueID PLAYER_DAMAGE = 2074073782U;
+        static const AkUniqueID STOP_SPIN_LOOP = 1043991041U;
     } // namespace EVENTS
 
     namespace BUSSES

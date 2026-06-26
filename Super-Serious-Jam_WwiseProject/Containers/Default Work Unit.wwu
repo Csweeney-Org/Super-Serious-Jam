@@ -14,7 +14,7 @@
 						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-20</Value>
+								<Value>-24</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -163,6 +163,94 @@
 								<ActiveSource Name="Gym Barbell Heavy Drop 3" ID="{F0AC1FC4-2C25-4B6F-9CD5-9ECC43B19836}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter" ID="{CD60A245-9754-426B-96CF-CBC58C27950D}" ShortID="797749163">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter" ID="{FAADFDF8-4CB0-4A4C-B918-AABC7CBF4AD9}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="567395332"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter" ID="{FAADFDF8-4CB0-4A4C-B918-AABC7CBF4AD9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall" ID="{3CEABE53-037A-4A7A-9533-13942E888E24}" ShortID="167572541">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall" ID="{5B2AD8AA-7837-488E-94E7-211F49E9CAE7}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="515382230"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall" ID="{5B2AD8AA-7837-488E-94E7-211F49E9CAE7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade" ID="{BEFD3220-0DE2-4B40-B8CD-4A6428BC321B}" ShortID="322590619">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade" ID="{8F095CBA-CC9B-4520-8611-C778AACC652F}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="950344998"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade" ID="{8F095CBA-CC9B-4520-8611-C778AACC652F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact" ID="{CB7781EB-0477-4149-BF68-DDEB75B77DF5}" ShortID="960757292">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact" ID="{2BBCC751-525A-4124-BE67-A6F847BEE081}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="979411635"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact" ID="{2BBCC751-525A-4124-BE67-A6F847BEE081}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="Item Pickup Random" ID="{2DCE418F-7015-439B-9652-92A49F93FCAD}" ShortID="7354565">
@@ -277,15 +365,15 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<Folder Name="Music" ID="{8A9FDDB5-CE5F-4E32-8384-E7DAEB35FA78}" ShortID="337409304"/>
-				<RandomSequenceContainer Name="Player_Damage" ID="{ED09AF26-53FC-4FBD-933E-201B4BAE04B2}" ShortID="275201877">
+				<BlendContainer Name="Player_Damage" ID="{073EE914-3D23-497C-BB7B-6B8E298B6EF3}" ShortID="583528477">
 					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="60"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-18</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
-						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
 						</Reference>
@@ -294,7 +382,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="Ocha violation - Track 1" ID="{1A0F5B71-5434-4005-916B-A9B62D10F0A2}" ShortID="310952013">
+						<Sound Name="ESM_TDG_FX_hit_one_shot_magic_damage_flame_03" ID="{D74F362E-F95E-4CED-BB20-6F693DE0F3CA}" ShortID="548652286">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
@@ -304,19 +392,19 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Ocha violation - Track 1" ID="{7230A9BE-C607-4831-BE9E-65084E3831BD}">
+								<AudioFileSource Name="ESM_TDG_FX_hit_one_shot_magic_damage_flame_03" ID="{AAACFCC1-4550-4E69-BEB8-21568F5B498B}">
 									<Language>SFX</Language>
-									<AudioFile>Ocha violation - Track 1.wav</AudioFile>
+									<AudioFile>ESM_TDG_FX_hit_one_shot_magic_damage_flame_03.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="1018286359"/>
+										<MediaID ID="47205287"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Ocha violation - Track 1" ID="{7230A9BE-C607-4831-BE9E-65084E3831BD}" Platform="Linked"/>
+								<ActiveSource Name="ESM_TDG_FX_hit_one_shot_magic_damage_flame_03" ID="{AAACFCC1-4550-4E69-BEB8-21568F5B498B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Ocha violation - Track 2" ID="{2A0FCBAB-CA8F-486D-8AD9-D2DEB2F52C66}" ShortID="95943104">
+						<Sound Name="snd_damage" ID="{F3B5CAA8-3E0F-4ECA-8D54-4E6FC290715A}" ShortID="333937867">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
@@ -326,130 +414,65 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Ocha violation - Track 2" ID="{6A55EA2C-159F-4A2C-A788-F31FC12EDCD4}">
+								<AudioFileSource Name="snd_damage" ID="{E2537A5D-E5C2-438D-A5A6-399D39DC3EF9}">
 									<Language>SFX</Language>
-									<AudioFile>Ocha violation - Track 2.wav</AudioFile>
+									<AudioFile>snd_damage.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="186108226"/>
+										<MediaID ID="704774677"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Ocha violation - Track 2" ID="{6A55EA2C-159F-4A2C-A788-F31FC12EDCD4}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Ocha violation - Track 3" ID="{4758BA11-655E-4AA9-B2FA-3254B1E79164}" ShortID="907247520">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Ocha violation - Track 3" ID="{CAB9A186-EF60-4033-B12E-259270DF3186}">
-									<Language>SFX</Language>
-									<AudioFile>Ocha violation - Track 3.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="676482530"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Ocha violation - Track 3" ID="{CAB9A186-EF60-4033-B12E-259270DF3186}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Ocha violation - Track 4" ID="{09388E8B-3538-4E90-9D8A-C19A7800F322}" ShortID="978323744">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Ocha violation - Track 4" ID="{5F71B859-7DB0-4F29-A75F-D7B8F117B18A}">
-									<Language>SFX</Language>
-									<AudioFile>Ocha violation - Track 4.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="517977471"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Ocha violation - Track 4" ID="{5F71B859-7DB0-4F29-A75F-D7B8F117B18A}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Ocha violation - Track 5" ID="{1B842D96-64F6-46FA-8F67-A7DBCD2A15BA}" ShortID="484840179">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Ocha violation - Track 5" ID="{218C4D34-B897-4005-9E38-D819DF50D2C4}">
-									<Language>SFX</Language>
-									<AudioFile>Ocha violation - Track 5.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="113572781"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Ocha violation - Track 5" ID="{218C4D34-B897-4005-9E38-D819DF50D2C4}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Ocha violation - Track 6" ID="{AE0EEA9C-5B6B-48C9-8E3C-3BAD43D1F7B0}" ShortID="209155455">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Ocha violation - Track 6" ID="{A889E444-9750-4B4E-9BA3-53B9BBEB0205}">
-									<Language>SFX</Language>
-									<AudioFile>Ocha violation - Track 6.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="963701873"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Ocha violation - Track 6" ID="{A889E444-9750-4B4E-9BA3-53B9BBEB0205}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Ocha violation - Track 7" ID="{83A1B612-F048-4DBF-BABC-4A659E182962}" ShortID="17583656">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Ocha violation - Track 7" ID="{3C352BD7-9AEF-4548-B273-0E1637BDC2E1}">
-									<Language>SFX</Language>
-									<AudioFile>Ocha violation - Track 7.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="244883385"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Ocha violation - Track 7" ID="{3C352BD7-9AEF-4548-B273-0E1637BDC2E1}" Platform="Linked"/>
+								<ActiveSource Name="snd_damage" ID="{E2537A5D-E5C2-438D-A5A6-399D39DC3EF9}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
-				</RandomSequenceContainer>
+				</BlendContainer>
+				<Sound Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0051DB82-BD5C-459A-8906-048A758DAAB8}" ShortID="893782553">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>23</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0C9FD867-3B91-49A6-8A8B-84197CA7EDF2}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.94996"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="3.11699"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="403704571"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0C9FD867-3B91-49A6-8A8B-84197CA7EDF2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

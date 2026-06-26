@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1043991041" Type="Event" GUID="{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}" Language="SFX" Hash="{9670FF54-04F0-CFB5-2151-B28DF0B893FB}">
+			<ObjectPath>Stop_Spin_Loop</ObjectPath>
+			<ShortName>Stop_Spin_Loop</ShortName>
+			<Path>Event/Stop_Spin_Loop.bnk</Path>
+			<Events>
+				<Event Id="1043991041" Name="Stop_Spin_Loop" ObjectPath="\Events\Default Work Unit\Stop_Spin_Loop" GUID="{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{902992D1-9C0A-0F97-C4E3-1A80B682676F}</FileHash>
+</SoundBanksInfo>
