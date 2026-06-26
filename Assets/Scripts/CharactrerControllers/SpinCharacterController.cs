@@ -22,11 +22,25 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     [field: SerializeField] public float RegenDelay { get; private set; } = 10f;
     [field: SerializeField] public float RegenRate { get; private set; } = 10f;
     [field: SerializeField] public float WeightDefenseFactor { get; private set; } = 0.05f; 
-    [field: SerializeField] public float WeightSpeedPenalty { get; private set; } = 0.2f;
+    [field: SerializeField] public float WeightSpeedPenalty { get; private set; } = 0.5f;
 
     [Header("Visual Integrations")]
     [field: SerializeField] public Spinner CharacterSpinner { get; private set; }
     [field: SerializeField] public float MaxVisualSpinSpeed { get; private set; } = 720f;
+
+    [Header("Crash Combat Properties")]
+    [field: SerializeField, Tooltip("Base damage dealt in a crash before weight differences")]
+    public float BaseCrashDamage { get; private set; } = 15f;
+    [field: SerializeField, Tooltip("How much extra damage is added/subtracted per unit of weight difference")]
+    public float WeightDifferenceMultiplier { get; private set; } = 1.0f;
+    [field: SerializeField, Tooltip("Minimum damage taken")]
+    public float MinimumCrashDamage { get; private set; } = 5f;
+    [field: SerializeField, Tooltip("Cooldown in seconds to prevent multi-hit physics")]
+    public float CrashCooldown { get; private set; } = 0.5f; 
+    [field: SerializeField, Tooltip("How much damage is added per unit of impact speed")]
+    public float VelocityDamageMultiplier { get; private set; } = 1.5f;
+
+    private float lastCrashTime = -100f;
 
     private float timeSinceLastHit = 0f;
     private bool isToppled = false;
@@ -160,6 +174,50 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
             ApplyForce(steeringForce.normalized, Speed);
         }
     }
+
+/// MELEE COMBAT ///
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        SpinCharacterController otherUnit = collision.gameObject.GetComponentInParent<SpinCharacterController>();
+        // Only react to collisions with player/enemy
+        if (otherUnit == null || otherUnit == this) 
+            return;
+
+        // Have a crash not trigger multiple times for the same situation
+        if (Time.time - lastCrashTime < CrashCooldown) 
+            return;
+        lastCrashTime = Time.time;
+
+        // Calculate Relative Weight Difference
+        // Positive means they are heavier than this entity -> more incoming damage
+        float weightDifference = otherUnit.Inventory.TotalWeight - this.Inventory.TotalWeight;
+        float impactSpeed = collision.relativeVelocity.magnitude;
+
+        float rawIncomingDamage = BaseCrashDamage 
+                            + (weightDifference * WeightDifferenceMultiplier) 
+                            + (impactSpeed * VelocityDamageMultiplier);
+        rawIncomingDamage = Mathf.Max(MinimumCrashDamage, rawIncomingDamage);
+
+        //TODO: Remove Debug.Log later
+        Debug.Log($"CRASH! {gameObject.name} hit {otherUnit.name}. Weight Diff: {weightDifference:F1}. Raw Damage: {rawIncomingDamage:F1}");
+        TakeDamage(rawIncomingDamage);
+
+        // Enemy and Player use the script -> prevent spawning two animations
+        if (this.gameObject.GetInstanceID() > otherUnit.gameObject.GetInstanceID())
+            if (AnimationVFXManager.Instance != null)
+            {
+                string[] possibleVFX = { "Crash", "Zap", "Boom", "Kaboom", "Slash", "Poof", "Splat" };
+                string chosenVFX = possibleVFX[Random.Range(0, possibleVFX.Length)];
+                AnimationVFXManager.Instance.PlayAnimation(chosenVFX, collision.GetContact(0).point);
+            }
+
+                
+    
+        Vector3 recoilDirection = (this.transform.position - otherUnit.transform.position).normalized;
+        recoilDirection.y = 0; 
+        rigidBody.AddForce(recoilDirection * (10f + impactSpeed * 0.5f), ForceMode.Impulse);    
+    }     
 
 /// TRIGGERS ///
     public void OnTriggerEnter(Collider other)
