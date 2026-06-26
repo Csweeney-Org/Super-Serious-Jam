@@ -14,6 +14,8 @@ public class ThrowableInventory : MonoBehaviour
     // Open question: do we want to sart from 0 weight or assign a base weight (initialize different enemies)
     [field: SerializeField] public float TotalWeight { get; private set; } = 0f;
 
+    public bool IsFull => throwableQueue.Count >= CarryPositions.Length;
+
     private void Start()
     {
         projectilePool ??= GameObject.FindAnyObjectByType<ProjectilePool>();
