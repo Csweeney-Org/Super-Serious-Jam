@@ -86,6 +86,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8103545461668248845, guid: b044d19a2674ec740b6fadb66e247e30, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e8b15e3facff75946ac6a550593aa897, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -104,6 +108,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8584046423541295636}
     m_Modifications:
+    - target: {fileID: 943034790775343391, guid: 62424c112f9ef6349a777580063b92fd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e8b15e3facff75946ac6a550593aa897, type: 2}
     - target: {fileID: 1667674613335402176, guid: 62424c112f9ef6349a777580063b92fd, type: 3}
       propertyPath: m_Name
       value: Drawer_Container
@@ -166,6 +174,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8584046423541295636}
     m_Modifications:
+    - target: {fileID: 5925225152745150884, guid: 2900151799836ab42b7b7bc2270c8029, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6acd96a6094c69d41b39edb5bafd2897, type: 2}
     - target: {fileID: 8856945475982763070, guid: 2900151799836ab42b7b7bc2270c8029, type: 3}
       propertyPath: m_Name
       value: Drawer_Handle
