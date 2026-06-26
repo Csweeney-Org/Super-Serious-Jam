@@ -86,7 +86,7 @@ namespace Assets.Scripts.AIBehaviours
             stuckTimer += Time.fixedDeltaTime;
             if (stuckTimer >= 0.5f) 
             {
-                if (Vector3.Distance(selfUnit.transform.position, lastPosition) < 0.2f)
+                if (Vector3.Distance(selfUnit.transform.position, lastPosition) < 0.1f)
                 {
                     Debug.LogWarning($"{selfUnit.name} got stuck! Nudging and picking new target.");
                     
@@ -150,6 +150,9 @@ namespace Assets.Scripts.AIBehaviours
 
         private void EvaluateStateAndStrategy()
         {
+            if (playerUnit == null)
+                Debug.LogWarning("No plyerunit detected");
+
             if (playerUnit == null || selfUnit.CurrentToppleHealth <= 0)
                 return;
 
@@ -172,11 +175,11 @@ namespace Assets.Scripts.AIBehaviours
                 CurrentState = AIState.Strafe;
                 Strategy = new StrafeStrategy(playerUnit.transform);
             }
-            else
-            {
-                CurrentState = AIState.Allrounder;
-                Strategy = new AllrounderStrategy(playerUnit.transform);
-            }
+            //else
+            //{
+                //CurrentState = AIState.Allrounder;
+                //Strategy = new AllrounderStrategy(playerUnit.transform);
+            //}
 
             // Force new calculation immediatly after state change
             if (previousState != CurrentState)

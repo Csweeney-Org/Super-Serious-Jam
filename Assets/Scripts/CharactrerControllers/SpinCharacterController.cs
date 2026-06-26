@@ -21,8 +21,8 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     [field: SerializeField] public float CurrentToppleHealth { get; private set; } = 100f;
     [field: SerializeField] public float RegenDelay { get; private set; } = 10f;
     [field: SerializeField] public float RegenRate { get; private set; } = 10f;
-    [field: SerializeField] public float WeightDefenseFactor { get; private set; } = 0.05f; 
-    [field: SerializeField] public float WeightSpeedPenalty { get; private set; } = 0.5f;
+    [field: SerializeField] public float WeightDefenseFactor { get; private set; } = 0.03f; 
+    [field: SerializeField] public float WeightSpeedPenalty { get; private set; } = 0.0f;
 
     [Header("Visual Integrations")]
     [field: SerializeField] public Spinner CharacterSpinner { get; private set; }
@@ -41,7 +41,6 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     public float VelocityDamageMultiplier { get; private set; } = 1.5f;
 
     private float lastCrashTime = -100f;
-
     private float timeSinceLastHit = 0f;
     private bool isToppled = false;
 

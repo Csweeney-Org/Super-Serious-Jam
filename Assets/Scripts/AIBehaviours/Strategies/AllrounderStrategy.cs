@@ -33,7 +33,7 @@ namespace Assets.Scripts.AIBehaviours
 
                 if (target.Type == typeof(ItemPickup))
                     //TODO: Remove magic number
-                    score *= 0.7f; 
+                    score *= 0.9f; 
 
                 else if (target.Type == typeof(SpinCharacterController))
                 {
