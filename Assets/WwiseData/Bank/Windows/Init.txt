@@ -1,3 +1,15 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1208172739	States			\Default Work Unit\States	
+	3298531235	Layers			\Default Work Unit\Layers	
+
+State	ID	Name	State Group			Notes
+	174960569	Loose	States			
+	748895195	None	States			
+	979765101	Win	States			
+	1611212405	Full_Mix	States			
+	748895195	None	Layers			
+	1125500713	Intro	Layers			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
 

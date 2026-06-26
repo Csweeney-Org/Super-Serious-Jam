@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="174">
 	<SoundBanks>
-		<SoundBank Id="945135624" Type="Event" GUID="{47B3F079-BA98-469C-AA64-962EBC254F0D}" Language="SFX" Hash="{94389D47-562D-23FA-3BC2-8429D0751CB0}">
+		<SoundBank Id="945135624" Type="Event" GUID="{47B3F079-BA98-469C-AA64-962EBC254F0D}" Language="SFX" Hash="{197F71BF-A410-EB92-6FAB-AF25969B3F70}">
 			<ObjectPath>Item_Crash</ObjectPath>
 			<ShortName>Item_Crash</ShortName>
 			<Path>Event/Item_Crash.bnk</Path>
@@ -9,37 +9,37 @@
 				<File Id="52878928" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Gym Barbell Heavy Drop 3.wav</ShortName>
 					<Path>Media/52878928.wem</Path>
-					<CachePath>8E/{8ED7C333-1246-08E7-CA84-96BFE1526905}.wem</CachePath>
+					<CachePath>F7/{F77BEC34-C5D9-A781-64AD-95C0AD3DCD22}.wem</CachePath>
 				</File>
 				<File Id="203619646" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Broken Plastic Drop 1.wav</ShortName>
 					<Path>Media/203619646.wem</Path>
-					<CachePath>7F/{7FDB10EA-C4BD-1C6E-73F5-F15033FF3E8C}.wem</CachePath>
+					<CachePath>D8/{D8036E91-D757-DADE-2F7E-BF9A0087F136}.wem</CachePath>
 				</File>
 				<File Id="515382230" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall.wav</ShortName>
 					<Path>Media/515382230.wem</Path>
-					<CachePath>A2/{A22BD5E2-11E5-C207-35F5-0E33A33E4CEC}.wem</CachePath>
+					<CachePath>03/{0346B403-11AE-FA05-A5FA-1333A22E5FA8}.wem</CachePath>
 				</File>
 				<File Id="567395332" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter.wav</ShortName>
 					<Path>Media/567395332.wem</Path>
-					<CachePath>8F/{8F20A5AA-CC45-98FF-21D7-FCD23932F4F4}.wem</CachePath>
+					<CachePath>E5/{E5829631-86F1-DFD3-6C19-ABBC333404CE}.wem</CachePath>
 				</File>
 				<File Id="950344998" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade.wav</ShortName>
 					<Path>Media/950344998.wem</Path>
-					<CachePath>05/{052F62F2-22A6-935A-1FD8-22E225926823}.wem</CachePath>
+					<CachePath>47/{476BB060-A371-51C8-1832-B2CB812C66BC}.wem</CachePath>
 				</File>
 				<File Id="979411635" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact.wav</ShortName>
 					<Path>Media/979411635.wem</Path>
-					<CachePath>8B/{8BB903A2-141D-EBF2-CF79-B8F46F7DAB32}.wem</CachePath>
+					<CachePath>40/{403BF2A3-17CD-EF41-A705-3ECEF2175484}.wem</CachePath>
 				</File>
 				<File Id="991405809" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Cloths, Bags, Fabrics, Drop 3.wav</ShortName>
 					<Path>Media/991405809.wem</Path>
-					<CachePath>66/{66E914B6-9646-C4FA-0992-34AB0AEC2C40}.wem</CachePath>
+					<CachePath>BD/{BD7D77BD-F067-A36C-41AA-06E346982441}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -57,5 +57,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{CE72CDB0-73A1-1861-2A93-07F294D4AA90}</FileHash>
+	<FileHash>{6C621097-2AAC-EDBA-232F-67CDCE5BA299}</FileHash>
 </SoundBanksInfo>

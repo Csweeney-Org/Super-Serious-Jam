@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{AF6CA181-B7B7-43B4-BBB0-ADA0ADF4E6E1}" SchemaVersion="133">
+<WwiseDocument Type="WorkUnit" ID="{AF6CA181-B7B7-43B4-BBB0-ADA0ADF4E6E1}" SchemaVersion="137">
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{AF6CA181-B7B7-43B4-BBB0-ADA0ADF4E6E1}" PersistMode="Standalone">
 			<ChildrenList>
@@ -70,6 +70,69 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0051DB82-BD5C-459A-8906-048A758DAAB8}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mus_Start_Battle" ID="{28113991-471F-44B4-9574-3AE50F64448E}">
+					<ChildrenList>
+						<Action Name="" ID="{A022EC7C-46F3-46EB-A0A9-B57C69FE77C3}" ShortID="280391049">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Full_Mix" ID="{CEF02D89-E20E-4199-A554-A8706E525FA0}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{06B23625-0364-4CB4-B4F9-E1F870F7FB76}" ShortID="759770608">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Battle Music" ID="{6E5ABD12-621B-4C9D-8CB8-293B7E228B86}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mus_Stop_Battle" ID="{F31A439F-E21F-431E-9512-40DAED22C14C}">
+					<ChildrenList>
+						<Action Name="" ID="{ACCFF141-3FE1-4B6E-925E-4D073F76D53D}" ShortID="596794703">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Battle Music" ID="{6E5ABD12-621B-4C9D-8CB8-293B7E228B86}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mus_Battle_WinState" ID="{552DB49B-50BF-4D2E-92A5-FE1985BF2A36}">
+					<ChildrenList>
+						<Action Name="" ID="{DDC99318-F711-4941-945A-AC60AA848165}" ShortID="707983040">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Win" ID="{BCECF0BB-276B-44F4-A045-5B632923B198}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mus_Battle_LooseState" ID="{596B79E9-9638-45DE-AA9E-E7F82686F498}">
+					<ChildrenList>
+						<Action Name="" ID="{0FFA289D-6ABE-4879-A832-21C798863E21}" ShortID="392655740">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Loose" ID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="174">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{CDE9AC3D-2B42-1217-02C1-D64576EB9AF6}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{251243D9-02ED-2C15-51CA-D9F21069FA07}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -14,7 +14,23 @@
 			<Busses>
 				<Bus Id="2246998526" Name="Main Audio Bus" ObjectPath="\Busses\Default Work Unit\Main Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 			</Busses>
+			<StateGroups>
+				<StateGroup Id="1208172739" Name="States" ObjectPath="\States\Default Work Unit\States" GUID="{C938D3FA-7C43-479C-B715-A04EE888D162}">
+					<States>
+						<State Id="174960569" Name="Loose" ObjectPath="\States\Default Work Unit\States\Loose" GUID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\States\None" GUID="{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"/>
+						<State Id="979765101" Name="Win" ObjectPath="\States\Default Work Unit\States\Win" GUID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+						<State Id="1611212405" Name="Full_Mix" ObjectPath="\States\Default Work Unit\States\Full_Mix" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3298531235" Name="Layers" ObjectPath="\States\Default Work Unit\Layers" GUID="{F037B57E-C638-438A-95E9-B9BEB9975014}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Layers\None" GUID="{4B58D8D9-4447-420E-8D73-797CCF34FA00}"/>
+						<State Id="1125500713" Name="Intro" ObjectPath="\States\Default Work Unit\Layers\Intro" GUID="{5CCE55B1-EA18-406A-B1BB-B111C9527B84}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{995A4904-F083-32E6-709C-E56CA35F1BDE}</FileHash>
+	<FileHash>{9E2654B3-9AEA-E25C-9259-E506AE2CFE88}</FileHash>
 </SoundBanksInfo>

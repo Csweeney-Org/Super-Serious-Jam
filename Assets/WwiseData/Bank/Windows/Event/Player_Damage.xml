@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="174">
 	<SoundBanks>
-		<SoundBank Id="2074073782" Type="Event" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" Language="SFX" Hash="{460FC6D0-C957-2F5B-8D55-5BFA8A38CDFE}">
+		<SoundBank Id="2074073782" Type="Event" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" Language="SFX" Hash="{7C0BE53F-92D2-9D01-BAEC-8CAD220761E4}">
 			<ObjectPath>Player_Damage</ObjectPath>
 			<ShortName>Player_Damage</ShortName>
 			<Path>Event/Player_Damage.bnk</Path>
@@ -9,12 +9,12 @@
 				<File Id="47205287" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_TDG_FX_hit_one_shot_magic_damage_flame_03.wav</ShortName>
 					<Path>Media/47205287.wem</Path>
-					<CachePath>48/{48045ED0-36FA-93BB-B89F-C09AAC9D7489}.wem</CachePath>
+					<CachePath>5E/{5E855D70-7281-BEE4-DC2E-2255A0BB91B6}.wem</CachePath>
 				</File>
 				<File Id="704774677" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>snd_damage.wav</ShortName>
 					<Path>Media/704774677.wem</Path>
-					<CachePath>DB/{DB0C3984-9DDF-B09A-86FA-F9DC5620856E}.wem</CachePath>
+					<CachePath>B2/{B249FE6F-3F76-838A-4268-8DAE5F019D33}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -27,5 +27,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A00D3456-83EF-B281-A28B-EC8A30AAC352}</FileHash>
+	<FileHash>{05CA0BD7-7501-C613-4054-7C47A6C92963}</FileHash>
 </SoundBanksInfo>

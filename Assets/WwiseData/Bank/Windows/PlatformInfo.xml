@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlatformInfo>
-	<Platform Name="Windows" BasePlatform="Windows" Generator="2025.1.8.9170"/>
+	<Platform Name="Windows" BasePlatform="Windows" Generator="2026.1.1.9196"/>
 	<RootPaths>
 		<ProjectRoot>../../../../Super-Serious-Jam_WwiseProject</ProjectRoot>
 		<SourceFilesRoot>../../../../Super-Serious-Jam_WwiseProject/.cache</SourceFilesRoot>
@@ -29,5 +29,5 @@
 		<PrintObjectPath>true</PrintObjectPath>
 		<PrintObjectColor>true</PrintObjectColor>
 	</Settings>
-	<FileHash>{E1C6A71F-D6FA-6C93-BE6B-9BD4D742EB33}</FileHash>
+	<FileHash>{81653478-8902-CB86-14FF-806E00AC5D68}</FileHash>
 </PlatformInfo>

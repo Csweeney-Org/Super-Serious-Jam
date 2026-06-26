@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}" SchemaVersion="133">
+<WwiseDocument Type="WorkUnit" ID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}" SchemaVersion="137">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="States" ID="{C938D3FA-7C43-479C-B715-A04EE888D162}">
+					<ChildrenList>
+						<State Name="None" ID="{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"/>
+						<State Name="Full_Mix" ID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+						<State Name="Win" ID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+						<State Name="Loose" ID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="Layers" ID="{F037B57E-C638-438A-95E9-B9BEB9975014}">
+					<ChildrenList>
+						<State Name="None" ID="{4B58D8D9-4447-420E-8D73-797CCF34FA00}"/>
+						<State Name="Intro" ID="{5CCE55B1-EA18-406A-B1BB-B111C9527B84}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

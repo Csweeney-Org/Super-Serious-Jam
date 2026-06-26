@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}" SchemaVersion="133">
+<WwiseDocument Type="WorkUnit" ID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}" SchemaVersion="137">
 	<Attenuations>
 		<WorkUnit Name="Factory Attenuations" ID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}" PersistMode="Standalone">
 			<ChildrenList>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="174">
 	<RootPaths>
 		<ProjectRoot>../../../../Super-Serious-Jam_WwiseProject</ProjectRoot>
 		<SourceFilesRoot>../../../../Super-Serious-Jam_WwiseProject/.cache</SourceFilesRoot>
@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="566396871" Type="Event" GUID="{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}" Language="SFX" Hash="{9DE72AA3-753D-8419-FD4A-5FDF20FF539D}">
+		<SoundBank Id="566396871" Type="Event" GUID="{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}" Language="SFX" Hash="{EF9FA657-0DB6-8F38-BEA1-A572E48AA187}">
 			<ObjectPath>Item_Pickup</ObjectPath>
 			<ShortName>Item_Pickup</ShortName>
 			<Path>Event/Item_Pickup.bnk</Path>
@@ -17,22 +17,22 @@
 				<File Id="290165397" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Corporate Pop - REC.wav</ShortName>
 					<Path>Media/290165397.wem</Path>
-					<CachePath>CA/{CA464BA7-4134-B88B-332B-4FC2C41F539A}.wem</CachePath>
+					<CachePath>61/{613271F9-8BA1-2211-9143-C100C3B148A0}.wem</CachePath>
 				</File>
 				<File Id="305937602" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Corporate Pop - REC_2.wav</ShortName>
 					<Path>Media/305937602.wem</Path>
-					<CachePath>C8/{C86A6BB9-8455-DEA8-1C35-035D0F89FB72}.wem</CachePath>
+					<CachePath>8C/{8CA7B852-F996-A229-9B11-8807E6E7A742}.wem</CachePath>
 				</File>
 				<File Id="404749359" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Corporate Pop - REC_4.wav</ShortName>
 					<Path>Media/404749359.wem</Path>
-					<CachePath>2A/{2ACD1D6A-2D73-78B1-E66D-3CEAC554020D}.wem</CachePath>
+					<CachePath>01/{01AD0562-A014-E774-2AD6-468A0C33FC99}.wem</CachePath>
 				</File>
 				<File Id="865441247" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Corporate Pop - REC_3.wav</ShortName>
 					<Path>Media/865441247.wem</Path>
-					<CachePath>C8/{C8EFC2C7-2D50-B80F-1F48-548E825C9189}.wem</CachePath>
+					<CachePath>20/{209618BA-2DA6-BF9A-1EF2-A310FA1E129F}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -46,7 +46,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="945135624" Type="Event" GUID="{47B3F079-BA98-469C-AA64-962EBC254F0D}" Language="SFX" Hash="{94389D47-562D-23FA-3BC2-8429D0751CB0}">
+		<SoundBank Id="945135624" Type="Event" GUID="{47B3F079-BA98-469C-AA64-962EBC254F0D}" Language="SFX" Hash="{197F71BF-A410-EB92-6FAB-AF25969B3F70}">
 			<ObjectPath>Item_Crash</ObjectPath>
 			<ShortName>Item_Crash</ShortName>
 			<Path>Event/Item_Crash.bnk</Path>
@@ -54,37 +54,37 @@
 				<File Id="52878928" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Gym Barbell Heavy Drop 3.wav</ShortName>
 					<Path>Media/52878928.wem</Path>
-					<CachePath>8E/{8ED7C333-1246-08E7-CA84-96BFE1526905}.wem</CachePath>
+					<CachePath>F7/{F77BEC34-C5D9-A781-64AD-95C0AD3DCD22}.wem</CachePath>
 				</File>
 				<File Id="203619646" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Broken Plastic Drop 1.wav</ShortName>
 					<Path>Media/203619646.wem</Path>
-					<CachePath>7F/{7FDB10EA-C4BD-1C6E-73F5-F15033FF3E8C}.wem</CachePath>
+					<CachePath>D8/{D8036E91-D757-DADE-2F7E-BF9A0087F136}.wem</CachePath>
 				</File>
 				<File Id="515382230" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall.wav</ShortName>
 					<Path>Media/515382230.wem</Path>
-					<CachePath>A2/{A22BD5E2-11E5-C207-35F5-0E33A33E4CEC}.wem</CachePath>
+					<CachePath>03/{0346B403-11AE-FA05-A5FA-1333A22E5FA8}.wem</CachePath>
 				</File>
 				<File Id="567395332" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter.wav</ShortName>
 					<Path>Media/567395332.wem</Path>
-					<CachePath>8F/{8F20A5AA-CC45-98FF-21D7-FCD23932F4F4}.wem</CachePath>
+					<CachePath>E5/{E5829631-86F1-DFD3-6C19-ABBC333404CE}.wem</CachePath>
 				</File>
 				<File Id="950344998" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade.wav</ShortName>
 					<Path>Media/950344998.wem</Path>
-					<CachePath>05/{052F62F2-22A6-935A-1FD8-22E225926823}.wem</CachePath>
+					<CachePath>47/{476BB060-A371-51C8-1832-B2CB812C66BC}.wem</CachePath>
 				</File>
 				<File Id="979411635" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact.wav</ShortName>
 					<Path>Media/979411635.wem</Path>
-					<CachePath>8B/{8BB903A2-141D-EBF2-CF79-B8F46F7DAB32}.wem</CachePath>
+					<CachePath>40/{403BF2A3-17CD-EF41-A705-3ECEF2175484}.wem</CachePath>
 				</File>
 				<File Id="991405809" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Cloths, Bags, Fabrics, Drop 3.wav</ShortName>
 					<Path>Media/991405809.wem</Path>
-					<CachePath>66/{66E914B6-9646-C4FA-0992-34AB0AEC2C40}.wem</CachePath>
+					<CachePath>BD/{BD7D77BD-F067-A36C-41AA-06E346982441}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -101,7 +101,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1043991041" Type="Event" GUID="{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}" Language="SFX" Hash="{9670FF54-04F0-CFB5-2151-B28DF0B893FB}">
+		<SoundBank Id="1043991041" Type="Event" GUID="{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}" Language="SFX" Hash="{83CF7746-A9AF-8E7E-AFA6-4BA7F7E95D1B}">
 			<ObjectPath>Stop_Spin_Loop</ObjectPath>
 			<ShortName>Stop_Spin_Loop</ShortName>
 			<Path>Event/Stop_Spin_Loop.bnk</Path>
@@ -109,7 +109,7 @@
 				<Event Id="1043991041" Name="Stop_Spin_Loop" ObjectPath="\Events\Default Work Unit\Stop_Spin_Loop" GUID="{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{CDE9AC3D-2B42-1217-02C1-D64576EB9AF6}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{251243D9-02ED-2C15-51CA-D9F21069FA07}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -122,8 +122,24 @@
 			<Busses>
 				<Bus Id="2246998526" Name="Main Audio Bus" ObjectPath="\Busses\Default Work Unit\Main Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 			</Busses>
+			<StateGroups>
+				<StateGroup Id="1208172739" Name="States" ObjectPath="\States\Default Work Unit\States" GUID="{C938D3FA-7C43-479C-B715-A04EE888D162}">
+					<States>
+						<State Id="174960569" Name="Loose" ObjectPath="\States\Default Work Unit\States\Loose" GUID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\States\None" GUID="{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"/>
+						<State Id="979765101" Name="Win" ObjectPath="\States\Default Work Unit\States\Win" GUID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+						<State Id="1611212405" Name="Full_Mix" ObjectPath="\States\Default Work Unit\States\Full_Mix" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3298531235" Name="Layers" ObjectPath="\States\Default Work Unit\Layers" GUID="{F037B57E-C638-438A-95E9-B9BEB9975014}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Layers\None" GUID="{4B58D8D9-4447-420E-8D73-797CCF34FA00}"/>
+						<State Id="1125500713" Name="Intro" ObjectPath="\States\Default Work Unit\Layers\Intro" GUID="{5CCE55B1-EA18-406A-B1BB-B111C9527B84}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1733917715" Type="Event" GUID="{775B9DD1-3003-40C5-B8A2-C466473F3C04}" Language="SFX" Hash="{FFF798DB-6304-FC7D-946C-039BBF8412F1}">
+		<SoundBank Id="1733917715" Type="Event" GUID="{775B9DD1-3003-40C5-B8A2-C466473F3C04}" Language="SFX" Hash="{5E42D2F8-9494-874C-2F8B-5FC6C75C8976}">
 			<ObjectPath>Play_Spin_Loop</ObjectPath>
 			<ShortName>Play_Spin_Loop</ShortName>
 			<Path>Event/Play_Spin_Loop.bnk</Path>
@@ -131,7 +147,7 @@
 				<File Id="403704571" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02.wav</ShortName>
 					<Path>Media/403704571.wem</Path>
-					<CachePath>8E/{8ECE7E91-52D1-85B9-498C-FBDCA5EAF49C}.wem</CachePath>
+					<CachePath>9A/{9A4DE903-A8A7-B33C-3BD9-0F08856CDA67}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -142,7 +158,15 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2074073782" Type="Event" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" Language="SFX" Hash="{460FC6D0-C957-2F5B-8D55-5BFA8A38CDFE}">
+		<SoundBank Id="1851218498" Type="Event" GUID="{F31A439F-E21F-431E-9512-40DAED22C14C}" Language="SFX" Hash="{36024F32-9D34-CE4E-FF88-89524572B7AD}">
+			<ObjectPath>Mus_Stop_Battle</ObjectPath>
+			<ShortName>Mus_Stop_Battle</ShortName>
+			<Path>Event/Mus_Stop_Battle.bnk</Path>
+			<Events>
+				<Event Id="1851218498" Name="Mus_Stop_Battle" ObjectPath="\Events\Default Work Unit\Mus_Stop_Battle" GUID="{F31A439F-E21F-431E-9512-40DAED22C14C}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2074073782" Type="Event" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" Language="SFX" Hash="{7C0BE53F-92D2-9D01-BAEC-8CAD220761E4}">
 			<ObjectPath>Player_Damage</ObjectPath>
 			<ShortName>Player_Damage</ShortName>
 			<Path>Event/Player_Damage.bnk</Path>
@@ -150,12 +174,12 @@
 				<File Id="47205287" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>ESM_TDG_FX_hit_one_shot_magic_damage_flame_03.wav</ShortName>
 					<Path>Media/47205287.wem</Path>
-					<CachePath>48/{48045ED0-36FA-93BB-B89F-C09AAC9D7489}.wem</CachePath>
+					<CachePath>5E/{5E855D70-7281-BEE4-DC2E-2255A0BB91B6}.wem</CachePath>
 				</File>
 				<File Id="704774677" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>snd_damage.wav</ShortName>
 					<Path>Media/704774677.wem</Path>
-					<CachePath>DB/{DB0C3984-9DDF-B09A-86FA-F9DC5620856E}.wem</CachePath>
+					<CachePath>B2/{B249FE6F-3F76-838A-4268-8DAE5F019D33}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -167,7 +191,51 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3051433909" Type="Event" GUID="{FD535694-1858-4361-9C6B-A6B8421840F2}" Language="SFX" Hash="{F82456C8-149F-80DE-9EA0-94D6F5A6BFF3}">
+		<SoundBank Id="2392886571" Type="Event" GUID="{596B79E9-9638-45DE-AA9E-E7F82686F498}" Language="SFX" Hash="{E983CA0D-EABB-EFCA-5513-46BD18A6FC35}">
+			<ObjectPath>Mus_Battle_LooseState</ObjectPath>
+			<ShortName>Mus_Battle_LooseState</ShortName>
+			<Path>Event/Mus_Battle_LooseState.bnk</Path>
+			<Events>
+				<Event Id="2392886571" Name="Mus_Battle_LooseState" ObjectPath="\Events\Default Work Unit\Mus_Battle_LooseState" GUID="{596B79E9-9638-45DE-AA9E-E7F82686F498}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1208172739" Id="174960569" Name="Loose" ObjectPath="\States\Default Work Unit\States\Loose" GUID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+					</ActionSetState>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="1208172739" Name="States" ObjectPath="\States\Default Work Unit\States" GUID="{C938D3FA-7C43-479C-B715-A04EE888D162}">
+					<States>
+						<State Id="174960569" Name="Loose" ObjectPath="\States\Default Work Unit\States\Loose" GUID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\States\None" GUID="{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"/>
+						<State Id="979765101" Name="Win" ObjectPath="\States\Default Work Unit\States\Win" GUID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+						<State Id="1611212405" Name="Full_Mix" ObjectPath="\States\Default Work Unit\States\Full_Mix" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="2645180283" Type="Event" GUID="{552DB49B-50BF-4D2E-92A5-FE1985BF2A36}" Language="SFX" Hash="{DFF8EB6F-E4A9-46B9-EB5D-CC5B5D750130}">
+			<ObjectPath>Mus_Battle_WinState</ObjectPath>
+			<ShortName>Mus_Battle_WinState</ShortName>
+			<Path>Event/Mus_Battle_WinState.bnk</Path>
+			<Events>
+				<Event Id="2645180283" Name="Mus_Battle_WinState" ObjectPath="\Events\Default Work Unit\Mus_Battle_WinState" GUID="{552DB49B-50BF-4D2E-92A5-FE1985BF2A36}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1208172739" Id="979765101" Name="Win" ObjectPath="\States\Default Work Unit\States\Win" GUID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+					</ActionSetState>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="1208172739" Name="States" ObjectPath="\States\Default Work Unit\States" GUID="{C938D3FA-7C43-479C-B715-A04EE888D162}">
+					<States>
+						<State Id="174960569" Name="Loose" ObjectPath="\States\Default Work Unit\States\Loose" GUID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\States\None" GUID="{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"/>
+						<State Id="979765101" Name="Win" ObjectPath="\States\Default Work Unit\States\Win" GUID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+						<State Id="1611212405" Name="Full_Mix" ObjectPath="\States\Default Work Unit\States\Full_Mix" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="3051433909" Type="Event" GUID="{FD535694-1858-4361-9C6B-A6B8421840F2}" Language="SFX" Hash="{37135F61-CF2F-8ED8-A059-0B27143E92EF}">
 			<ObjectPath>Item_Throw</ObjectPath>
 			<ShortName>Item_Throw</ShortName>
 			<Path>Event/Item_Throw.bnk</Path>
@@ -175,7 +243,7 @@
 				<File Id="275128577" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Quick Swish Whoosh Swoosh-49.wav</ShortName>
 					<Path>Media/275128577.wem</Path>
-					<CachePath>99/{9950BD3A-BD6A-5370-49A5-25E7F685F693}.wem</CachePath>
+					<CachePath>8D/{8D8BC707-CB17-6F59-690F-053E642273CE}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -186,6 +254,87 @@
 				</Event>
 			</Events>
 		</SoundBank>
+		<SoundBank Id="3123435120" Type="Event" GUID="{28113991-471F-44B4-9574-3AE50F64448E}" Language="SFX" Hash="{F1470DED-641C-F987-7993-B60F224A3289}">
+			<ObjectPath>Mus_Start_Battle</ObjectPath>
+			<ShortName>Mus_Start_Battle</ShortName>
+			<Path>Event/Mus_Start_Battle.bnk</Path>
+			<Media>
+				<File Id="46024639" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>CorporateBattleSTEM1.wav</ShortName>
+					<Path>Media/46024639.wem</Path>
+					<CachePath>57/{5751A17D-5C2F-FBFB-CA8E-3F44E439D6BA}.wem</CachePath>
+				</File>
+				<File Id="82041006" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>CorporateWIN.wav</ShortName>
+					<Path>Media/82041006.wem</Path>
+					<CachePath>45/{450FCE19-AB59-04B9-F2CE-8AEB62733635}.wem</CachePath>
+				</File>
+				<File Id="184658772" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>CorporateBattleSTEM3.wav</ShortName>
+					<Path>Media/184658772.wem</Path>
+					<CachePath>11/{11389C27-A280-2540-077E-17CF70516E6A}.wem</CachePath>
+				</File>
+				<File Id="207157016" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>CorporateBattleINTRO.wav</ShortName>
+					<Path>Media/207157016.wem</Path>
+					<CachePath>57/{576E7BA3-C8B5-6E97-CAC0-F8E0DDA0CD66}.wem</CachePath>
+				</File>
+				<File Id="265090331" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>CorporateBattleSTEM2.wav</ShortName>
+					<Path>Media/265090331.wem</Path>
+					<CachePath>13/{13B55BFC-2F7F-6511-861C-46EC556B3D8F}.wem</CachePath>
+				</File>
+				<File Id="994666764" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>CorporateLOSE.wav</ShortName>
+					<Path>Media/994666764.wem</Path>
+					<CachePath>2A/{2AB2C609-3860-9501-AFB5-F8D8FA347BA3}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3123435120" Name="Mus_Start_Battle" ObjectPath="\Events\Default Work Unit\Mus_Start_Battle" GUID="{28113991-471F-44B4-9574-3AE50F64448E}" DurationType="Mixed" DurationMin="8.971958" DurationMax="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1208172739" Id="1611212405" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="46024639"/>
+								<MediaRef Id="184658772"/>
+								<MediaRef Id="207157016"/>
+								<MediaRef Id="265090331"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1208172739" Id="979765101" GUID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+							<MediaRefs>
+								<MediaRef Id="46024639"/>
+								<MediaRef Id="82041006"/>
+								<MediaRef Id="265090331"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1208172739" Id="174960569" GUID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+							<MediaRefs>
+								<MediaRef Id="46024639"/>
+								<MediaRef Id="265090331"/>
+								<MediaRef Id="994666764"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1208172739" Id="1611212405" Name="Full_Mix" ObjectPath="\States\Default Work Unit\States\Full_Mix" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+					</ActionSetState>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="1208172739" Name="States" ObjectPath="\States\Default Work Unit\States" GUID="{C938D3FA-7C43-479C-B715-A04EE888D162}">
+					<States>
+						<State Id="174960569" Name="Loose" ObjectPath="\States\Default Work Unit\States\Loose" GUID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\States\None" GUID="{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"/>
+						<State Id="979765101" Name="Win" ObjectPath="\States\Default Work Unit\States\Win" GUID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+						<State Id="1611212405" Name="Full_Mix" ObjectPath="\States\Default Work Unit\States\Full_Mix" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E463A231-F993-B33E-3381-929CE8490599}</FileHash>
+	<FileHash>{1F05DD26-565E-416F-12D6-195FEC310DCF}</FileHash>
 </SoundBanksInfo>

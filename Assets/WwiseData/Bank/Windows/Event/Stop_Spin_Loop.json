@@ -3,14 +3,14 @@
   "Platform": "Windows",
   "BasePlatform": "Windows",
   "SchemaVersion": "16",
-  "SoundBankVersion": "172",
+  "SoundBankVersion": "174",
   "SoundBanks": [
    {
     "Id": "1043991041",
     "Type": "Event",
     "GUID": "{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}",
     "Language": "SFX",
-    "Hash": "{9670FF54-04F0-CFB5-2151-B28DF0B893FB}",
+    "Hash": "{83CF7746-A9AF-8E7E-AFA6-4BA7F7E95D1B}",
     "ObjectPath": "Stop_Spin_Loop",
     "ShortName": "Stop_Spin_Loop",
     "Path": "Event/Stop_Spin_Loop.bnk",
@@ -28,6 +28,6 @@
     ]
    }
   ],
-  "FileHash": "{A091AB00-47EE-71C4-7526-DE775CE3E52F}"
+  "FileHash": "{7E4BD5AA-8D15-56BD-DCF7-7564C8E86316}"
  }
 }

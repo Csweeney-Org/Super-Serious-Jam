@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2392886571	Mus_Battle_LooseState			\Default Work Unit\Mus_Battle_LooseState	
+
