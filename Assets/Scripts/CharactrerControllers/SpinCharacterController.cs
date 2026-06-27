@@ -202,6 +202,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     {
         this.CurrentToppleHealth = this.MaxToppleHealth;
         this.rigidBody.position = originalPosition;
+        this.isToppled = false;
     }
 
     /// MELEE COMBAT ///
