@@ -6,6 +6,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
 {
     public Rigidbody rigidBody;
     public ThrowableInventory Inventory;
+    public AK.Wwise.Event Spin_Loop;
 
     [Header("Initialization Properties")]
     [field: SerializeField] public float maxSpeed { get; private set; }

@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1043991041	Stop_Spin_Loop			\Default Work Unit\Stop_Spin_Loop	
+

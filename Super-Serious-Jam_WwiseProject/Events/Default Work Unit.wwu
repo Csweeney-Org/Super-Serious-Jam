@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AF6CA181-B7B7-43B4-BBB0-ADA0ADF4E6E1}" SchemaVersion="137">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{AF6CA181-B7B7-43B4-BBB0-ADA0ADF4E6E1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Item_Throw" ID="{FD535694-1858-4361-9C6B-A6B8421840F2}">
+					<ChildrenList>
+						<Action Name="" ID="{C12E9078-46C3-4EBF-9202-F5D62CF08833}" ShortID="589258468">
+							<PropertyList>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Quick Swish Whoosh Swoosh-49" ID="{CE1A6F1C-8402-4CAE-B0EB-A298AC8D6F32}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Item_Crash" ID="{47B3F079-BA98-469C-AA64-962EBC254F0D}">
+					<ChildrenList>
+						<Action Name="" ID="{CE5B90CC-E638-441C-A2F7-241B6709A098}" ShortID="308842822">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Item Crash Random" ID="{CC758117-5897-4F38-83E1-E32786C55295}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Item_Pickup" ID="{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}">
+					<ChildrenList>
+						<Action Name="" ID="{4E14B5AD-28E0-4ADD-8234-24A1F44EE473}" ShortID="696040227">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Item Pickup Random" ID="{2DCE418F-7015-439B-9652-92A49F93FCAD}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Player_Damage" ID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}">
+					<ChildrenList>
+						<Action Name="" ID="{516A96F0-7978-4361-BBCD-CFDAB1146FC5}" ShortID="828056756">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_Damage" ID="{073EE914-3D23-497C-BB7B-6B8E298B6EF3}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Spin_Loop" ID="{775B9DD1-3003-40C5-B8A2-C466473F3C04}">
+					<ChildrenList>
+						<Action Name="" ID="{C0B8F624-D71F-4D30-A1CA-25FC8F51DFAD}" ShortID="581503887">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0051DB82-BD5C-459A-8906-048A758DAAB8}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Spin_Loop" ID="{0A0C8769-BE4A-4A4F-9DCA-0EEE7AF0D833}">
+					<ChildrenList>
+						<Action Name="" ID="{978ED1A4-DDFA-4F77-81B5-9D308C9FECD9}" ShortID="518950789">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0051DB82-BD5C-459A-8906-048A758DAAB8}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mus_Start_Battle" ID="{28113991-471F-44B4-9574-3AE50F64448E}">
+					<ChildrenList>
+						<Action Name="" ID="{A022EC7C-46F3-46EB-A0A9-B57C69FE77C3}" ShortID="280391049">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Full_Mix" ID="{CEF02D89-E20E-4199-A554-A8706E525FA0}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{06B23625-0364-4CB4-B4F9-E1F870F7FB76}" ShortID="759770608">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Battle Music" ID="{6E5ABD12-621B-4C9D-8CB8-293B7E228B86}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mus_Stop_Battle" ID="{F31A439F-E21F-431E-9512-40DAED22C14C}">
+					<ChildrenList>
+						<Action Name="" ID="{ACCFF141-3FE1-4B6E-925E-4D073F76D53D}" ShortID="596794703">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Battle Music" ID="{6E5ABD12-621B-4C9D-8CB8-293B7E228B86}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mus_Battle_WinState" ID="{552DB49B-50BF-4D2E-92A5-FE1985BF2A36}">
+					<ChildrenList>
+						<Action Name="" ID="{DDC99318-F711-4941-945A-AC60AA848165}" ShortID="707983040">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Win" ID="{BCECF0BB-276B-44F4-A045-5B632923B198}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mus_Battle_LooseState" ID="{596B79E9-9638-45DE-AA9E-E7F82686F498}">
+					<ChildrenList>
+						<Action Name="" ID="{0FFA289D-6ABE-4879-A832-21C798863E21}" ShortID="392655740">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Loose" ID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

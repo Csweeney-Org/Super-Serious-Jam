@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Throwables;
 using UnityEngine;
-
 public class Projectile : MonoBehaviour
 {
     public float LaunchForce = 10f;
@@ -9,6 +8,9 @@ public class Projectile : MonoBehaviour
     public Rigidbody RB;
     public Collider[] Colliders;
     public MeshFilter MeshFilter;
+
+    public AK.Wwise.Event Player_Damage;
+    public AK.Wwise.Event Item_Crash;
 
     private ItemPickup linkedItem;
     private SpinCharacterController shooterUnit;
@@ -72,11 +74,13 @@ public class Projectile : MonoBehaviour
         {
             if (collidedUnit == shooterUnit) return;
             BOING(collidedUnit);
+            AkUnitySoundEngine.PostEvent("Player_Damage", gameObject);
 
         }
         else if (collidedUnit == null)
         {
             //Collided with something that is not a player/npc -> drop as item
+            AkUnitySoundEngine.PostEvent("Item_Crash", gameObject);
             TriggerChaoticBounce();
             //DropItemAndExpire();
             //return;

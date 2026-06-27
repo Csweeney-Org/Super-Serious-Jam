@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3051433909",
+    "Type": "Event",
+    "GUID": "{FD535694-1858-4361-9C6B-A6B8421840F2}",
+    "Language": "SFX",
+    "Hash": "{BB957BD3-8C36-29C8-DA24-77E9F8297043}",
+    "ObjectPath": "Item_Throw",
+    "ShortName": "Item_Throw",
+    "Path": "Event/Item_Throw.bnk",
+    "Media": [
+     {
+      "Id": "275128577",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Quick Swish Whoosh Swoosh-49.wav",
+      "Path": "Media/275128577.wem",
+      "CachePath": "99/{9950BD3A-BD6A-5370-49A5-25E7F685F693}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3051433909",
+      "Name": "Item_Throw",
+      "ObjectPath": "\\Events\\Default Work Unit\\Item_Throw",
+      "GUID": "{FD535694-1858-4361-9C6B-A6B8421840F2}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.59639454",
+      "DurationMax": "0.59639454",
+      "MediaRefs": [
+       {
+        "Id": "275128577"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{55073778-78B7-F2E1-6C80-F05DF6DAB762}"
+ }
+}

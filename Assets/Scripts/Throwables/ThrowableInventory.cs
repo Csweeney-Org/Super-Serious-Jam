@@ -12,6 +12,11 @@ public class ThrowableInventory : MonoBehaviour
     private Queue<ItemPickup> throwableQueue = new Queue<ItemPickup>();
     [field: SerializeField] private ProjectilePool projectilePool;
     // Open question: do we want to sart from 0 weight or assign a base weight (initialize different enemies)
+
+    // Script to add in sound effects to pull from
+    public AK.Wwise.Event Item_Throw;
+    public AK.Wwise.Event Item_Crash;
+    public AK.Wwise.Event Player_Damage;
     [field: SerializeField] public float TotalWeight { get; private set; } = 0f;
 
     public bool IsFull => throwableQueue.Count >= CarryPositions.Length;
@@ -57,7 +62,9 @@ public class ThrowableInventory : MonoBehaviour
 
         projectilePool.GetProjectileForItem(thrownItem)
             .LaunchFrom(this.transform.position + 2 * aimController.CurrentAimDirection, aimController.CurrentAimDirection, Owner);
-        thrownItem.HideItem();
+        //Plays the throw SFX. Try finding out how to get it to play from the thrown object with attenuation
+        Item_Throw.Post(gameObject);
+        thrownItem.HideItem();  
         //Fire from slightly ahead of thrower to prevent early self collisions
         //ReorganizeQueue();
     }

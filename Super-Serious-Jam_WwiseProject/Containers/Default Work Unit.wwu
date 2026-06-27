@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}" SchemaVersion="137">
+	<Containers>
+		<WorkUnit Name="Default Work Unit" ID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Quick Swish Whoosh Swoosh-49" ID="{CE1A6F1C-8402-4CAE-B0EB-A298AC8D6F32}" ShortID="11618738">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>37</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-24</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Quick Swish Whoosh Swoosh-49" ID="{7184CB45-67AF-4FBF-847F-94D79AB1BFB8}">
+							<Language>SFX</Language>
+							<AudioFile>Quick Swish Whoosh Swoosh-49.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="275128577"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="Quick Swish Whoosh Swoosh-49_01" ID="{F73B1C88-234B-4D7C-84C8-294896DD89BF}">
+							<Language>SFX</Language>
+							<AudioFile>Quick Swish Whoosh Swoosh-49.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="275128577"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{F49C2D15-647D-43FD-912D-89B2220F5707}"/>
+					</PositioningInfo>
+					<StateInfo>
+						<StatePropertyList>
+							<Property Name="EnableAttenuation"/>
+							<Property Name="Highpass"/>
+							<Property Name="Lowpass"/>
+							<Property Name="MakeUpGain"/>
+							<Property Name="Pitch"/>
+							<Property Name="Volume"/>
+						</StatePropertyList>
+					</StateInfo>
+					<ActiveSourceList>
+						<ActiveSource Name="Quick Swish Whoosh Swoosh-49_01" ID="{F73B1C88-234B-4D7C-84C8-294896DD89BF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Item Crash Random" ID="{CC758117-5897-4F38-83E1-E32786C55295}" ShortID="697669940">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Broken Plastic Drop 1" ID="{AC1B8559-B4F6-47ED-A61C-3EFBE04AECD6}" ShortID="801606133">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Broken Plastic Drop 1" ID="{7AADDB00-4161-4C2F-8428-9A448CC5CA94}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.29356"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.29356"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Broken Plastic Drop 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="203619646"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Broken Plastic Drop 1" ID="{7AADDB00-4161-4C2F-8428-9A448CC5CA94}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Cloths, Bags, Fabrics, Drop 3" ID="{FADE4246-6DC3-4F71-A29C-FD689CB796EA}" ShortID="1999902">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cloths, Bags, Fabrics, Drop 3" ID="{B470141E-B8CC-4730-A6B4-00F049FB52D5}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.00984"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.38461"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.06789"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.70138"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Cloths, Bags, Fabrics, Drop 3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="991405809"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Cloths, Bags, Fabrics, Drop 3" ID="{B470141E-B8CC-4730-A6B4-00F049FB52D5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Gym Barbell Heavy Drop 3" ID="{4BE415CA-81F3-4DC6-8096-DE47523DF6DA}" ShortID="321129051">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Gym Barbell Heavy Drop 3" ID="{F0AC1FC4-2C25-4B6F-9CD5-9ECC43B19836}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.04329"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.34073"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.05883"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.64029"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Gym Barbell Heavy Drop 3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="52878928"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Gym Barbell Heavy Drop 3" ID="{F0AC1FC4-2C25-4B6F-9CD5-9ECC43B19836}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter" ID="{CD60A245-9754-426B-96CF-CBC58C27950D}" ShortID="797749163">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter" ID="{FAADFDF8-4CB0-4A4C-B918-AABC7CBF4AD9}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="567395332"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter" ID="{FAADFDF8-4CB0-4A4C-B918-AABC7CBF4AD9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall" ID="{3CEABE53-037A-4A7A-9533-13942E888E24}" ShortID="167572541">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall" ID="{5B2AD8AA-7837-488E-94E7-211F49E9CAE7}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="515382230"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall" ID="{5B2AD8AA-7837-488E-94E7-211F49E9CAE7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade" ID="{BEFD3220-0DE2-4B40-B8CD-4A6428BC321B}" ShortID="322590619">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade" ID="{8F095CBA-CC9B-4520-8611-C778AACC652F}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="950344998"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade" ID="{8F095CBA-CC9B-4520-8611-C778AACC652F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact" ID="{CB7781EB-0477-4149-BF68-DDEB75B77DF5}" ShortID="960757292">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact" ID="{2BBCC751-525A-4124-BE67-A6F847BEE081}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="979411635"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact" ID="{2BBCC751-525A-4124-BE67-A6F847BEE081}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Item Pickup Random" ID="{2DCE418F-7015-439B-9652-92A49F93FCAD}" ShortID="7354565">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-18</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Corporate Pop - REC" ID="{D6FB2955-B22A-43F2-8ECF-BE9D3C12AE55}" ShortID="246365878">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Corporate Pop - REC" ID="{9B5A3DD7-5044-43A8-96F5-216E09CC0A76}">
+									<Language>SFX</Language>
+									<AudioFile>Corporate Pop - REC.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="290165397"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Corporate Pop - REC" ID="{9B5A3DD7-5044-43A8-96F5-216E09CC0A76}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Corporate Pop - REC_2" ID="{E9FF5AD1-16D8-4149-A028-8291C2B7256C}" ShortID="253202793">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Corporate Pop - REC_2" ID="{F08BC1E6-2FA9-4AC3-B8A6-1B85146957F5}">
+									<Language>SFX</Language>
+									<AudioFile>Corporate Pop - REC_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="305937602"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Corporate Pop - REC_2" ID="{F08BC1E6-2FA9-4AC3-B8A6-1B85146957F5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Corporate Pop - REC_3" ID="{A075D4E6-A397-4715-86AA-B1853F181D42}" ShortID="34249477">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Corporate Pop - REC_3" ID="{2AEC169C-63E7-445B-8E81-CA785035EF95}">
+									<Language>SFX</Language>
+									<AudioFile>Corporate Pop - REC_3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="865441247"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Corporate Pop - REC_3" ID="{2AEC169C-63E7-445B-8E81-CA785035EF95}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Corporate Pop - REC_4" ID="{FE8CBFC3-3184-40BC-9C51-4588219F8AAC}" ShortID="47028830">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Corporate Pop - REC_4" ID="{2332F94C-A97B-4322-B569-7019920034F0}">
+									<Language>SFX</Language>
+									<AudioFile>Corporate Pop - REC_4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="404749359"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Corporate Pop - REC_4" ID="{2332F94C-A97B-4322-B569-7019920034F0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Folder Name="Music" ID="{8A9FDDB5-CE5F-4E32-8384-E7DAEB35FA78}" ShortID="337409304">
+					<ChildrenList>
+						<SwitchContainer Name="Battle Music" ID="{6E5ABD12-621B-4C9D-8CB8-293B7E228B86}" ShortID="498308584">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Full_Mix" ID="{CEF02D89-E20E-4199-A554-A8706E525FA0}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="States" ID="{C938D3FA-7C43-479C-B715-A04EE888D162}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Mix" ID="{543F3B4C-F043-425D-B44C-87F1CDA60EE3}" ShortID="976426651">
+									<PropertyList>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CorporateBattleSTEM1" ID="{50133A5F-0C67-4709-BD86-E8C65EB6628C}" ShortID="473822397">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateBattleSTEM1" ID="{B1D7C86B-2A6B-4D3F-9882-253B9BD68C1D}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateBattleSTEM1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="46024639"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateBattleSTEM1" ID="{B1D7C86B-2A6B-4D3F-9882-253B9BD68C1D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CorporateBattleSTEM2" ID="{22348CE0-13D6-4A54-BED1-254E3AE2A7FC}" ShortID="61084093">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateBattleSTEM2" ID="{85B6962E-3134-49DE-A962-ACDB271E02DE}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateBattleSTEM2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="265090331"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateBattleSTEM2" ID="{85B6962E-3134-49DE-A962-ACDB271E02DE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CorporateBattleSTEM3" ID="{2B7AFC04-1E1A-4D50-ADFE-4A35DF552567}" ShortID="718482787">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateBattleSTEM3" ID="{EFE7EB5D-4B42-4572-AA0E-11B57E4D39C1}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateBattleSTEM3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="184658772"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateBattleSTEM3" ID="{EFE7EB5D-4B42-4572-AA0E-11B57E4D39C1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CorporateBattleINTRO" ID="{35EB32F9-7056-4EFA-B0B3-E97510A5F05C}" ShortID="219519710">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateBattleINTRO" ID="{F869EC4F-35BA-48B4-BF09-06CA3EC14305}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateBattleINTRO.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="207157016"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateBattleINTRO" ID="{F869EC4F-35BA-48B4-BF09-06CA3EC14305}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<StateInfo>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="None" ID="{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"/>
+												<CustomState Name="" ID="{5019E8AF-5CD8-4A1F-9F13-3AFE8425AD04}" ShortID="994497714"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Intro" ID="{5CCE55B1-EA18-406A-B1BB-B111C9527B84}"/>
+												<CustomState Name="" ID="{5DE39C25-7402-4209-9734-498327657F67}" ShortID="106889338"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Full_Mix" ID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+												<CustomState Name="" ID="{AAC3B7BC-85E9-49E7-93D9-B40D3BC9389C}" ShortID="254418580"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="None" ID="{4B58D8D9-4447-420E-8D73-797CCF34FA00}"/>
+												<CustomState Name="" ID="{BD0A6D9D-515A-489E-A51B-6422632AEC51}" ShortID="748143553"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Loose" ID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+												<CustomState Name="" ID="{A5D6D677-DA5A-48E8-B318-754EFFEBD2DD}" ShortID="436425201"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Win" ID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+												<CustomState Name="" ID="{B7DCFC02-2F20-42EF-BAB0-ACB992E00AFD}" ShortID="518714355"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ObjectLists>
+										<ObjectList Name="Playlist">
+											<PluginInnerObject Name="" ID="{05F91C9E-D73E-4831-A76A-13A9632A5F72}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateBattleSTEM1" ID="{50133A5F-0C67-4709-BD86-E8C65EB6628C}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{0F65DE70-7C6C-40A2-B650-2EAD91178917}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateBattleSTEM2" ID="{22348CE0-13D6-4A54-BED1-254E3AE2A7FC}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{077F8A8E-898C-498C-A603-E2F1AD16AF54}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateBattleSTEM3" ID="{2B7AFC04-1E1A-4D50-ADFE-4A35DF552567}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+										</ObjectList>
+										<ObjectList Name="StateGroups">
+											<StateGroupInfo Name="" ID="{3D7F2326-D770-4071-B65F-1634ADDF8189}" ShortID="762902506">
+												<ReferenceList>
+													<Reference Name="StateGroup">
+														<ObjectRef Name="States" ID="{C938D3FA-7C43-479C-B715-A04EE888D162}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+													</Reference>
+												</ReferenceList>
+											</StateGroupInfo>
+											<StateGroupInfo Name="" ID="{8B605D12-5B94-421A-A463-05AC0D3BD541}" ShortID="377309377">
+												<ReferenceList>
+													<Reference Name="StateGroup">
+														<ObjectRef Name="Layers" ID="{F037B57E-C638-438A-95E9-B9BEB9975014}" WorkUnitID="{4CA4B61F-2E52-4CE4-9FA7-479CF4799C4F}"/>
+													</Reference>
+												</ReferenceList>
+											</StateGroupInfo>
+										</ObjectList>
+									</ObjectLists>
+								</RandomSequenceContainer>
+								<Sound Name="CorporateBattleFULLMIX" ID="{520A2832-9B36-4CB2-AD3C-19DAAF3AC1A5}" ShortID="395046546">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="CorporateBattleFULLMIX" ID="{5BEFA557-6ADB-4597-8388-7EA4E1DB4360}">
+											<Language>SFX</Language>
+											<AudioFile>CorporateBattleFULLMIX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="700793320"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="CorporateBattleFULLMIX" ID="{5BEFA557-6ADB-4597-8388-7EA4E1DB4360}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="CorporateBattleVO" ID="{2161614B-8BAE-4BAD-A5F8-CA1E39CE4996}" ShortID="438646942">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="CorporateBattleVO" ID="{20D2C82E-DFDD-460A-8091-98FDD692CEF7}">
+											<Language>SFX</Language>
+											<AudioFile>CorporateBattleVO.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="626406030"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="CorporateBattleVO" ID="{20D2C82E-DFDD-460A-8091-98FDD692CEF7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="Win" ID="{E40E7ADC-FEB2-4EB7-8216-5A4E4EB7498F}" ShortID="137926647">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CorporateWIN" ID="{F0C5B419-A63B-4826-B953-823CFFA1312C}" ShortID="667067603">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateWIN" ID="{E589BC2A-3E63-4B58-B85B-E000CF526A1D}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateWIN.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="82041006"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateWIN" ID="{E589BC2A-3E63-4B58-B85B-E000CF526A1D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CorporateBattleSTEM1" ID="{921DA3A6-9F4F-4B80-BD15-10187C645B68}" ShortID="580326193">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateBattleSTEM1" ID="{2A991550-5B4F-4AA9-8D44-40B5A890753B}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateBattleSTEM1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="46024639"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateBattleSTEM1" ID="{2A991550-5B4F-4AA9-8D44-40B5A890753B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CorporateBattleSTEM2" ID="{06BF68E1-94DA-4F16-BFFA-CE0248A4245F}" ShortID="700770923">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateBattleSTEM2" ID="{D55091BB-78E4-4173-88E7-4971DD73B38A}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateBattleSTEM2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="265090331"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateBattleSTEM2" ID="{D55091BB-78E4-4173-88E7-4971DD73B38A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Playlist">
+											<PluginInnerObject Name="" ID="{0F78D0AA-4356-4F47-A8A9-FFC4C0E43281}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateBattleSTEM1" ID="{921DA3A6-9F4F-4B80-BD15-10187C645B68}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{B38B2EEC-CBB9-4770-B2B5-EC921EDFA4ED}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateBattleSTEM2" ID="{06BF68E1-94DA-4F16-BFFA-CE0248A4245F}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{EF55AA2F-79C2-4229-9E7D-0DD70B4B0179}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateWIN" ID="{F0C5B419-A63B-4826-B953-823CFFA1312C}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+										</ObjectList>
+									</ObjectLists>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Loose" ID="{B1B6C70E-FF5A-40B1-BFF5-1763CD4AA8B3}" ShortID="685318814">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CorporateLOSE" ID="{E1840177-1276-4DBD-88D1-50C688EAB884}" ShortID="353864949">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateLOSE" ID="{9022E607-7ED5-42BF-9CBE-DFD83D52EDB9}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateLOSE.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="994666764"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateLOSE" ID="{9022E607-7ED5-42BF-9CBE-DFD83D52EDB9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CorporateBattleSTEM1" ID="{29E0ADEC-83F1-4C4A-8534-79D0D2299479}" ShortID="518625280">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateBattleSTEM1" ID="{0BE62D72-EEFF-4E6A-82E0-6AFAE6600ED0}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateBattleSTEM1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="46024639"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateBattleSTEM1" ID="{0BE62D72-EEFF-4E6A-82E0-6AFAE6600ED0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CorporateBattleSTEM2" ID="{5D386709-8F57-4219-8316-8F4F39217E50}" ShortID="158363986">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CorporateBattleSTEM2" ID="{0256B9E9-BF79-4B05-B606-2EEDB7CD6704}">
+													<Language>SFX</Language>
+													<AudioFile>CorporateBattleSTEM2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="265090331"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CorporateBattleSTEM2" ID="{0256B9E9-BF79-4B05-B606-2EEDB7CD6704}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Playlist">
+											<PluginInnerObject Name="" ID="{260A9E4C-9F0F-4F06-91FF-E6354387EF24}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateBattleSTEM1" ID="{29E0ADEC-83F1-4C4A-8534-79D0D2299479}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{D4304CEB-76B0-4C63-9722-BAF0723DB429}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateBattleSTEM2" ID="{5D386709-8F57-4219-8316-8F4F39217E50}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{11D67D0B-CF05-4C61-B171-9388671F3F4B}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="CorporateLOSE" ID="{E1840177-1276-4DBD-88D1-50C688EAB884}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+										</ObjectList>
+									</ObjectLists>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Loose" ID="{B1B6C70E-FF5A-40B1-BFF5-1763CD4AA8B3}"/>
+										<PropertyList>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>1</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="CorporateBattleFULLMIX" ID="{520A2832-9B36-4CB2-AD3C-19DAAF3AC1A5}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="CorporateBattleVO" ID="{2161614B-8BAE-4BAD-A5F8-CA1E39CE4996}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Mix" ID="{543F3B4C-F043-425D-B44C-87F1CDA60EE3}"/>
+										<PropertyList>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>1</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Win" ID="{E40E7ADC-FEB2-4EB7-8216-5A4E4EB7498F}"/>
+										<PropertyList>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>1</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Full_Mix" ID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
+										<ItemList>
+											<ItemRef Name="Mix" ID="{543F3B4C-F043-425D-B44C-87F1CDA60EE3}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Win" ID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
+										<ItemList>
+											<ItemRef Name="Win" ID="{E40E7ADC-FEB2-4EB7-8216-5A4E4EB7498F}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Loose" ID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
+										<ItemList>
+											<ItemRef Name="Loose" ID="{B1B6C70E-FF5A-40B1-BFF5-1763CD4AA8B3}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+					</ChildrenList>
+				</Folder>
+				<BlendContainer Name="Player_Damage" ID="{073EE914-3D23-497C-BB7B-6B8E298B6EF3}" ShortID="583528477">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-18</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="ESM_TDG_FX_hit_one_shot_magic_damage_flame_03" ID="{D74F362E-F95E-4CED-BB20-6F693DE0F3CA}" ShortID="548652286">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_TDG_FX_hit_one_shot_magic_damage_flame_03" ID="{AAACFCC1-4550-4E69-BEB8-21568F5B498B}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_TDG_FX_hit_one_shot_magic_damage_flame_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="47205287"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_TDG_FX_hit_one_shot_magic_damage_flame_03" ID="{AAACFCC1-4550-4E69-BEB8-21568F5B498B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="snd_damage" ID="{F3B5CAA8-3E0F-4ECA-8D54-4E6FC290715A}" ShortID="333937867">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="snd_damage" ID="{E2537A5D-E5C2-438D-A5A6-399D39DC3EF9}">
+									<Language>SFX</Language>
+									<AudioFile>snd_damage.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="704774677"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="snd_damage" ID="{E2537A5D-E5C2-438D-A5A6-399D39DC3EF9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</BlendContainer>
+				<Sound Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0051DB82-BD5C-459A-8906-048A758DAAB8}" ShortID="893782553">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>23</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A2B4AA28-E60A-48B4-9CA4-EA06497A00B1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2A8BEF5F-98DF-4877-A87B-EFBDDFE65E19}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0C9FD867-3B91-49A6-8A8B-84197CA7EDF2}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.94996"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="3.11699"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="403704571"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02" ID="{0C9FD867-3B91-49A6-8A8B-84197CA7EDF2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>

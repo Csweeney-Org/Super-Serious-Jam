@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2645180283	Mus_Battle_WinState			\Default Work Unit\Mus_Battle_WinState	
+

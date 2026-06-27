@@ -1,0 +1,60 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "174",
+  "SoundBanks": [
+   {
+    "Id": "2074073782",
+    "Type": "Event",
+    "GUID": "{46FB6F2B-381E-4369-90C2-FCC4F9369650}",
+    "Language": "SFX",
+    "Hash": "{7C0BE53F-92D2-9D01-BAEC-8CAD220761E4}",
+    "ObjectPath": "Player_Damage",
+    "ShortName": "Player_Damage",
+    "Path": "Event/Player_Damage.bnk",
+    "Media": [
+     {
+      "Id": "47205287",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_TDG_FX_hit_one_shot_magic_damage_flame_03.wav",
+      "Path": "Media/47205287.wem",
+      "CachePath": "5E/{5E855D70-7281-BEE4-DC2E-2255A0BB91B6}.wem"
+     },
+     {
+      "Id": "704774677",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "snd_damage.wav",
+      "Path": "Media/704774677.wem",
+      "CachePath": "B2/{B249FE6F-3F76-838A-4268-8DAE5F019D33}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2074073782",
+      "Name": "Player_Damage",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player_Damage",
+      "GUID": "{46FB6F2B-381E-4369-90C2-FCC4F9369650}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.66152084",
+      "DurationMax": "0.66152084",
+      "MediaRefs": [
+       {
+        "Id": "47205287"
+       },
+       {
+        "Id": "704774677"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{144E9F86-DCAD-D642-8855-E02DAE8D3CF5}"
+ }
+}
