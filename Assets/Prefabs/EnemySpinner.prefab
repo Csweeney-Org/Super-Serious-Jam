@@ -742,7 +742,6 @@ GameObject:
   - component: {fileID: 7095256398844470151}
   - component: {fileID: 8392916472428904178}
   - component: {fileID: 3591812320697245409}
-  - component: {fileID: 4201751459924506277}
   m_Layer: 5
   m_Name: CanvasHealt
   m_TagString: Untagged
@@ -816,23 +815,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &4201751459924506277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6562477735679539887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &7400567385622980436
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +869,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpinCharacterController
   rigidBody: {fileID: 9097159848918452615}
   Inventory: {fileID: 3907870042952927939}
+  Spin_Loop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   <maxSpeed>k__BackingField: 20
   <maxTurnRate>k__BackingField: 0
   <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
@@ -901,10 +887,11 @@ MonoBehaviour:
   <WeightSpeedPenalty>k__BackingField: 0.2
   <CharacterSpinner>k__BackingField: {fileID: 1015832138952479218}
   <MaxVisualSpinSpeed>k__BackingField: 720
-  EndPanel: {fileID: 0}
-  EndPanelText: {fileID: 0}
-  PlayAgainButton: {fileID: 0}
-  MainMenuButton: {fileID: 0}
+  <BaseCrashDamage>k__BackingField: 15
+  <WeightDifferenceMultiplier>k__BackingField: 1
+  <MinimumCrashDamage>k__BackingField: 5
+  <CrashCooldown>k__BackingField: 0.5
+  <VelocityDamageMultiplier>k__BackingField: 1.5
   healthSlider: {fileID: 7581356116517166765}
   sliderTransform: {fileID: 7793702517958928987}
 --- !u!114 &3907870042952927939
@@ -926,6 +913,18 @@ MonoBehaviour:
   Owner: {fileID: 4632588650338287887}
   aimController: {fileID: 1102930002698976914}
   projectilePool: {fileID: 0}
+  Item_Throw:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Item_Crash:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Player_Damage:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   <TotalWeight>k__BackingField: 0
 --- !u!54 &9097159848918452615
 Rigidbody:

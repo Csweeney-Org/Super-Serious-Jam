@@ -1,6 +1,6 @@
+using Assets.Scripts.SpinPhysics;
 using UnityEngine;
 using UnityEngine.UI;
-using Assets.Scripts.SpinPhysics;
 
 public class SpinCharacterController : MonoBehaviour, ICollidable
 {
@@ -23,7 +23,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     [field: SerializeField] public float CurrentToppleHealth { get; private set; } = 100f;
     [field: SerializeField] public float RegenDelay { get; private set; } = 10f;
     [field: SerializeField] public float RegenRate { get; private set; } = 10f;
-    [field: SerializeField] public float WeightDefenseFactor { get; private set; } = 0.03f; 
+    [field: SerializeField] public float WeightDefenseFactor { get; private set; } = 0.03f;
     [field: SerializeField] public float WeightSpeedPenalty { get; private set; } = 0.0f;
 
     [Header("Visual Integrations")]
@@ -38,7 +38,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     [field: SerializeField, Tooltip("Minimum damage taken")]
     public float MinimumCrashDamage { get; private set; } = 5f;
     [field: SerializeField, Tooltip("Cooldown in seconds to prevent multi-hit physics")]
-    public float CrashCooldown { get; private set; } = 0.5f; 
+    public float CrashCooldown { get; private set; } = 0.5f;
     [field: SerializeField, Tooltip("How much damage is added per unit of impact speed")]
     public float VelocityDamageMultiplier { get; private set; } = 1.5f;
 
@@ -46,19 +46,15 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     private float timeSinceLastHit = 0f;
     private bool isToppled = false;
 
-    [Header("UI For EndGame")]
-    public GameObject EndPanel;
-    public TMPro.TextMeshProUGUI EndPanelText;
-    public Button PlayAgainButton;
-    public Button MainMenuButton;
 
     [Header("UI Health Bar")]
-    public Slider healthSlider;          
-    public Transform sliderTransform;    
+    public Slider healthSlider;
+    public Transform sliderTransform;
+
+    private Vector3 originalPosition;
 
     private void Awake()
     {
-        EndPanel.SetActive(false);
         isToppled = false;
         CurrentToppleHealth = MaxToppleHealth;
         rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
@@ -68,6 +64,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
             healthSlider.maxValue = MaxToppleHealth;
             healthSlider.value = CurrentToppleHealth;
         }
+        originalPosition = transform.position;
     }
 
     private void Start()
@@ -158,10 +155,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
         rigidBody.angularVelocity = Vector3.zero;
         rigidBody.constraints = RigidbodyConstraints.FreezeAll;
 
-        EndPanel.SetActive(true);
-        EndPanelText.text = gameObject.CompareTag("Player")
-            ? "You have toppled! Game Over!"
-            : "You have toppled the enemy! You Win!";
+        BattleEvents.InvokeToppleEvent(this);
     }
 
     public void ApplyForce(Vector3 direction, float magnitude = 1f)
@@ -204,17 +198,23 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
         }
     }
 
-/// MELEE COMBAT ///
+    public void ResetToOriginalState()
+    {
+        this.CurrentToppleHealth = this.MaxToppleHealth;
+        this.rigidBody.position = originalPosition;
+    }
+
+    /// MELEE COMBAT ///
 
     private void OnCollisionEnter(Collision collision)
     {
         SpinCharacterController otherUnit = collision.gameObject.GetComponentInParent<SpinCharacterController>();
         // Only react to collisions with player/enemy
-        if (otherUnit == null || otherUnit == this) 
+        if (otherUnit == null || otherUnit == this)
             return;
 
         // Have a crash not trigger multiple times for the same situation
-        if (Time.time - lastCrashTime < CrashCooldown) 
+        if (Time.time - lastCrashTime < CrashCooldown)
             return;
         lastCrashTime = Time.time;
 
@@ -223,8 +223,8 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
         float weightDifference = otherUnit.Inventory.TotalWeight - this.Inventory.TotalWeight;
         float impactSpeed = collision.relativeVelocity.magnitude;
 
-        float rawIncomingDamage = BaseCrashDamage 
-                            + (weightDifference * WeightDifferenceMultiplier) 
+        float rawIncomingDamage = BaseCrashDamage
+                            + (weightDifference * WeightDifferenceMultiplier)
                             + (impactSpeed * VelocityDamageMultiplier);
         rawIncomingDamage = Mathf.Max(MinimumCrashDamage, rawIncomingDamage);
 
@@ -241,14 +241,14 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
                 AnimationVFXManager.Instance.PlayAnimation(chosenVFX, collision.GetContact(0).point);
             }
 
-                
-    
-        Vector3 recoilDirection = (this.transform.position - otherUnit.transform.position).normalized;
-        recoilDirection.y = 0; 
-        rigidBody.AddForce(recoilDirection * (10f + impactSpeed * 0.5f), ForceMode.Impulse);    
-    }     
 
-/// TRIGGERS ///
+
+        Vector3 recoilDirection = (this.transform.position - otherUnit.transform.position).normalized;
+        recoilDirection.y = 0;
+        rigidBody.AddForce(recoilDirection * (10f + impactSpeed * 0.5f), ForceMode.Impulse);
+    }
+
+    /// TRIGGERS ///
     public void OnTriggerEnter(Collider other)
     {
         // Handle collision logic here

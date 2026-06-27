@@ -167,7 +167,6 @@ GameObject:
   - component: {fileID: 7863061100443633297}
   - component: {fileID: 7995326363900512192}
   - component: {fileID: 1383686071361658335}
-  - component: {fileID: 6507224340171650945}
   m_Layer: 5
   m_Name: CanvasHealt
   m_TagString: Untagged
@@ -241,23 +240,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &6507224340171650945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085162724724865006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &1254005450444492360
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,9 +584,9 @@ GameObject:
   - component: {fileID: 4405833338504242274}
   - component: {fileID: 1148754605795818559}
   - component: {fileID: 107223198185237193}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,6 +625,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpinCharacterController
   rigidBody: {fileID: 107223198185237193}
   Inventory: {fileID: 1148754605795818559}
+  Spin_Loop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   <maxSpeed>k__BackingField: 20
   <maxTurnRate>k__BackingField: 0
   <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
@@ -655,17 +641,13 @@ MonoBehaviour:
   <RegenRate>k__BackingField: 10
   <WeightDefenseFactor>k__BackingField: 0.05
   <WeightSpeedPenalty>k__BackingField: 0.2
-  <CharacterSpinner>k__BackingField: {fileID: 0}
+  <CharacterSpinner>k__BackingField: {fileID: 114878073427203624}
   <MaxVisualSpinSpeed>k__BackingField: 720
   <BaseCrashDamage>k__BackingField: 15
   <WeightDifferenceMultiplier>k__BackingField: 1
   <MinimumCrashDamage>k__BackingField: 5
   <CrashCooldown>k__BackingField: 0.5
   <VelocityDamageMultiplier>k__BackingField: 1.5
-  EndPanel: {fileID: 0}
-  EndPanelText: {fileID: 0}
-  PlayAgainButton: {fileID: 0}
-  MainMenuButton: {fileID: 0}
   healthSlider: {fileID: 6697371080492124989}
   sliderTransform: {fileID: 7686371831036612703}
 --- !u!114 &1148754605795818559
@@ -687,6 +669,18 @@ MonoBehaviour:
   Owner: {fileID: 4405833338504242274}
   aimController: {fileID: 1801236480399154640}
   projectilePool: {fileID: 0}
+  Item_Throw:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Item_Crash:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Player_Damage:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   <TotalWeight>k__BackingField: 0
 --- !u!54 &107223198185237193
 Rigidbody:
@@ -740,7 +734,7 @@ Transform:
   m_GameObject: {fileID: 6335995394476325279}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -842,19 +836,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1159447566993402391, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071079
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1159447566993402391, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1159447566993402391, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710576
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1159447566993402391, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1159447566993402391, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -862,7 +856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1159447566993402391, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1159447566993402391, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -875,10 +869,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4502283622497154162, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 114878073427203624}
   m_SourcePrefab: {fileID: 100100000, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
 --- !u!4 &5770207764426969366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1159447566993402391, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
   m_PrefabInstance: {fileID: 4613034056199437057}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9115172470147223411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4502283622497154162, guid: b76d8e197315d234291e2ca3347a499e, type: 3}
+  m_PrefabInstance: {fileID: 4613034056199437057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &114878073427203624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115172470147223411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a545cdabd30fa4ca9e30eeb3d3d1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.SpinPhysics.Spinner
+  <SpinSpeed>k__BackingField: 720
