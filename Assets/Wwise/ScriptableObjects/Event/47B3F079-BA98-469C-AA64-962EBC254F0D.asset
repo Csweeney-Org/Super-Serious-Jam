@@ -15,5 +15,5 @@ MonoBehaviour:
   objectName: Item_Crash
   id: 945135624
   guid: 47B3F079-BA98-469C-AA64-962EBC254F0D
-  AutoBank: {fileID: 11400000, guid: 6dd86709103c98e41997ffccc3291148, type: 2}
-  IsInUserDefinedSoundBank: 0
+  AutoBank: {fileID: 0}
+  IsInUserDefinedSoundBank: 1

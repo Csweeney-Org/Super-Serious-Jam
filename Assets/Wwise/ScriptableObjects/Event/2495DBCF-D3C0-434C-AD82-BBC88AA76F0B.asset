@@ -15,5 +15,5 @@ MonoBehaviour:
   objectName: Item_Pickup
   id: 566396871
   guid: 2495DBCF-D3C0-434C-AD82-BBC88AA76F0B
-  AutoBank: {fileID: 11400000, guid: 5eae908d989b86d4ebee4e18237d468e, type: 2}
+  AutoBank: {fileID: 0}
   IsInUserDefinedSoundBank: 0

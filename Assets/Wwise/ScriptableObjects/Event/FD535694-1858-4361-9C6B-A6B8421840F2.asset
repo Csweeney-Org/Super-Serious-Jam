@@ -15,5 +15,5 @@ MonoBehaviour:
   objectName: Item_Throw
   id: 3051433909
   guid: FD535694-1858-4361-9C6B-A6B8421840F2
-  AutoBank: {fileID: 11400000, guid: ff6a80cd33bdb6747803dc2496769882, type: 2}
-  IsInUserDefinedSoundBank: 0
+  AutoBank: {fileID: 0}
+  IsInUserDefinedSoundBank: 1

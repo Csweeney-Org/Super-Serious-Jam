@@ -15,5 +15,5 @@ MonoBehaviour:
   objectName: Player_Damage
   id: 2074073782
   guid: 46FB6F2B-381E-4369-90C2-FCC4F9369650
-  AutoBank: {fileID: 11400000, guid: b21157efaa046984992db5ea562cecb8, type: 2}
-  IsInUserDefinedSoundBank: 0
+  AutoBank: {fileID: 0}
+  IsInUserDefinedSoundBank: 1
