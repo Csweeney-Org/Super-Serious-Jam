@@ -22,19 +22,55 @@ MonoBehaviour:
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    LocalizedStreamingMediaKeys: []
+    LocalizedStreamingMediaKeys:
+    - SFX
     LocalizedStreamingMediaValues:
-      localizedMediaList: []
-  currentPlatformAssets:
-    WwisePlatform: Windows
+      localizedMediaList:
+      - media:
+        - m_AssetGUID: c88fc67a363f7854593f8970dc3751d7
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 403704571
+  - WwisePlatform: Mac
     LocalizedBankKeys:
     - SFX
     LocalizedBanksValues:
-    - m_AssetGUID: cb217275f5198b24d838cf5f132fcf9f
+    - m_AssetGUID: 97af8cf0401224ef98661efc13dda0ba
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    LocalizedStreamingMediaKeys: []
+    LocalizedStreamingMediaKeys:
+    - SFX
     LocalizedStreamingMediaValues:
-      localizedMediaList: []
+      localizedMediaList:
+      - media:
+        - m_AssetGUID: c75ce103d8c304a1ea9553e93fb87057
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 403704571
+  currentPlatformAssets:
+    WwisePlatform: Mac
+    LocalizedBankKeys:
+    - SFX
+    LocalizedBanksValues:
+    - m_AssetGUID: 97af8cf0401224ef98661efc13dda0ba
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    LocalizedStreamingMediaKeys:
+    - SFX
+    LocalizedStreamingMediaValues:
+      localizedMediaList:
+      - media:
+        - m_AssetGUID: c75ce103d8c304a1ea9553e93fb87057
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 403704571

@@ -383,6 +383,16 @@ public partial class AkCommonUserSettings
 		/// Set to 0 to disable the limit. The default value is 3.
 		public uint m_MaxEmitterRoomAuxSends = 3;
 
+		[UnityEngine.MinAttribute(0.0f)]
+		[UnityEngine.Tooltip("Global scaling factor that manipulates reverb send values by altering the perceived size of portals. A value of 1.0 (default) maintains portals at their true geometric sizes. Values greater than 1.0 increase the perceived size of all portals, increasing bleed into adjacent rooms. Values less than 1.0 decrease the perceived size of all portals, reducing bleed into adjacent rooms. This value is multiplied by AkPortalParams.AdjacentRoomBleed, which scales reverb bleed for individual portals. Valid range: (0.0 - infinity). Note: Values close to 0 might cause abrupt portal transitions.")]
+		/// Global scaling factor that manipulates reverb send values by altering the perceived size of portals.
+		/// A value of 1.0 (default) maintains portals at their true geometric sizes.
+		/// Values greater than 1.0 increase the perceived size of all portals, increasing bleed into adjacent rooms.
+		/// Values less than 1.0 decrease the perceived size of all portals, reducing bleed into adjacent rooms.
+		/// This value is multiplied by AkPortalParams.AdjacentRoomBleed, which scales reverb bleed for individual portals.
+		/// Valid range: (0.0 - infinity). Note: Values close to 0 might cause abrupt portal transitions.
+		public float m_AdjacentRoomBleed = 1.0f;
+
 		[UnityEngine.Tooltip("Length of the rays that are cast inside Spatial Audio. Effectively caps the maximum length of an individual segment in a reflection or diffraction path. The default value is 1000.")]
 		/// Length of the rays that are cast inside Spatial Audio. Effectively caps the maximum length of an individual segment in a reflection or diffraction path. The default value is 1000.
 		public float m_MaxPathLength = 1000.0f;
@@ -421,12 +431,19 @@ public partial class AkCommonUserSettings
 		/// Conversely, a larger number (8 or more) produces higher quality output but requires more CPU resources. The recommended range is 2-8.
 		public uint m_MaxDiffractionPaths = 8;
 		
-		[UnityEngine.MinAttribute(0)]
-		[UnityEngine.Tooltip("[\"Experimental\"] Set a global reflection path limit among all sound emitters with early reflections enabled. Potential reflection paths, discovered by raycasting, are first sorted according to a heuristic to determine which paths are the most prominent. Afterwards, the full reflection path calculation is performed on only the uMaxReflectionPaths, most prominent paths. Limiting the total number of reflection path calculations can significantly reduce CPU usage. Recommended range: 10-50. Set to 0 to disable the limit. In this case, the number of paths computed is unbounded and depends on how many are discovered by raycasting.")]
-		/// [\ref spatial_audio_experimental "Experimental"] Set a global reflection path limit among all sound emitters with early reflections enabled. Potential reflection paths, discovered by raycasting, are first sorted according to a heuristic to determine which paths are the most prominent. 
-		/// Afterwards, the full reflection path calculation is performed on only the uMaxGlobalReflectionPaths, most prominent paths. Limiting the total number of reflection path calculations can significantly reduce CPU usage. Recommended range: 10-50. 
-		/// Set to 0 to disable the limit. In this case, the number of paths computed is unbounded and depends on how many are discovered by raycasting.
-		public uint m_MaxGlobalReflectionPaths = 0;
+		[UnityEngine.MinAttribute(1)]
+		[UnityEngine.Tooltip("Set a global reflection path limit among all sound emitters with early reflections enabled. Potential reflection paths, discovered by raycasting, are first sorted according to a heuristic to determine which paths are the most prominent. Afterwards, the full reflection path calculation is performed on only the uMaxReflectionPaths, most prominent paths. Limiting the total number of reflection path calculations can significantly reduce CPU usage. Recommended range: 10-50.")]
+		/// Set a global reflection path limit among all sound emitters with early reflections enabled. Potential reflection paths, discovered by raycasting, are first sorted according to a heuristic to determine which paths are the most prominent. 
+		/// Afterwards, the full reflection path calculation is performed on only the uMaxGlobalReflectionPaths, most prominent paths. Limiting the total number of reflection path calculations can significantly reduce CPU usage. Recommended range: 10-50.
+		public uint m_MaxGlobalReflectionPaths = 50;
+
+		[UnityEngine.Range(0.0f, 1.0f)]
+		[UnityEngine.Tooltip("Balances reflection engine quality against CPU performance. A low value (closer to 0) indicates faster processing but less accurate reflections. A high value (closer to 1) indicates more accurate reflections at the cost of higher CPU usage. Range: 0-1. The default value is 1.")]
+		/// Balances reflection engine quality against CPU performance.
+		/// A low value (closer to 0) indicates faster processing but less accurate reflections.
+		/// A high value (closer to 1) indicates more accurate reflections at the cost of higher CPU usage.
+		/// Range: 0-1. The default value is 1.
+		public float m_ReflectionPathSearchEffort = 1.0f;
 
 		[UnityEngine.MinAttribute(0.0f)]
 		[UnityEngine.Tooltip("The largest possible diffraction value, in degrees, beyond which paths are not computed and are inaudible. Must be greater than zero. Default value: 180 degrees. A large value (for example, 360 degrees) allows paths to propagate further around corners and obstacles, but takes more CPU time to compute. A gain is applied to each diffraction path to taper the volume of the path to zero as the diffraction angle approaches fMaxDiffractionAngleDegrees, and appears in the Voice Inspector as 'Propagation Path Gain'. This tapering gain is applied in addition to the diffraction curves, and prevents paths from popping in or out suddenly when the maximum diffraction angle is exceeded. In Wwise Authoring, the horizontal axis of a diffraction curve in the attenuation editor is defined over the range 0-100%, corresponding to angles 0-180 degrees.  If fMaxDiffractionAngleDegrees is greater than 180 degrees, diffraction coefficients over 100% are clamped and the curve is evaluated at the rightmost point.")]
@@ -437,6 +454,17 @@ public partial class AkCommonUserSettings
 		/// In Wwise Authoring, the horizontal axis of a diffraction curve in the attenuation editor is defined over the range 0-100%, corresponding to angles 0-180 degrees.
 		/// If fMaxDiffractionAngleDegrees is greater than 180 degrees, diffraction coefficients over 100% are clamped and the curve is evaluated at the rightmost point.
 		public float m_MaxDiffractionAngleDegrees = 180.0f;
+
+		[UnityEngine.MinAttribute(0)]
+		[UnityEngine.Tooltip("[\"Experimental\"] Per-frame node expansion budget for the Diffraction Field. The Diffraction Field pre-computes diffraction paths outward from the listener, allowing emitters to query pre-built paths instead of running per-emitter A* searches each frame. Set to 0 (default) to disable the Diffraction Field; the per-emitter A* search is used instead. Set to a value N > 0 to enable the field and allow up to N search graph nodes to be expanded per audio frame. Portal diffraction fields use half this budget (N / 2) each. Higher values converge the field faster after a listener move, at proportionally higher CPU cost per frame. As a starting point, try a value of 128. Profile the \"DF Queue Length\" and \"DF Nodes Expanded\" stats in the Wwise Profiler to tune this value. m_EnableGeometricDiffractionAndTransmission must also be true for any geometric diffraction to occur.")]
+		/// [\ref spatial_audio_experimental "Experimental"] Per-frame node expansion budget for the Diffraction Field.
+		/// The Diffraction Field pre-computes diffraction paths outward from the listener, allowing emitters to
+		/// query pre-built paths instead of running per-emitter A* searches each frame.
+		/// Set to 0 (default) to disable the Diffraction Field; the per-emitter A* search is used instead.
+		/// Set to a value N > 0 to enable the field and allow up to N search graph nodes to be expanded per audio frame.
+		/// Portal diffraction fields use half this budget (N / 2) each.
+		/// Higher values converge the field faster after a listener move, at proportionally higher CPU cost per frame.
+		public uint m_DiffractionFieldNodeBudget = 0;
 
 		[UnityEngine.Tooltip("[\"Experimental\"]  Enable parameter smoothing on the diffraction paths output from the Acoustics Engine. Set fSmoothingConstantMs to a value greater than 0 to define the time constant (in milliseconds) for parameter smoothing. The time constant of an exponential moving average is the amount of time for the smoothed response of a unit step function to reach 1 - 1/e ~= 63.2% of the original signal. A large value (eg. 500-1000 ms) results in less variance but introduces lag, which is a good choice when using conservative values for uNumberOfPrimaryRays (eg. 5-10), uMaxDiffractionPaths (eg. 1-3) or fMovementThreshold ( > 1m ), in order to reduce overall CPU cost. A small value (eg. 10-100 ms) results in greater accuracy and faster convergence of rendering parameters. Set to 0 to disable path smoothing.")]
 		/// [\ref spatial_audio_experimental "Experimental"]  Enable parameter smoothing on the diffraction paths output from the Acoustics Engine. Set fSmoothingConstantMs to a value greater than 0 to define the time constant (in milliseconds) for parameter smoothing.
@@ -474,7 +502,9 @@ public partial class AkCommonUserSettings
 		settings.uMaxDiffractionOrder = m_SpatialAudioSettings.m_MaxDiffractionOrder;
 		settings.uMaxDiffractionPaths = m_SpatialAudioSettings.m_MaxDiffractionPaths;
 		settings.uMaxGlobalReflectionPaths = m_SpatialAudioSettings.m_MaxGlobalReflectionPaths;
+		settings.fReflectionPathSearchEffort = m_SpatialAudioSettings.m_ReflectionPathSearchEffort;
 		settings.uMaxEmitterRoomAuxSends = m_SpatialAudioSettings.m_MaxEmitterRoomAuxSends;
+		settings.fAdjacentRoomBleed = m_SpatialAudioSettings.m_AdjacentRoomBleed;
 		settings.uDiffractionOnReflectionsOrder = m_SpatialAudioSettings.m_DiffractionOnReflectionsOrder;
 		settings.fMaxDiffractionAngleDegrees = m_SpatialAudioSettings.m_MaxDiffractionAngleDegrees;
 		settings.fMaxPathLength = m_SpatialAudioSettings.m_MaxPathLength;
@@ -487,6 +517,7 @@ public partial class AkCommonUserSettings
 		settings.uClusteringMinPoints = m_SpatialAudioSettings.m_ClusteringMinPoints;
 		settings.fClusteringMaxDistance = m_SpatialAudioSettings.m_ClusteringMaxDistance;
 		settings.fClusteringDeadZoneDistance = m_SpatialAudioSettings.m_ClusteringDeadZoneDistance;
+		settings.uDiffractionFieldNodeBudget = m_SpatialAudioSettings.m_DiffractionFieldNodeBudget;
 	}
 
 	public virtual void Validate()

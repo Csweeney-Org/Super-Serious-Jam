@@ -9,7 +9,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-///  Structure for retrieving information about the indirect paths of a sound that have been calculated via the geometric reflections API. Useful for debug draw applications.
+///  Structure for retrieving information about the indirect paths of a sound calculated by the geometric reflections API. Useful for debug draw applications.
 
 public class AkReflectionPathInfo : global::System.IDisposable {
   private global::System.IntPtr swigCPtr;
@@ -67,7 +67,7 @@ public class AkReflectionPathInfo : global::System.IDisposable {
   public float level { set { AkUnitySoundEnginePINVOKE.CSharp_AkReflectionPathInfo_level_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkReflectionPathInfo_level_get(swigCPtr); } 
   }
 
-  ///  Deprecated - always false. Occluded paths are not generated.
+  ///  (Deprecated) Always false. Occluded paths are not generated.
   public bool isOccluded { set { AkUnitySoundEnginePINVOKE.CSharp_AkReflectionPathInfo_isOccluded_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkReflectionPathInfo_isOccluded_get(swigCPtr); } 
   }
 

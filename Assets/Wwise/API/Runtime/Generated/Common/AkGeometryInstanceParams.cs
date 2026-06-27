@@ -58,13 +58,12 @@ public class AkGeometryInstanceParams : global::System.IDisposable {
   }
 
   ///  Set the position and orientation of the geometry instance.
-  ///  AkWorldTransform uses one vector to define the position of the geometry instance, and two more to define the orientation; a forward vector and an up vector.
-  ///  To ensure that a geometry instance has the correct rotation with respect to the game, AkInitSettings::eFloorPlane must be initialized with the correct value.
-  ///
+  ///  AkWorldTransform uses one vector to define the position of the geometry instance, and two more to define the orientation: a forward vector and an up vector.
+  ///  To ensure that a geometry instance has the correct rotation with respect to the game, you must initialize AkInitSettings::eFloorPlane with the correct value.
   /// <seealso cref="
   ///  - \ref AkInitSettings.eFloorPlane
-  ///  - \ref AK.SpatialAudio.SetGeometryInstance
-  /// 	- \ref AK.SpatialAudio.RemoveGeometryInstance"/>
+  ///  - \ref AK.Acoustics.SetGeometryInstance
+  /// 	- \ref AK.Acoustics.RemoveGeometryInstance"/>
   public AkWorldTransform PositionAndOrientation { set { AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_PositionAndOrientation_set(swigCPtr, AkWorldTransform.getCPtr(value)); } 
     get {
       global::System.IntPtr cPtr = AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_PositionAndOrientation_get(swigCPtr);
@@ -75,25 +74,25 @@ public class AkGeometryInstanceParams : global::System.IDisposable {
 
   ///  Set the 3-dimensional scaling of the geometry instance.
   /// <seealso cref="
-  ///  - \ref AK.SpatialAudio.SetGeometryInstance
-  /// 	- \ref AK.SpatialAudio.RemoveGeometryInstance"/>
+  ///  - \ref AK.Acoustics.SetGeometryInstance
+  /// 	- \ref AK.Acoustics.RemoveGeometryInstance"/>
   public UnityEngine.Vector3 Scale { set { AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_Scale_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_Scale_get(swigCPtr); } 
   }
 
-  /// When enabled, the geometry instance is indexed for ray computation and used to compute reflection, diffraction, and transmission.
-  /// If the geometry instance is used only for room containment, this flag must be set to false.
-  /// - \ref AK::SpatialAudio::SetRoom
+  /// When enabled, the geometry instance is indexed for ray computation and is used to compute reflection, diffraction, and transmission.
+  /// If the geometry instance is used only for Room containment, set this flag to false.
+  /// - \ref AK::Acoustics::SetRoom
   /// - \ref AkRoomParams
   public bool UseForReflectionAndDiffraction { set { AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_UseForReflectionAndDiffraction_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_UseForReflectionAndDiffraction_get(swigCPtr); } 
   }
 
-  /// [\ref Experimental]  When set to false (default), the intersection of the geometry instance with any portal bounding box is subtracted from the geometry. In effect, an opening is created at the portal location through which sound can pass.
-  /// When set to true, portals cannot create openings in the geometry instance. Enable this to allow the geometry instance to be an obstacle to paths going into or through portal bounds.
-  /// - \ref AK::SpatialAudio::SetPortal
+  /// [\ref Experimental] When set to false (default), the intersection of the geometry instance with any Portal bounding box is subtracted from the geometry. In effect, an opening is created at the Portal location through which sound can pass.
+  /// When set to true, Portals cannot create openings in the geometry instance. In other words, the geometry instance acts as an obstacle to paths going into or through Portal bounds.
+  /// - \ref AK::Acoustics::SetPortal
   public bool BypassPortalSubtraction { set { AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_BypassPortalSubtraction_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_BypassPortalSubtraction_get(swigCPtr); } 
   }
 
-  ///  A solid geometry instance applies transmission loss once for each time a transmission path enters and exits its volume, using the max transmission loss between each hit surface. A non-solid geometry instance is one where each surface is infinitely thin, applying transmission loss at each surface. This option has no effect if the Transmission Operation is set to Max.
+  ///  A solid geometry instance applies transmission loss once each time a transmission path enters and exits its volume, using the highest transmission loss value among hit surfaces. In a non-solid geometry instance, each surface is infinitely thin, and transmission loss is applied at each surface. This option has no effect if the Transmission Operation is set to Max.
   public bool IsSolid { set { AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_IsSolid_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkGeometryInstanceParams_IsSolid_get(swigCPtr); } 
   }
 

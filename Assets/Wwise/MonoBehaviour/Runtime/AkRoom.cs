@@ -251,6 +251,8 @@ public class AkRoom : AkTriggerHandler
 			roomCollider = GetComponent<UnityEngine.Collider>();
 		}
 
+		var geometryName = name + " Geometry";
+
 		if (roomCollider.GetType() == typeof(UnityEngine.MeshCollider))
 		{
 			var MeshGeometryData = new AkSurfaceReflector.GeometryData();
@@ -270,7 +272,8 @@ public class AkRoom : AkTriggerHandler
 				MeshGeometryData.surfaces,
 				MeshGeometryData.numSurfaces,
 				false,
-				false);
+				false,
+				geometryName);
 
 			bGeometrySetByRoom = true;
 		}
@@ -288,7 +291,8 @@ public class AkRoom : AkTriggerHandler
 				AkInitializer.CubeGeometryData.surfaces,
 				AkInitializer.CubeGeometryData.numSurfaces,
 				false,
-				false);
+				false,
+				geometryName);
 
 			bGeometrySetByRoom = true;
 		}
@@ -305,7 +309,8 @@ public class AkRoom : AkTriggerHandler
 				AkInitializer.SphereGeometryData.surfaces,
 				AkInitializer.SphereGeometryData.numSurfaces,
 				false,
-				false);
+				false,
+				geometryName);
 
 			bGeometrySetByRoom = true;
 		}
@@ -333,10 +338,12 @@ public class AkRoom : AkTriggerHandler
 			roomCollider = GetComponent<UnityEngine.Collider>();
 		}
 
+		var geometryInstanceName = name + " Geometry Instance";
+
 		if (roomCollider.GetType() == typeof(UnityEngine.MeshCollider))
 		{
 			geometryID = GetID();
-			AkSurfaceReflector.SetGeometryInstance(geometryID, geometryID, transform, false, bypassPortalSubtraction, isSolid);
+			AkSurfaceReflector.SetGeometryInstance(geometryID, geometryID, transform, false, bypassPortalSubtraction, isSolid, geometryInstanceName);
 		}
 		else if (roomCollider.GetType() == typeof(UnityEngine.BoxCollider) && AkInitializer.CubeGeometryData.numTriangles != 0)
 		{
@@ -349,7 +356,7 @@ public class AkRoom : AkTriggerHandler
 				transform.lossyScale.y * ((UnityEngine.BoxCollider)roomCollider).size.y,
 				transform.lossyScale.z * ((UnityEngine.BoxCollider)roomCollider).size.z);
 
-			AkUnitySoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, false, bypassPortalSubtraction, isSolid);
+			AkUnitySoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, false, bypassPortalSubtraction, isSolid, geometryInstanceName);
 		}
 		else if (roomCollider.GetType() == typeof(UnityEngine.CapsuleCollider) && AkInitializer.CubeGeometryData.numTriangles != 0)
 		{
@@ -363,7 +370,7 @@ public class AkRoom : AkTriggerHandler
 				((UnityEngine.CapsuleCollider)roomCollider).height,
 				((UnityEngine.CapsuleCollider)roomCollider).direction);
 
-			AkUnitySoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, false, bypassPortalSubtraction, isSolid);
+			AkUnitySoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, false, bypassPortalSubtraction, isSolid, geometryInstanceName);
 		}
 		else if (roomCollider.GetType() == typeof(UnityEngine.SphereCollider) && AkInitializer.SphereGeometryData.numTriangles != 0)
 		{
@@ -373,7 +380,7 @@ public class AkRoom : AkTriggerHandler
 			geometryInstanceTransform.Set(roomCollider.bounds.center, transform.forward, transform.up);
 			UnityEngine.Vector3 geometryInstanceScale = roomCollider.bounds.size;
 
-			AkUnitySoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, false, bypassPortalSubtraction, isSolid);
+			AkUnitySoundEngine.SetGeometryInstance(geometryID, geometryInstanceTransform, geometryInstanceScale, geometryID, false, bypassPortalSubtraction, isSolid, geometryInstanceName);
 		}
 		else
 		{

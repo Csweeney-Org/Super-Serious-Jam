@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: WwiseData_Mac
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: WwiseData_Mac
+  m_GUID: 5909f1aa0e8ad473f99c5ba1ebdcb227
+  m_SerializeEntries:
+  - m_GUID: 0133bcee4db6c46e5a4c03d1c87f628e
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Item_Pickup.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 078bccd493b0e4398be02f178359ac9b
+    m_Address: Assets/WwiseData/Bank/Mac/Media/265090331.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 078e28632cd8245e0abc42f5e22913f9
+    m_Address: Assets/WwiseData/Bank/Mac/Media/46024639.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c130851db9004de5942181c5fa3d991
+    m_Address: Assets/WwiseData/Bank/Mac/Media/52878928.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c367e3eed93b4259b94c9de378d592d
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Mus_Battle_LooseState.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f4af44e1260f4a8c91e220cb60438e7
+    m_Address: Assets/WwiseData/Bank/Mac/Media/203619646.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13357ba5408bc40f5ac0970e5a1374b5
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Item_Crash.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f1818a5411884cb59de110083131fc0
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Mus_Battle_WinState.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ea9fb9f9c24c4be5bf782ed20c600fd
+    m_Address: Assets/WwiseData/Bank/Mac/Media/865441247.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2fa0fb9f39314436993a7de79c7d1df1
+    m_Address: Assets/WwiseData/Bank/Mac/Media/704774677.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33be3e7af5a764044b2a5288bed6b29a
+    m_Address: Assets/WwiseData/Bank/Mac/Media/404749359.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43e8f5c262c784dbdb3abd89d0ff6dc1
+    m_Address: Assets/WwiseData/Bank/Mac/Media/994666764.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55ad2a7d7dfa64bdd8537ae1b8b570d1
+    m_Address: Assets/WwiseData/Bank/Mac/Media/991405809.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58bbda158abef4382a980502d23a988b
+    m_Address: Assets/WwiseData/Bank/Mac/Media/82041006.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a3290f43b2384b13a560fe90002d440
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Mus_Stop_Battle.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 750f4736b3a484467a9d4dbf8a7f7e1a
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Player_Damage.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80f7818a844834ba0bf980c2ca0c3d4e
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Stop_Spin_Loop.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8bb0db2c63b95423daf6bbd28a7647a1
+    m_Address: Assets/WwiseData/Bank/Mac/Media/184658772.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90e9a3829c5c342c88057dd5a1620731
+    m_Address: Assets/WwiseData/Bank/Mac/Media/305937602.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97af8cf0401224ef98661efc13dda0ba
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Play_Spin_Loop.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98480ac2226fd4f46b7196e28f1690be
+    m_Address: Assets/WwiseData/Bank/Mac/Media/515382230.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cb28731a40a24424b1af82a10fdf230
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Item_Throw.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0bc31678262c4c30bb0e085e5379faa
+    m_Address: Assets/WwiseData/Bank/Mac/Media/290165397.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c090bd04034ca4f26aa42d2f1713082a
+    m_Address: Assets/WwiseData/Bank/Mac/Media/47205287.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c75ce103d8c304a1ea9553e93fb87057
+    m_Address: Assets/WwiseData/Bank/Mac/Media/403704571.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd8922c65881c45b891515f429250b07
+    m_Address: Assets/WwiseData/Bank/Mac/Media/979411635.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db9e9aaf546fc4b34922b3d2f8a56e90
+    m_Address: Assets/WwiseData/Bank/Mac/Media/950344998.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e627f88aa91e04452bb18544b4dbc612
+    m_Address: Assets/WwiseData/Bank/Mac/Media/275128577.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea032c7f622714597ab8b28d3ef4c61b
+    m_Address: Assets/WwiseData/Bank/Mac/Media/207157016.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4d11824585584d81b22ba87da0171fe
+    m_Address: Assets/WwiseData/Bank/Mac/Media/567395332.wem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6ec4db3f44b945d38b9a4ba64411821
+    m_Address: Assets/WwiseData/Bank/Mac/Event/Mus_Start_Battle.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1bee80acf91dc7c4abd7feccb3edd7d5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 0534ddfc09c754740929056f6ff071f1, type: 2}

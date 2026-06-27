@@ -10,14 +10,14 @@
 //------------------------------------------------------------------------------
 
 
-///  Determines how a room interacts with the distance calculation of other rooms that it overlaps or is nested within.
+///  Determines how a Room interacts with the distance calculation of other Rooms that it overlaps or is nested within.
 public enum AkRoomDistanceBehavior {
-  /// This room is subtracted from the shape of parents and overlapping rooms of lower priority.
-  /// Distance attenuation is applied to other rooms when the listener is in this room, because this room is a distinct space.
+  /// This Room is subtracted from the shape of parents and overlapping Rooms of lower priority.
+  /// Distance attenuation is applied to other Rooms when the listener is in this Room, because this Room is a distinct space.
   AkRoomDistanceBehavior_Subtract,
-  /// [\ref Experimental] This room does not participate in the distance calculation of other rooms.
-  /// Distance attenuation does not apply to this room's parents, or overlapping sections of lower priority rooms,
-  /// because this room does not form a distinct space and is not subtracted from the shape of other rooms.
+  /// [\ref Experimental] This Room does not participate in the distance calculation of other Rooms.
+  /// Distance attenuation does not apply to this Room's parents or overlapping sections of lower priority Rooms
+  /// because this Room does not form a distinct space and is not subtracted from the shape of other Rooms.
   AkRoomDistanceBehavior_Exclude,
   AkRoomDistanceBehavior_Default = AkRoomDistanceBehavior_Subtract
 }

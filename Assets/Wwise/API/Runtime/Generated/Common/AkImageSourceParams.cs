@@ -60,7 +60,7 @@ public class AkImageSourceParams : global::System.IDisposable {
   public AkVector64 sourcePosition { set { AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_sourcePosition_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_sourcePosition_get(swigCPtr); } 
   }
 
-  ///  Image source distance scaling. This number effectively scales the sourcePosition vector with respect to the listener and, consequently, scales distance and preserves orientation.
+  ///  Image source distance scaling. This number scales the sourcePosition vector with respect to the listener and consequently scales distance and preserves orientation.
   public float fDistanceScalingFactor { set { AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_fDistanceScalingFactor_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_fDistanceScalingFactor_get(swigCPtr); } 
   }
 
@@ -76,11 +76,11 @@ public class AkImageSourceParams : global::System.IDisposable {
   public float fOcclusion { set { AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_fOcclusion_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_fOcclusion_get(swigCPtr); } 
   }
 
-  ///  If there is a shadow zone diffraction just after the emitter in the reflection path, indicates the number of diffraction edges, otherwise 0 if no diffraction.
+  ///  If there is a shadow zone diffraction just after the emitter in the reflection path, indicates the number of diffraction edges. 0 indicates no diffraction.
   public byte uDiffractionEmitterSide { set { AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_uDiffractionEmitterSide_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_uDiffractionEmitterSide_get(swigCPtr); } 
   }
 
-  ///  If there is a shadow zone diffraction before reaching the listener in the reflection path, indicates the number of diffraction edges, otherwise 0 if no diffraction.
+  ///  If there is a shadow zone diffraction before reaching the listener in the reflection path, indicates the number of diffraction edges. 0 indicates no diffraction.
   public byte uDiffractionListenerSide { set { AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_uDiffractionListenerSide_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkImageSourceParams_uDiffractionListenerSide_get(swigCPtr); } 
   }
 

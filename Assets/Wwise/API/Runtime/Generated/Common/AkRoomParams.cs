@@ -56,82 +56,82 @@ public class AkRoomParams : global::System.IDisposable {
   }
 
   /// Room Orientation. Up and Front must be orthonormal.
-  /// Room orientation has an effect when the associated aux bus (see ReverbAuxBus) is set with 3D Spatialization in Wwise, as 3D Spatialization implements relative rotation of the emitter (room) and listener.
+  /// Room orientation has an effect when the associated auxiliary bus (see ReverbAuxBus) is set with 3D Spatialization in Wwise Authoring because 3D Spatialization implements relative rotation of the emitter (Room) and listener.
   public UnityEngine.Vector3 Front { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_Front_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_Front_get(swigCPtr); } 
   }
 
   /// Room Orientation. Up and Front must be orthonormal.
-  /// Room orientation has an effect when the associated aux bus (see ReverbAuxBus) is set with 3D Spatialization in Wwise, as 3D Spatialization implements relative rotation of the emitter (room) and listener.
+  /// Room orientation has an effect when the associated auxiliary bus (see ReverbAuxBus) is set with 3D Spatialization in Wwise Authoring because 3D Spatialization implements relative rotation of the emitter (Room) and listener.
   public UnityEngine.Vector3 Up { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_Up_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_Up_get(swigCPtr); } 
   }
 
-  /// The reverb aux bus that is associated with this room.
-  /// When Spatial Audio is told that a game object is in a particular room via SetGameObjectInRoom, a send to this aux bus will be created to model the reverb of the room.
-  /// Using a combination of Rooms and Portals, Spatial Audio manages which game object the aux bus is spawned on, and what control gain is sent to the bus.
-  /// When a game object is inside a connected portal, as defined by the portal's orientation and extent vectors, both this aux send and the aux send of the adjacent room are active.
-  /// Spatial audio modulates the control value for each send based on the game object's position, in relation to the portal's z-azis and extent, to crossfade the reverb between the two rooms.
-  /// If more advanced control of reverb is desired, SetGameObjectAuxSendValues can be used to add additional sends on to a game object.
-  /// - \ref AK::SpatialAudio::SetGameObjectInRoom
+  /// The reverb auxiliary bus associated with this Room.
+  /// When SetGameObjectInRoom informs Wwise Acoustics that a Game Object is in a Room, a send to this auxiliary bus is created to model the reverb of the Room.
+  /// Wwise Acoustics uses a combination of Rooms and Portals to manage which Game Object the auxiliary bus is spawned on, and the control gain sent to the bus.
+  /// When a Game Object is inside a connected Portal as defined by the Portal's orientation and extent vectors, both this auxiliary send and the auxiliary send of the adjacent Room are active.
+  /// Wwise Acoustics modulates the control value for each send based on the Game Object's position in relation to the Portal's z-axis and extent to crossfade the reverb between the two Rooms.
+  /// If you need more advanced control of reverb, use SetGameObjectAuxSendValues to add additional sends on to a Game Object.
+  /// - \ref AK::Acoustics::SetGameObjectInRoom
   /// - \ref AK::SoundEngine::SetGameObjectAuxSendValues
   public uint ReverbAuxBus { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_ReverbAuxBus_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_ReverbAuxBus_get(swigCPtr); } 
   }
 
-  /// The reverb control value for the send to ReverbAuxBus. Valid range: (0.f-1.f)
-  /// Can be used to implement multiple rooms that share the same aux bus, but have different reverb levels.
+  /// The reverb control value for the send to ReverbAuxBus. Valid range: (0.f-1.f).
+  /// Can be used to implement multiple Rooms that share the same auxiliary bus but have different reverb levels.
   public float ReverbLevel { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_ReverbLevel_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_ReverbLevel_get(swigCPtr); } 
   }
 
-  /// Characteristic transmission loss value for the Room, describing the average amount of sound energy dissipated by the walls of the room.
+  /// Characteristic transmission loss value for the Room, describing the average amount of sound energy dissipated by the walls of the Room.
   /// The Room transmission loss value is used in the following situations:
-  /// 1) If a room tone is playing on the Room Game Object, in a different room than that of the listener.
-  ///    Transmission loss is only applied when the listener and the emitter are in different rooms.
-  ///    It is taken as the maximum between the emitter's room's transmission loss value and the listener's room's transmission loss value.
-  /// 2) If, for both the emitter and listener's Rooms, geometry is not assigned with ``AkRoomParams::GeometryInstanceID``, or the Geometry Instance that is assigned
-  ///    has ``AkGeometryInstanceParams::UseForReflectionAndDiffraction`` set to false. In this case, room transmission loss is applied
-  ///    to the direct path when the emitter and listener are in different rooms.
-  ///    When geometry is available, the transmission loss value is calculated instead by intersecting a ray with the geometry between the emitter and listener.
-  ///    Transmission loss on geometry overrides room transmission loss, allowing a room to have varying degrees of transmission loss (for example, some transparent walls and some opaque walls).
-  /// 3) To spatialize the output of the Room Game Object. A low transmission loss value emphasizes panning the room
-  ///    towards the room's center (the center of the room bounding box) and a higher value emphasizes panning towards the room's portals.
-  /// When room transmission is applied directly to either a room tone (situation 1) or a point source emitter (situation 2), it is applied on the mix connection between the sound and the room.
-  /// The transmission loss value is converted to volume attenuation, low-pass and/or high-pass filtering, using the transmission loss curves defined on the sound in Wwise Authoring.
-  /// Even when relying on geometry for detailed transmission loss values (per triangle), it is still necessary to set ``AkSoundParams::TransmissionLoss`` to a representitive value so that
+  /// 1) If a Room tone is playing on the Room Game Object while the listener is in a different Room.
+  ///    Transmission loss is only applied when the listener and the emitter are in different Rooms.
+  ///    The highest value between the emitter's Room's transmission loss value and the listener's Room's transmission loss value is used.
+  /// 2) If, for both the emitter and listener's Rooms, geometry is not assigned with ``AkRoomParams::GeometryInstanceID`` or the assigned Geometry Instance
+  ///    has ``AkGeometryInstanceParams::UseForReflectionAndDiffraction`` set to false. In this case, Room transmission loss is applied
+  ///    to the Direct Propagation Path when the emitter and listener are in different Rooms.
+  ///    When geometry is available, the transmission loss value is calculated by intersecting a ray with the geometry between the emitter and listener.
+  ///    Transmission loss on geometry overrides Room transmission loss, so a Room can have varying degrees of transmission loss (for example, some transparent walls and some opaque walls).
+  /// 3) To spatialize the output of the Room Game Object. A low transmission loss value emphasizes panning the Room
+  ///    towards the Room's center (the center of the Room bounding box) and a high value emphasizes panning towards the Room's Portals.
+  /// When Room transmission is applied directly to either a Room tone (situation 1) or to a point source emitter (situation 2), it is applied on the mix connection between the sound and the Room.
+  /// The transmission loss value is converted to volume attenuation, low-pass filtering, and high-pass filtering, using the transmission loss curves defined on the sound in Wwise Authoring.
+  /// Even if you use geometry for detailed transmission loss values (per triangle), you must still set ``AkSoundParams::TransmissionLoss`` to a representative value so that
   /// the output of the Room Game Object is properly spatialized (situation 3).
   /// Valid range: (0.f-1.f)
   /// - \ref AkAcousticSurface
   public float TransmissionLoss { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_TransmissionLoss_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_TransmissionLoss_get(swigCPtr); } 
   }
 
-  ///  Send level for sounds that are posted on the room game object; adds reverb to ambience and room tones. Valid range: (0.f-1.f).  Set to a value greater than 0 to have spatial audio create a send on the room game object,
-  ///  where the room game object itself is specified as the listener and ReverbAuxBus is specified as the aux bus. A value of 0 disables the aux send. This should not be confused with ReverbLevel, which is the send level
-  ///  for spatial audio emitters sending to the room game object.
-  ///  The room game object can be accessed though the ID that is passed to ``SetRoom()`` and the ``AkRoomID::AsGameObjectID()`` method.  Posting an event on the room game object leverages automatic room game object placement
-  /// 	by spatial audio so that when the listener is inside the room, the sound comes from all around the listener, and when the listener is outside the room, the sound comes from the portal(s). Typically, this would be used for
-  ///  surround ambiance beds or room tones. Point source sounds should use separate game objects that are registered as spatial audio emitters.
+  ///  Send level for sounds that are posted on the Room Game Object. Adds reverb to ambience and Room tones. Valid range: (0.f-1.f). Set to a value greater than 0 to have Wwise Acoustics create a send on the Room Game Object,
+  ///  where the Room Game Object itself is specified as the listener and ReverbAuxBus is specified as the auxiliary bus. A value of 0 deactivates the auxiliary send. Do not mistake this for ReverbLevel, which is the send level
+  ///  for Wwise Acoustics emitters sending to the Room Game Object.
+  ///  You can access the Room Game Object through the ID passed to ``SetRoom()`` and the ``AkRoomID::AsGameObjectID()`` method. Posting an Event on the Room Game Object uses automatic Room Game Object placement
+  ///  by Wwise Acoustics so that when the listener is inside the Room, the sound comes from all around the listener, and when the listener is outside the Room, the sound comes from the Portals. You could use this send level for
+  ///  surrounding ambience beds or Room Tones. For point source sounds, use separate Game Objects registered as Wwise Acoustics emitters.
   /// <seealso cref="
   ///  - \ref AkRoomParams.RoomGameObj_KeepRegistered
   ///  - \ref AkRoomID"/>
   public float RoomGameObj_AuxSendLevelToSelf { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_RoomGameObj_AuxSendLevelToSelf_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_RoomGameObj_AuxSendLevelToSelf_get(swigCPtr); } 
   }
 
-  /// Associate a priority with this room. Room priority is used by the room containment system to disambiguate cases where an object is inside several rooms at the same time. In this case, the room with the higher priority is selected.
+  /// Associate a priority with this Room. Room priority is used by the Room containment system to disambiguate cases where an object is inside several Rooms at the same time. In this case, the Room with the higher priority is selected.
   /// Default priority is 100.
-  /// If several rooms have the same highest room priority, the inner one is selected.
+  /// If several Rooms have the same highest Room priority, the inner one is selected.
   public float RoomPriority { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_RoomPriority_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_RoomPriority_get(swigCPtr); } 
   }
 
-  /// Determines how a room interacts with the distance calculation of other rooms that it overlaps or is nested within.
+  /// Determines how a Room interacts with the distance calculation of other Rooms that it overlaps or is nested within.
   /// Default is AkRoomDistanceBehavior_Subtract.
   ///  - \ref spatial_audio_roomsportals_distance
   public AkRoomDistanceBehavior DistanceBehavior { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_DistanceBehavior_set(swigCPtr, (int)value); }  get { return (AkRoomDistanceBehavior)AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_DistanceBehavior_get(swigCPtr); } 
   }
 
-  ///  If set to true, the room game object is registered on calling ``SetRoom()``, and not released until the room is deleted or removed with ``RemoveRoom()``. If set to false, Spatial Audio registers
-  ///  the room object only when it is needed by the sound propagation system for the purposes of reverb, and unregisters the game object when all reverb tails are finished.
-  ///  We recommend that you set RoomGameObj_KeepRegistered to true if you use RTPCs on the room game object, if you call ``SetScalingFactor()``, or call ``PostEvent()`` for the purpose of ambience or room tones.
-  ///  The room game object can be accessed through the ID that is passed to ``SetRoom()`` and the ``AkRoomID::AsGameObjectID()`` method. Posting an event on the room game object uses automatic room game object placement
-  /// 	by Spatial Audio so that when the listener is inside the room, the sound comes from all around the listener, and when the listener is outside the room, the sound comes from the portal(s). Typically, this would be used for
-  ///  surround ambience beds or room tones. For point source sounds, use separate game objects that are registered as Spatial Audio emitters.
+  ///  If set to true, the Room Game Object is registered when ``SetRoom()`` is called, and released when the Room is deleted or removed with ``RemoveRoom()``. If set to false, Wwise Acoustics registers
+  ///  the Room object only when it is needed by the sound propagation system for the purposes of reverb, and unregisters the Game Object when all reverb tails are finished.
+  ///  We recommend that you set RoomGameObj_KeepRegistered to true if you use RTPCs on the Room Game Object, if you call ``SetScalingFactor()``, or call ``PostEvent()`` for the purpose of ambience or Room tones.
+  ///  You can access the Room Game Object through the ID passed to ``SetRoom()`` and the ``AkRoomID::AsGameObjectID()`` method. Posting an Event on the Room Game Object uses automatic Room Game Object placement
+  ///  by Wwise Acoustics so that when the listener is inside the Room, the sound comes from all around the listener, and when the listener is outside the Room, the sound comes from the Portals. You could use this for
+  ///  surrounding ambience beds or Room Tones. For point source sounds, use separate Game Objects registered as Wwise Acoustics emitters.
   /// <seealso cref="
   ///  - \ref AkRoomParams.RoomGameObj_AuxSendLevelToSelf
   ///  - \ref AkRoomID"/>

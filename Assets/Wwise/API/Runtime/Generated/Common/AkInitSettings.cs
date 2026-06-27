@@ -10,8 +10,11 @@
 //------------------------------------------------------------------------------
 
 ///  Platform-independent initialization settings of the sound engine
+/// Deprecated: This structure is deprecated in favor of runtime options.
+///
 /// <seealso cref="
-///  - AK.SoundEngine.Init"/>
+///  - \ref workingwithsdks_configuration
+///  - \ref runtime_options_26_1"/>
 
 public class AkInitSettings : global::System.IDisposable {
   private global::System.IntPtr swigCPtr;
@@ -72,6 +75,10 @@ public class AkInitSettings : global::System.IDisposable {
 
   ///  Multiplication factor for all streaming look-ahead heuristic values, for music streams.
   public float fStreamingLookAheadRatio { set { AkUnitySoundEnginePINVOKE.CSharp_AkInitSettings_fStreamingLookAheadRatio_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkInitSettings_fStreamingLookAheadRatio_get(swigCPtr); } 
+  }
+
+  ///  Maximum latency for a stream, for music streams.
+  public uint uStreamingMaxLatencyMs { set { AkUnitySoundEnginePINVOKE.CSharp_AkInitSettings_uStreamingMaxLatencyMs_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkInitSettings_uStreamingMaxLatencyMs_get(swigCPtr); } 
   }
 
   ///  Number of samples per audio frame (256, 512, 1024, or 2048).

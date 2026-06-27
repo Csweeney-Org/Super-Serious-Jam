@@ -239,6 +239,8 @@ public enum AkMonitorErrorCode {
   ErrorCode_IOStreamLeak,
   ErrorCode_SetSidechainMixConfigInvalid,
   ErrorCode_NodeNotCompatibleWithMidi,
+  ErrorCode_CommFailedToInitialize,
+  ErrorCode_NodeNotCompatibleWithStitch,
   Num_ErrorCodes
 }
 #endif // #if !(UNITY_QNX) // Disable under unsupported platforms.

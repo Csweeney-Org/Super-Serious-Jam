@@ -66,7 +66,7 @@ public class AkCallbackSerializer : global::System.IDisposable {
 
   public static void FreeXmlTranslatorHandle(string in_xmlFilePath, uint in_msXmlTranslatorTimeout) { AkUnitySoundEnginePINVOKE.CSharp_AkCallbackSerializer_FreeXmlTranslatorHandle(in_xmlFilePath, in_msXmlTranslatorTimeout); }
 
-  public static AKRESULT AudioSourceChangeCallbackFunc(bool in_bOtherAudioPlaying, object in_pCookie) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_AkCallbackSerializer_AudioSourceChangeCallbackFunc(in_bOtherAudioPlaying, in_pCookie != null ? (global::System.IntPtr)in_pCookie.GetHashCode() : global::System.IntPtr.Zero); }
+  public static void AudioSourceChangeCallbackFunc(bool in_bOtherAudioPlaying, object in_pCookie) { AkUnitySoundEnginePINVOKE.CSharp_AkCallbackSerializer_AudioSourceChangeCallbackFunc(in_bOtherAudioPlaying, in_pCookie != null ? (global::System.IntPtr)in_pCookie.GetHashCode() : global::System.IntPtr.Zero); }
 
   public AkCallbackSerializer() : this(AkUnitySoundEnginePINVOKE.CSharp_new_AkCallbackSerializer(), true) {
   }

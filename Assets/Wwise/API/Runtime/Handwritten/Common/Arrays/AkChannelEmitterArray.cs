@@ -54,13 +54,6 @@ public class AkChannelEmitterArray : System.IDisposable
 
 	private static readonly int NativeStructSize = Marshal.SizeOf<NativeAkChannelEmitter>();
 
-	private static readonly int OffFront = (int)Marshal.OffsetOf(typeof(NativeAkChannelEmitter), nameof(NativeAkChannelEmitter.orientationFront));
-	private static readonly int OffTop   = (int)Marshal.OffsetOf(typeof(NativeAkChannelEmitter), nameof(NativeAkChannelEmitter.orientationTop));
-	private static readonly int OffPosX  = (int)Marshal.OffsetOf(typeof(NativeAkChannelEmitter), nameof(NativeAkChannelEmitter.position_x));
-	private static readonly int OffPosY  = (int)Marshal.OffsetOf(typeof(NativeAkChannelEmitter), nameof(NativeAkChannelEmitter.position_y));
-	private static readonly int OffPosZ  = (int)Marshal.OffsetOf(typeof(NativeAkChannelEmitter), nameof(NativeAkChannelEmitter.position_z));
-	private static readonly int OffMask  = (int)Marshal.OffsetOf(typeof(NativeAkChannelEmitter), nameof(NativeAkChannelEmitter.uInputChannels));
-
 	public AkChannelEmitterArray(uint in_Count)
 	{
 		m_Buffer = Marshal.AllocHGlobal((int)(in_Count * NativeStructSize));
@@ -113,26 +106,21 @@ public class AkChannelEmitterArray : System.IDisposable
 		if (Count >= m_MaxCount)
 			throw new System.IndexOutOfRangeException("Out of range access in AkChannelEmitterArray");
 
-		// OPTIMIZATION. Since we don't use unsafe, and we want to avoid boxing via Marshal.StructureToPtr, the only solution is to write members individually.
-		System.IntPtr pItem = m_Buffer + (int)(Count * NativeStructSize);
+		var newEmitter = new NativeAkChannelEmitter
+		{
+			orientationFront = in_Forward,
+			orientationTop = in_Top,
+			position_x = in_Pos.X,
+			position_y = in_Pos.Y,
+			position_z = in_Pos.Z,
+			uInputChannels = in_ChannelMask
+		};
 
-		// Orientation Front
-		Marshal.WriteInt32(pItem, OffFront + 0, System.BitConverter.SingleToInt32Bits(in_Forward.x));
-		Marshal.WriteInt32(pItem, OffFront + 4, System.BitConverter.SingleToInt32Bits(in_Forward.y));
-		Marshal.WriteInt32(pItem, OffFront + 8, System.BitConverter.SingleToInt32Bits(in_Forward.z));
-
-		// Orientation Top
-		Marshal.WriteInt32(pItem, OffTop + 0, System.BitConverter.SingleToInt32Bits(in_Top.x));
-		Marshal.WriteInt32(pItem, OffTop + 4, System.BitConverter.SingleToInt32Bits(in_Top.y));
-		Marshal.WriteInt32(pItem, OffTop + 8, System.BitConverter.SingleToInt32Bits(in_Top.z));
-
-		// Position - Direct 64-bit writes from the struct fields
-		Marshal.WriteInt64(pItem, OffPosX, System.BitConverter.DoubleToInt64Bits(in_Pos.X));
-		Marshal.WriteInt64(pItem, OffPosY, System.BitConverter.DoubleToInt64Bits(in_Pos.Y));
-		Marshal.WriteInt64(pItem, OffPosZ, System.BitConverter.DoubleToInt64Bits(in_Pos.Z));
-
-		// Mask
-		Marshal.WriteInt32(pItem, OffMask, (int)in_ChannelMask);
+		unsafe
+		{
+			NativeAkChannelEmitter* addr = (NativeAkChannelEmitter*)(m_Buffer + (int)(Count * NativeStructSize));
+			*addr = newEmitter;
+		}
 
 		Count++;
 	}

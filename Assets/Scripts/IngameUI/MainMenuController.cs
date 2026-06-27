@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    public void OnEnable(){
+        AkUnitySoundEngine.PostEvent("Mus_Start_Battle", gameObject);
+    }
+
     public void StartGame()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

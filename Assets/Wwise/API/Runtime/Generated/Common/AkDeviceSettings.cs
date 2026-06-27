@@ -97,5 +97,17 @@ public class AkDeviceSettings : global::System.IDisposable {
   public uint uMaxCachePinnedBytes { set { AkUnitySoundEnginePINVOKE.CSharp_AkDeviceSettings_uMaxCachePinnedBytes_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkDeviceSettings_uMaxCachePinnedBytes_get(swigCPtr); } 
   }
 
+  /// Change the policy when a file is not found in a package.
+  /// When false (the default), when a file is not found in a package, it will fall back on searching the base path locations.
+  /// By enabling this option, files will be searched in packages exclusively, with no fallback on base path locations.
+  public bool bPackageFallbackBehavior { set { AkUnitySoundEnginePINVOKE.CSharp_AkDeviceSettings_bPackageFallbackBehavior_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkDeviceSettings_bPackageFallbackBehavior_get(swigCPtr); } 
+  }
+
+  /// Change the sub-foldering policy of the Low-Level I/O hook for searching files
+  /// This setting should match the "Create Sub-Folders for Generated Files" of the Wwise Project Settings.
+  /// Default: false
+  public bool bUseSubfoldering { set { AkUnitySoundEnginePINVOKE.CSharp_AkDeviceSettings_bUseSubfoldering_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkDeviceSettings_bUseSubfoldering_get(swigCPtr); } 
+  }
+
 }
 #endif // #if !(UNITY_QNX) // Disable under unsupported platforms.

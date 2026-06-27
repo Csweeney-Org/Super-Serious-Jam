@@ -10,8 +10,11 @@
 //------------------------------------------------------------------------------
 
 ///  Platform specific initialization settings
-/// <seealso cref="AK.SoundEngine.Init"/>
-/// <seealso cref="AK.SoundEngine.GetDefaultPlatformInitSettings"/>
+/// Deprecated: This structure is deprecated in favor of runtime options.
+///
+/// <seealso cref="
+///  - \ref workingwithsdks_configuration
+///  - \ref runtime_options_26_1"/>
 
 public class AkPlatformInitSettings : global::System.IDisposable {
   private global::System.IntPtr swigCPtr;

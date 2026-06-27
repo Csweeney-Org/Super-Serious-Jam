@@ -29,7 +29,7 @@
 				<Property Name="GenerateMainSoundBank" Type="bool" Value="True"/>
 				<Property Name="GenerateSoundBankXML" Type="bool" Value="True"/>
 				<Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True"/>
-				<Property Name="SoundBankHeaderFilePath" Type="string" Value="..\Assets\WwiseData\Bank"/>
+				<Property Name="SoundBankHeaderFilePath" Type="string" Value="Z:\Users\claytinsweeney\Documents\GitHub\Super-Serious-Jam\Assets\WwiseData\Bank"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
 						<Value Platform="Windows">..\Assets\WwiseData\Bank\Windows\</Value>

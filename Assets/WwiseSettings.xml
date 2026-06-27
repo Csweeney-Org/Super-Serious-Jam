@@ -11,7 +11,7 @@
     <LoadSoundEngineInEditMode>true</LoadSoundEngineInEditMode>
     <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
     <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
-    <WwiseInstallationPathMac></WwiseInstallationPathMac>
+    <WwiseInstallationPathMac>/Applications/Audiokinetic/Wwise_2026.1.1.9196/Wwise.app</WwiseInstallationPathMac>
     <WwiseInstallationPathWindows>C:\Audiokinetic\Wwise_2025.1.8.9170</WwiseInstallationPathWindows>
     <WwiseProjectPath>../Super-Serious-Jam_WwiseProject/Super-Serious-Jam_WwiseProject.wproj</WwiseProjectPath>
     <UseWaapi>true</UseWaapi>

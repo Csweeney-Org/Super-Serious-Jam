@@ -15,10 +15,7 @@ in a written agreement between you and Audiokinetic Inc.
 Copyright (c) 2026 Audiokinetic Inc.
 *******************************************************************************/
 
-#if UNITY_ANDROID && !UNITY_EDITOR
 using System;
-#endif
-using System.Runtime.InteropServices;
 using AK.Wwise.Unity.Logging;
 
 public class AkUnitySoundEngineInitialization
@@ -83,10 +80,14 @@ public class AkUnitySoundEngineInitialization
 #endif
 		var activePlatformSettings = AkWwiseInitializationSettings.ActivePlatformSettings;
 		var initSettings = activePlatformSettings.AkInitializationSettings;
-		// DO NOT REMOVE until AkInitializationSettings.getCPtr(AkInitializationSettings obj) uses a safe handle (e.g. HandleRef)
-		var handle = GCHandle.Alloc(initSettings);
-		var initResult = AkUnitySoundEngine.Init(initSettings);
-		handle.Free();
+		var spatialAudioInitSettings = activePlatformSettings.AkSpatialAudioInitSettings;
+		var communicationSettings = activePlatformSettings.AkCommunicationSettings;
+
+		var initResult = AkUnitySoundEngine.Init(initSettings, spatialAudioInitSettings, communicationSettings);
+		// DO NOT REMOVE KeepAlives until AkInitializationSettings.getCPtr(AkInitializationSettings obj) uses a safe handle (e.g. HandleRef)
+		GC.KeepAlive(initSettings);
+		GC.KeepAlive(spatialAudioInitSettings);
+		GC.KeepAlive(communicationSettings);
 		if (initResult != AKRESULT.AK_Success)
 		{
 			WwiseLogger.Error($"Failed to initialize the sound engine. Reason: {initResult}");
@@ -94,26 +95,8 @@ public class AkUnitySoundEngineInitialization
 			return false;
 		}
 
-		var spatialAudioInitSettings = activePlatformSettings.AkSpatialAudioInitSettings;
-		// DO NOT REMOVE until AkSpatialAudioInitSettings.getCPtr(AkSpatialAudioInitSettings obj) uses a safe handle (e.g. HandleRef)
-		handle = GCHandle.Alloc(spatialAudioInitSettings);
-		if (AkUnitySoundEngine.InitSpatialAudio(spatialAudioInitSettings) != AKRESULT.AK_Success)
-		{
-			WwiseLogger.Warning("Failed to initialize spatial audio.");
-		}
-		handle.Free();
-
-		var communicationSettings = activePlatformSettings.AkCommunicationSettings;
-		// DO NOT REMOVE until AkCommunicationSettings.getCPtr(AkCommunicationSettings obj) uses a safe handle (e.g. HandleRef)
-		handle = GCHandle.Alloc(communicationSettings);
-		AkUnitySoundEngine.InitCommunication(communicationSettings);
-		handle.Free();
-
 		var akBasePathGetterInstance = AkBasePathGetter.Get();
 		var soundBankBasePath = akBasePathGetterInstance.SoundBankBasePath;
-#if UNITY_OPENHARMONY && !UNITY_EDITOR
-		soundBankBasePath = "rawfile://" + soundBankBasePath;
-#endif
 		if (string.IsNullOrEmpty(soundBankBasePath))
 		{
 			// this is a nearly impossible situation

@@ -27,36 +27,35 @@ MonoBehaviour:
     LocalizedStreamingMediaValues:
       localizedMediaList:
       - media:
-        - m_AssetGUID: aac512177c6e2424da7b5f3b11b17cf1
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 290165397
         - m_AssetGUID: 2af0838d19420754bb0101c81910c12a
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
           id: 865441247
-        - m_AssetGUID: 1e757d4c488393442915bb514298f28d
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 305937602
         - m_AssetGUID: 2a5457867c7c6da4a805381ea462fa80
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
           id: 404749359
-  currentPlatformAssets:
-    WwisePlatform: Windows
+        - m_AssetGUID: 1e757d4c488393442915bb514298f28d
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 305937602
+        - m_AssetGUID: aac512177c6e2424da7b5f3b11b17cf1
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 290165397
+  - WwisePlatform: Mac
     LocalizedBankKeys:
     - SFX
     LocalizedBanksValues:
-    - m_AssetGUID: bcb83a659143d5f4d862c3c3aa72044e
+    - m_AssetGUID: 0133bcee4db6c46e5a4c03d1c87f628e
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
@@ -66,27 +65,66 @@ MonoBehaviour:
     LocalizedStreamingMediaValues:
       localizedMediaList:
       - media:
-        - m_AssetGUID: aac512177c6e2424da7b5f3b11b17cf1
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 290165397
-        - m_AssetGUID: 2af0838d19420754bb0101c81910c12a
+        - m_AssetGUID: 2ea9fb9f9c24c4be5bf782ed20c600fd
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
           id: 865441247
-        - m_AssetGUID: 1e757d4c488393442915bb514298f28d
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 305937602
-        - m_AssetGUID: 2a5457867c7c6da4a805381ea462fa80
+        - m_AssetGUID: 33be3e7af5a764044b2a5288bed6b29a
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
           id: 404749359
+        - m_AssetGUID: 90e9a3829c5c342c88057dd5a1620731
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 305937602
+        - m_AssetGUID: a0bc31678262c4c30bb0e085e5379faa
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 290165397
+  currentPlatformAssets:
+    WwisePlatform: Mac
+    LocalizedBankKeys:
+    - SFX
+    LocalizedBanksValues:
+    - m_AssetGUID: 0133bcee4db6c46e5a4c03d1c87f628e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    LocalizedStreamingMediaKeys:
+    - SFX
+    LocalizedStreamingMediaValues:
+      localizedMediaList:
+      - media:
+        - m_AssetGUID: 2ea9fb9f9c24c4be5bf782ed20c600fd
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 865441247
+        - m_AssetGUID: 33be3e7af5a764044b2a5288bed6b29a
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 404749359
+        - m_AssetGUID: 90e9a3829c5c342c88057dd5a1620731
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 305937602
+        - m_AssetGUID: a0bc31678262c4c30bb0e085e5379faa
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 290165397

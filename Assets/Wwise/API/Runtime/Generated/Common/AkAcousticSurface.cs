@@ -10,9 +10,11 @@
 //------------------------------------------------------------------------------
 
 /// Describes the acoustic surface properties of one or more triangles.
-/// An single acoustic surface may describe any number of triangles, depending on the granularity desired.  For example, if desired for debugging, one could create a unique
-/// ``AkAcousticSurface`` struct for each triangle, and define a unique name for each.  Alternatively, a single ``AkAcousticSurface`` could be used to describe all triangles.
-/// In fact it is not necessary to define any acoustic surfaces at all.  If the ``AkTriangle::surface`` field is left as ``AK_INVALID_SURFACE``, then a default-constructed ``AkAcousticSurface`` is used.
+/// A single acoustic surface can describe any number of triangles depending on the granularity desired. For example,
+/// for debugging, you could create a unique ``AkAcousticSurface`` struct for each triangle and define a unique name for each.
+/// Alternatively, you could use a single ``AkAcousticSurface`` to describe all triangles.
+/// It is not necessary to define any acoustic surfaces. If the ``AkTriangle::surface`` field is left as
+/// ``AK_INVALID_SURFACE``, then a default ``AkAcousticSurface`` is used.
 
 public class AkAcousticSurface : global::System.IDisposable {
   private global::System.IntPtr swigCPtr;
@@ -58,28 +60,28 @@ public class AkAcousticSurface : global::System.IDisposable {
   public AkAcousticSurface() : this(AkUnitySoundEnginePINVOKE.CSharp_new_AkAcousticSurface(), true) {
   }
 
-  ///  Acoustic Texture ShareSet ID for the surface.  The Acoustic Texture is authored in Wwise, and the ShareSet ID can be obtained by calling ``AK::SoundEngine::GetIDFromString``
+  ///  Acoustic Texture ShareSet ID for the surface. The Acoustic Texture is authored in Wwise, and the ShareSet ID can be obtained by calling ``AK::SoundEngine::GetIDFromString``.
   /// <seealso cref="\ref AK.SoundEngine.GetIDFromString"/>
   public uint textureID { set { AkUnitySoundEnginePINVOKE.CSharp_AkAcousticSurface_textureID_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkAcousticSurface_textureID_get(swigCPtr); } 
   }
 
   /// Transmission loss value to apply when simulating sound transmission through this geometric surface.
-  /// Transmission is only simulated on a sound when the sound has **Enable Diffraction and Transmission** box
-  /// enabled in Wwise Authoring.
-  /// If more than one surface is intersected between the emitter and the listener, the result depends on ``AkSpatialAudioInitSettings::eTransmissionOperation``. The default behavior is to use the maximum of all surfaces' transmission loss values.
-  /// Transmission loss is applied on the mix connection between the emitter and the listener for the Direct Propagation Path, and between the emitter and the room for the Diffuse Propagation Path.
-  /// The transmission loss value is converted to volume attenuation, low-pass and/or high-pass filtering, using the transmission loss curves defined on the sound in Wwise Authoring.
+  /// Transmission is only simulated on a sound when the sound has **Enable Diffraction and Transmission**
+  /// selected in Wwise Authoring.
+  /// If more than one surface is intersected between the emitter and the listener, the result depends on ``AkAcousticsInitSettings::eTransmissionOperation``. The default behavior is to use the maximum of all surfaces' transmission loss values.
+  /// Transmission loss is applied on the mix connection between the emitter and the listener for the Direct Propagation Path, and between the emitter and the Room for the Diffuse Propagation Path.
+  /// The transmission loss value is converted to volume attenuation, low-pass filtering, and high-pass filtering using the transmission loss curves defined on the sound in Wwise Authoring.
   /// A transmission loss value of 0 has special meaning in some contexts:
-  /// - Setting a transmission loss value of 0 effectively disables a surface for ray intersection. It is ignored for all diffraction and reflection calculations.
+  /// - Setting a transmission loss value of 0 deactivates a surface for ray intersection. It is ignored for all diffraction and reflection calculations.
   /// - When geometry is used to define the shape of a Reverb Zone, surfaces with a transmission loss of 0 define the center of the transition between the Reverb Zone and its parent Room.
-  /// Only surfaces with transmission loss of 0 define the transition region, allowing the user to have transitions around parts of the geometry (certain walls, for example), and not others.
+  /// Only surfaces with transmission loss of 0 define the transition region. The user can have transitions around parts of the geometry (certain walls, for example) and not others.
   /// Valid range: (0.f-1.f)
   /// - \ref AkRoomParams
-  /// - \ref AK::SpatialAudio::SetReverbZone
+  /// - \ref AK::Acoustics::SetReverbZone
   public float transmissionLoss { set { AkUnitySoundEnginePINVOKE.CSharp_AkAcousticSurface_transmissionLoss_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkAcousticSurface_transmissionLoss_get(swigCPtr); } 
   }
 
-  ///  Name to describe this surface
+  ///  Name to describe this surface.
   public string strName { set { AkUnitySoundEnginePINVOKE.CSharp_AkAcousticSurface_strName_set(swigCPtr, value); }  get { return AkUnitySoundEngine.StringFromIntPtrString(AkUnitySoundEnginePINVOKE.CSharp_AkAcousticSurface_strName_get(swigCPtr)); } 
   }
 

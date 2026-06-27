@@ -361,7 +361,7 @@ public partial class AkUnitySoundEngine {
   ///  Query whether or not the sound engine has been successfully initialized.
   /// <remarks>This function is not thread-safe. It should not be called at the same time as </remarks><returns>``True`` if the sound engine has been initialized, ``False`` otherwise.</returns> 
   /// <seealso cref="
-  ///  - \ref soundengine_integration_init_advanced
+  ///  - \ref initialization_configure_options
   ///  - AK.SoundEngine.Init"/>
   public static bool IsInitialized() { return AkUnitySoundEnginePINVOKE.CSharp_IsInitialized(); }
 
@@ -689,6 +689,9 @@ public partial class AkUnitySoundEngine {
   ///  - AK.SoundEngine.PrepareEvent
   ///  - AK.SoundEngine.PrepareGameSyncs"/>
   public static uint GetIDFromString(string in_pszString) { return AkUnitySoundEnginePINVOKE.CSharp_GetIDFromString(in_pszString); }
+
+  ///  Converts a string corresponding to a bank filename to a valid bank ID.
+  public static uint GetBankIDFromString(string in_pszString) { return AkUnitySoundEnginePINVOKE.CSharp_GetBankIDFromString(in_pszString); }
 
   ///  Asynchronously posts an Event to the sound engine (by event ID).
   ///
@@ -3154,10 +3157,6 @@ public partial class AkUnitySoundEngine {
   ///  that contain the Events and structures. When a request is posted to the
   ///  Bank Manager consumer thread, it will resolve all dependencies needed to
   ///  successfully post the specified Events and load the required loose media files.
-  ///  Before version 2015.1, the required media files could be included
-  ///  in a separate media SoundBank. As described in \ref whatsnew_2015_1_migration,
-  ///  however, ``PrepareEvent()`` now only looks for loose media files.
-  ///
   ///  The function returns when the request is completely processed.
   /// <returns>
   ///      - ``AK_Success``: Prepare/un-prepare successful.
@@ -3183,10 +3182,6 @@ public partial class AkUnitySoundEngine {
   ///  that contain the Events and structures. When a request is posted to the
   ///  Bank Manager consumer thread, it will resolve all dependencies needed to
   ///  successfully post the specified Events and load the required loose media files.
-  ///  Before version 2015.1, the required media files could be included
-  ///  in a separate media SoundBank. As described in \ref whatsnew_2015_1_migration,
-  ///  however, PrepareEvent() now only looks for loose media files.
-  ///
   ///  The function returns when the request is completely processed.
   /// <returns>
   ///      - ``AK_Success``: Prepare/un-prepare successful.
@@ -3212,10 +3207,6 @@ public partial class AkUnitySoundEngine {
   ///  that contain the Events and structures. When a request is posted to the
   ///  Bank Manager consumer thread, it will resolve all dependencies needed to
   ///  successfully post the specified Events and load the required loose media files.
-  ///  Before version 2015.1, the required media files could be included
-  ///  in a separate media SoundBank. As described in \ref whatsnew_2015_1_migration,
-  ///  however, ``PrepareEvent()`` now only looks for loose media files.
-  ///
   ///  The function returns immediately. Use a callback to be notified when the request has finished being processed.
   /// <returns>AK_Success if scheduling is was successful, AK_Fail otherwise.</returns> 
   /// <remarks> Whenever at least one event fails to be resolved, the actions performed for all other events are cancelled.</remarks>
@@ -3238,10 +3229,6 @@ public partial class AkUnitySoundEngine {
   ///  that contain the Events and structures. When a request is posted to the
   ///  Bank Manager consumer thread, it will resolve all dependencies needed to
   ///  successfully post the specified Events and load the required loose media files.
-  ///  Before version 2015.1, the required media files could be included
-  ///  in a separate media SoundBank. As described in \ref whatsnew_2015_1_migration,
-  ///  however, PrepareEvent() now only looks for loose media files.
-  ///
   ///  The function returns immediately. Use a callback to be notified when the request has finished being processed.
   /// <returns>AK_Success if scheduling is was successful, AK_Fail otherwise.</returns> 
   /// <remarks> Whenever at least one event fails to be resolved, the actions performed for all other events are cancelled.</remarks>
@@ -4769,9 +4756,12 @@ public partial class AkUnitySoundEngine {
   ///  to change the location where the file is saved. The profiling session records all data types possible.
   ///  Note that this call captures peak metering for all the busses loaded and mixing
   ///  while this call is invoked.
+  ///  It is recommended to reduce the quantity of data recorded by omitting types. This will reduce the performance impact
+  ///  of the profiling and reduce the file size.
   /// <remarks>This function is provided as a utility tool only. It does nothing if it is			called in the release configuration and returns AK_NotCompatible.</remarks>
-  /// <param name="in_CaptureFileName"> Name of the output profiler file (.prof extension recommended)</param>
-  public static AKRESULT StartProfilerCapture(string in_CaptureFileName) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_StartProfilerCapture(in_CaptureFileName); }
+  /// <param name="in_CaptureFileName"> Name of the output profiler file (.prof extension recommended)</param> 
+  /// <param name="in_uTypes"> Types of data to capture, bitfield with the enum AkMonitorInfo</param>
+  public static AKRESULT StartProfilerCapture(string in_CaptureFileName, ulong in_uTypes) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_StartProfilerCapture(in_CaptureFileName, in_uTypes); }
 
   ///  Stops recording the sound engine profiling information.
   /// <remarks>This function is provided as a utility tool only. It does nothing if it is			called in the release configuration and returns AK_NotCompatible.</remarks>
@@ -4985,6 +4975,56 @@ public partial class AkUnitySoundEngine {
   ///  the sound engine since initialization.
   /// <returns>Sample count.</returns>
   public static ulong GetSampleTick() { return AkUnitySoundEnginePINVOKE.CSharp_GetSampleTick(); }
+
+  ///  Alias for \ref AK::SoundEngine::Init.
+  public static AKRESULT AK_SoundEngine_Init() { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_AK_SoundEngine_Init(); }
+
+  ///  Alias for \ref AK::SoundEngine::RenderAudio.
+  public static AKRESULT AK_SoundEngine_RenderAudio() { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_AK_SoundEngine_RenderAudio(); }
+
+  ///  Alias for \ref AK::SoundEngine::Term.
+  public static void AK_SoundEngine_Term() { AkUnitySoundEnginePINVOKE.CSharp_AK_SoundEngine_Term(); }
+
+  ///  Alias for \ref AK::SoundEngine::IsInitialized.
+  public static bool AK_SoundEngine_IsInitialized() { return AkUnitySoundEnginePINVOKE.CSharp_AK_SoundEngine_IsInitialized(); }
+
+  ///  Generates a new playing ID. This is guaranteed to return a different value every time this is called.
+  public static uint AK_SoundEngine_GeneratePlayingID() {
+		uint ret = AkUnitySoundEnginePINVOKE.CSharp_AK_SoundEngine_GeneratePlayingID();
+		if (ret != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+		{
+			AkCallbackManager.SetLastAddedPlayingID(ret);
+		}
+		else
+		{
+			AkCallbackManager.RemoveEventCallback(AkUnitySoundEngine.AK_INVALID_PLAYING_ID);
+		}
+		return ret;
+	}
+
+  /// Universal converter from string to ID for the sound engine.
+  /// This function will hash the name based on a algorithm ( provided at : /AK/Tools/Common/AkFNVHash.h )
+  /// Note:
+  /// 	This function returns a AkUInt32, which is compatible with:
+  /// 	AkUniqueID, AkStateGroupID, AkStateID, AkSwitchGroupID, AkSwitchStateID, AkRtpcID, and so on.
+  public static uint AK_SoundEngine_GetIDFromString(string in_pszString) { return AkUnitySoundEnginePINVOKE.CSharp_AK_SoundEngine_GetIDFromString(in_pszString); }
+
+  ///  Gets the compounded output ID from shareset and device id.
+  ///  Outputs are defined by their type (Audio Device shareset) and their specific system ID.  A system ID could be reused for other device types on some OS or platforms, hence the compounded ID.
+  ///  Use 0 for in_idShareset and in_idDevice to get the Main Output ID (the one usually initialized during AK::SoundEngine::Init)
+  ///
+  /// <param name="in_idShareset"> Audio Device ShareSet ID, as defined in the Wwise Project.  If needed, use AK::SoundEngine::GetIDFromString() to convert from a string.  Set to AK_INVALID_UNIQUE_ID to use the default.</param> 
+  /// <param name="in_idDevice"> Device specific identifier, when multiple devices of the same type are possible.  If only one device is possible, leave to 0.</param> 
+  /// <returns>The id of the output</returns> 
+  ///
+  /// <seealso cref="\ref obtaining_device_id"/>
+  public static ulong AK_SoundEngine_GetOutputID(uint in_idShareset, uint in_idDevice) { return AkUnitySoundEnginePINVOKE.CSharp_AK_SoundEngine_GetOutputID(in_idShareset, in_idDevice); }
+
+  ///  Alias for \ref AK::StreamMgr::SetCurrentLanguage.
+  public static AKRESULT AK_StreamMgr_SetCurrentLanguage(string in_pszCurrentLanguage) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_AK_StreamMgr_SetCurrentLanguage(in_pszCurrentLanguage); }
+
+  ///  Alias for \ref AK::StreamMgr::AddBasePath.
+  public static AKRESULT AK_StreamMgr_AddBasePath(string in_pszBasePath) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_AK_StreamMgr_AddBasePath(in_pszBasePath); }
 
   public static AkAudioDeviceEvent AkAudioDeviceEvent_Initialization { get { return (AkAudioDeviceEvent)AkUnitySoundEnginePINVOKE.CSharp_AkAudioDeviceEvent_Initialization_get(); } 
   }
@@ -5466,431 +5506,501 @@ public partial class AkUnitySoundEngine {
 
   ///  Define an inner and outer radius around each sound position for a specified game object.
   ///  If the radii are set to 0, the game object is a point source. Non-zero radii create a Radial Emitter.
-  ///  The radii are used in spread and distance calculations that simulates sound emitting from a spherical volume of space.
-  ///  When applying attenuation curves, the distance between the listener and the inner sphere (defined by the sound position and ``in_innerRadius)`` is used.
+  ///  The radii are used in spread and distance calculations that simulate sound emission from a spherical volume of space.
+  ///  When applying attenuation curves, the distance between the listener and the inner sphere (defined by the sound
+  ///  position and ``in_innerRadius)`` is used.
   ///  The spread for each sound position is calculated as follows:
-  ///  - If the listener is outside the outer radius, the spread is defined by the area that the sphere occupies in the listener field of view. Specifically, this angle is calculated as 2.0*asinf( ``in_outerRadius`` / distance ), where distance is the distance between the listener and the sound position.
-  /// 	- When the listener intersects the outer radius (the listener is exactly ``in_outerRadius`` units away from the sound position), the spread is exactly 50%.
-  ///  - When the listener is between the inner and outer radii, the spread interpolates linearly from 50% to 100% as the listener transitions from the outer radius towards the inner radius.
+  ///  - If the listener is outside the outer radius, the spread is defined by the area that the sphere occupies in
+  ///    the listener field of view. Specifically, this angle is calculated as 2.0*asinf( ``in_outerRadius`` / distance ),
+  ///    where distance is the distance between the listener and the sound position.
+  ///  - When the listener intersects the outer radius (the listener is exactly ``in_outerRadius`` units away from the
+  ///    sound position), the spread is exactly 50%.
+  ///  - When the listener is between the inner and outer radii, the spread interpolates linearly from 50% to 100% as
+  ///    the listener transitions from the outer radius towards the inner radius.
   ///  - If the listener is inside the inner radius, the spread is 100%.
-  ///  Transmission and diffraction calculations in Spatial Audio always use the center of the sphere (the position(s) passed into ``AK::SoundEngine::SetPosition`` or ``AK::SoundEngine::SetMultiplePositions)`` for raycasting.
-  ///  To obtain accurate diffraction and transmission calculations for radial sources, where different parts of the volume may take different paths through or around geometry,
-  ///  it is necessary to pass multiple sound positions into ``AK::SoundEngine::SetMultiplePositions`` to allow the engine to 'sample' the area at different points.
+  ///  Transmission and diffraction calculations in Wwise Acoustics always use the center of the sphere (the
+  ///  position(s) passed into ``AK::SoundEngine::SetPosition`` or ``AK::SoundEngine::SetMultiplePositions)`` for raycasting.
+  ///  To obtain accurate diffraction and transmission calculations for radial sources, where different parts of the
+  ///  volume might take different paths through or around geometry, it is necessary to pass multiple sound positions into
+  ///  ``AK::SoundEngine::SetMultiplePositions`` for the engine to sample the area at different points.
   ///  - \ref AK::SoundEngine::SetPosition
   ///  - \ref AK::SoundEngine::SetMultiplePositions
   /// <param name="in_gameObjectID"> Game object ID</param> 
-  /// <param name="in_outerRadius"> Outer radius around each sound position, defining 50% spread. Must satisfy ``in_innerRadius`` <= ``in`` outerRadius.</param> 
-  /// <param name="in_innerRadius"> Inner radius around each sound position, defining 100% spread and 0 attenuation distance. Must satisfy ``in_innerRadius`` <= ``in`` outerRadius.</param>
+  /// <param name="in_outerRadius"> Outer radius around each sound position, defining 50% spread. Must satisfy ``in_innerRadius`` <= ``in_outerRadius``.</param> 
+  /// <param name="in_innerRadius"> Inner radius around each sound position, defining 100% spread and 0 attenuation distance. Must satisfy ``in_innerRadius`` <= ``in_outerRadius``.</param>
   public static AKRESULT SetGameObjectRadius(ulong in_gameObjectID, float in_outerRadius, float in_innerRadius) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGameObjectRadius(in_gameObjectID, in_outerRadius, in_innerRadius); }
 
   ///  Use this API for detailed placement of reflection image sources.
-  ///  These functions are low-level and useful when your game engine already implements a geometrical approach to sound propagation such as an image-source or a ray tracing algorithm.
-  ///  Functions of Geometry are preferred and easier to use with the Reflect plug-in.
-  ///  Add or update an individual image source for processing via the AkReflect plug-in.  Use this API for detailed placement of
-  ///  reflection image sources, whose positions have been determined by the client, such as from the results of a ray cast, computation or by manual placement.  One possible
-  ///  use case is generating reflections that originate far enough away that they can be modeled as a static point source, for example, off of a distant mountain.
-  ///  The SpatialAudio API manages image sources added via SetImageSource() and sends them to the AkReflect plug-in that is on the aux bus with ID ``in_AuxBusID``.
-  ///  The image source applies all game objects that have a reflections aux send defined in the authoring tool, or only to a specific game object if ``in_gameObjectID`` is used.
-  ///  The ``AkImageSourceSettings`` struct passed in ``in_info`` must contain a unique image source ID to be able to identify this image source across frames and when updating and/or removing it later.
-  ///  Each instance of AkReflect has its own set of data, so you may reuse ID, if desired, as long as ``in_gameObjectID`` and ``in_AuxBusID`` are different.
-  ///  It is possible for the AkReflect plugin to process reflections from both ``SetImageSource`` and the geometric reflections API on the same aux bus and game object, but be aware that image source ID collisions are possible.
-  ///  The image source IDs used by the geometric reflections API are generated from hashed data that uniquely identifies the reflecting surfaces. If a collision occurs, one of the reflections will not be heard.
-  ///  While collision are rare, to ensure that it never occurs use an aux bus for ``SetImageSource`` that is unique from the aux bus(es) defined in the authoring tool, and from those passed to ``SetEarlyReflectionsAuxSend``.
-  ///
-  ///  For proper operation with AkReflect and the SpatialAudio API, any aux bus using AkReflect should have 'Listener Relative Routing' checked and the 3D Spatialization set to None in the Wwise authoring tool. See \ref spatial_audio_wwiseprojectsetup_businstances for more details.
+  ///  These functions are low-level and useful when your game engine already implements a geometric approach
+  ///  to sound propagation such as an image-source or a ray tracing algorithm.
+  ///  We recommend that you use geometric functions with the Reflect plug-in.
+  ///  Add or update an individual image source for the AkReflect plug-in to process. Use this API for detailed
+  ///  placement of reflection image sources whose positions have been determined by the client, such as from the
+  ///  results of a ray cast, computation, or by manual placement. For example, you could use this API when generating reflections that
+  ///  originate from a great enough distance, such as from a distant mountain, that they can be modeled as a static point source.
+  ///  The Wwise Acoustics API manages image sources added through SetImageSource() and sends them to the AkReflect plug-in
+  ///  on the auxiliary bus with ID ``in_AuxBusID``.
+  ///  The image source applies to all game objects that have a reflection auxiliary send defined in Wwise Authoring, or
+  ///  only to a specific game object if ``in_gameObjectID`` is used.
+  ///  The ``AkImageSourceSettings`` struct passed in ``in_info`` must contain a unique image source ID to be able
+  ///  to identify the image source across frames and when updating or removing it later.
+  ///  Each instance of AkReflect has its own set of data, so you can reuse an ID as long as
+  ///  ``in_gameObjectID`` and ``in_AuxBusID`` are different.
+  ///  The AkReflect plug-in can process reflections from both ``SetImageSource`` and the
+  ///  geometric reflections API on the same auxiliary bus and game object. However, image source ID collisions are
+  ///  possible, even though they are rare. The image source IDs used by the geometric reflections API are generated from hashed data that uniquely
+  ///  identifies the reflecting surfaces. If a collision occurs, one of the reflections is inaudible.
+  ///  To completely prevent collisions, use a different auxiliary bus for ``SetImageSource`` than
+  ///  the auxiliary busses defined in Wwise Authoring or those passed to ``SetEarlyReflectionsAuxSend``.
+  ///  To ensure proper operation with AkReflect and the Wwise Acoustics API, you must set certain configuration options in Wwise Authoring for any auxiliary bus that uses AkReflect: select **Listener Relative Routing** and set 3D Spatialization to **None**. See
+  ///  \ref spatial_audio_wwiseprojectsetup_businstances for more information.
   /// <seealso cref="
-  ///  - \ref AK.SpatialAudio.RemoveImageSource
-  /// 	- \ref AK.SpatialAudio.ClearImageSources
-  ///  - \ref AK.SpatialAudio.SetGameObjectInRoom
-  ///  - \ref AK.SpatialAudio.SetEarlyReflectionsAuxSend"/>
-  /// <param name="in_srcID"> The ID of the image source being added.</param> 
+  ///  - \ref AK.Acoustics.RemoveImageSource
+  /// 	- \ref AK.Acoustics.ClearImageSources
+  ///  - \ref AK.Acoustics.SetGameObjectInRoom
+  ///  - \ref AK.Acoustics.SetEarlyReflectionsAuxSend"/>
+  /// <param name="in_srcID"> The ID of the image source to add.</param> 
   /// <param name="in_info"> Image source information.</param> 
-  /// <param name="in_name"> Name given to image source, can be used to identify the image source in the AK Reflect plugin UI.</param> 
-  /// <param name="in_AuxBusID"> Aux bus that has the AkReflect plug in for early reflection DSP.
-  ///      Pass AK_INVALID_AUX_ID to use the reflections aux bus defined in the authoring tool.</param> 
-  /// <param name="in_gameObjectID"> The ID of the emitter game object to which the image source applies.
-  ///      Pass AK_INVALID_GAME_OBJECT to apply to all game objects that have a reflections aux bus assigned in the authoring tool.</param>
+  /// <param name="in_name"> Name of the image source, which can be used to identify the image source in the AK Reflect plug-in user interface.</param> 
+  /// <param name="in_AuxBusID"> Auxiliary bus that has the AkReflect plug-in for early reflection DSP.
+  ///      Pass AK_INVALID_AUX_ID to use the reflections auxiliary bus defined in Wwise Authoring.</param> 
+  /// <param name="in_gameObjectID"> The ID of the emitter Game Object to which the image source applies.
+  ///      Pass AK_INVALID_GAME_OBJECT to apply to all Game Objects that have a reflection auxiliary bus assigned in Wwise Authoring.</param>
   public static AKRESULT SetImageSource(uint in_srcID, AkImageSourceSettings in_info, string in_name, uint in_AuxBusID, ulong in_gameObjectID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetImageSource__SWIG_0(in_srcID, AkImageSourceSettings.getCPtr(in_info), in_name, in_AuxBusID, in_gameObjectID); }
 
   ///  Use this API for detailed placement of reflection image sources.
-  ///  These functions are low-level and useful when your game engine already implements a geometrical approach to sound propagation such as an image-source or a ray tracing algorithm.
-  ///  Functions of Geometry are preferred and easier to use with the Reflect plug-in.
-  ///  Add or update an individual image source for processing via the AkReflect plug-in.  Use this API for detailed placement of
-  ///  reflection image sources, whose positions have been determined by the client, such as from the results of a ray cast, computation or by manual placement.  One possible
-  ///  use case is generating reflections that originate far enough away that they can be modeled as a static point source, for example, off of a distant mountain.
-  ///  The SpatialAudio API manages image sources added via SetImageSource() and sends them to the AkReflect plug-in that is on the aux bus with ID ``in_AuxBusID``.
-  ///  The image source applies all game objects that have a reflections aux send defined in the authoring tool, or only to a specific game object if ``in_gameObjectID`` is used.
-  ///  The ``AkImageSourceSettings`` struct passed in ``in_info`` must contain a unique image source ID to be able to identify this image source across frames and when updating and/or removing it later.
-  ///  Each instance of AkReflect has its own set of data, so you may reuse ID, if desired, as long as ``in_gameObjectID`` and ``in_AuxBusID`` are different.
-  ///  It is possible for the AkReflect plugin to process reflections from both ``SetImageSource`` and the geometric reflections API on the same aux bus and game object, but be aware that image source ID collisions are possible.
-  ///  The image source IDs used by the geometric reflections API are generated from hashed data that uniquely identifies the reflecting surfaces. If a collision occurs, one of the reflections will not be heard.
-  ///  While collision are rare, to ensure that it never occurs use an aux bus for ``SetImageSource`` that is unique from the aux bus(es) defined in the authoring tool, and from those passed to ``SetEarlyReflectionsAuxSend``.
-  ///
-  ///  For proper operation with AkReflect and the SpatialAudio API, any aux bus using AkReflect should have 'Listener Relative Routing' checked and the 3D Spatialization set to None in the Wwise authoring tool. See \ref spatial_audio_wwiseprojectsetup_businstances for more details.
+  ///  These functions are low-level and useful when your game engine already implements a geometric approach
+  ///  to sound propagation such as an image-source or a ray tracing algorithm.
+  ///  We recommend that you use geometric functions with the Reflect plug-in.
+  ///  Add or update an individual image source for the AkReflect plug-in to process. Use this API for detailed
+  ///  placement of reflection image sources whose positions have been determined by the client, such as from the
+  ///  results of a ray cast, computation, or by manual placement. For example, you could use this API when generating reflections that
+  ///  originate from a great enough distance, such as from a distant mountain, that they can be modeled as a static point source.
+  ///  The Wwise Acoustics API manages image sources added through SetImageSource() and sends them to the AkReflect plug-in
+  ///  on the auxiliary bus with ID ``in_AuxBusID``.
+  ///  The image source applies to all game objects that have a reflection auxiliary send defined in Wwise Authoring, or
+  ///  only to a specific game object if ``in_gameObjectID`` is used.
+  ///  The ``AkImageSourceSettings`` struct passed in ``in_info`` must contain a unique image source ID to be able
+  ///  to identify the image source across frames and when updating or removing it later.
+  ///  Each instance of AkReflect has its own set of data, so you can reuse an ID as long as
+  ///  ``in_gameObjectID`` and ``in_AuxBusID`` are different.
+  ///  The AkReflect plug-in can process reflections from both ``SetImageSource`` and the
+  ///  geometric reflections API on the same auxiliary bus and game object. However, image source ID collisions are
+  ///  possible, even though they are rare. The image source IDs used by the geometric reflections API are generated from hashed data that uniquely
+  ///  identifies the reflecting surfaces. If a collision occurs, one of the reflections is inaudible.
+  ///  To completely prevent collisions, use a different auxiliary bus for ``SetImageSource`` than
+  ///  the auxiliary busses defined in Wwise Authoring or those passed to ``SetEarlyReflectionsAuxSend``.
+  ///  To ensure proper operation with AkReflect and the Wwise Acoustics API, you must set certain configuration options in Wwise Authoring for any auxiliary bus that uses AkReflect: select **Listener Relative Routing** and set 3D Spatialization to **None**. See
+  ///  \ref spatial_audio_wwiseprojectsetup_businstances for more information.
   /// <seealso cref="
-  ///  - \ref AK.SpatialAudio.RemoveImageSource
-  /// 	- \ref AK.SpatialAudio.ClearImageSources
-  ///  - \ref AK.SpatialAudio.SetGameObjectInRoom
-  ///  - \ref AK.SpatialAudio.SetEarlyReflectionsAuxSend"/>
-  /// <param name="in_srcID"> The ID of the image source being added.</param> 
+  ///  - \ref AK.Acoustics.RemoveImageSource
+  /// 	- \ref AK.Acoustics.ClearImageSources
+  ///  - \ref AK.Acoustics.SetGameObjectInRoom
+  ///  - \ref AK.Acoustics.SetEarlyReflectionsAuxSend"/>
+  /// <param name="in_srcID"> The ID of the image source to add.</param> 
   /// <param name="in_info"> Image source information.</param> 
-  /// <param name="in_name"> Name given to image source, can be used to identify the image source in the AK Reflect plugin UI.</param> 
-  /// <param name="in_AuxBusID"> Aux bus that has the AkReflect plug in for early reflection DSP.
-  ///      Pass AK_INVALID_AUX_ID to use the reflections aux bus defined in the authoring tool.</param>
+  /// <param name="in_name"> Name of the image source, which can be used to identify the image source in the AK Reflect plug-in user interface.</param> 
+  /// <param name="in_AuxBusID"> Auxiliary bus that has the AkReflect plug-in for early reflection DSP.
+  ///      Pass AK_INVALID_AUX_ID to use the reflections auxiliary bus defined in Wwise Authoring.</param>
   public static AKRESULT SetImageSource(uint in_srcID, AkImageSourceSettings in_info, string in_name, uint in_AuxBusID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetImageSource__SWIG_1(in_srcID, AkImageSourceSettings.getCPtr(in_info), in_name, in_AuxBusID); }
 
   ///  Use this API for detailed placement of reflection image sources.
-  ///  These functions are low-level and useful when your game engine already implements a geometrical approach to sound propagation such as an image-source or a ray tracing algorithm.
-  ///  Functions of Geometry are preferred and easier to use with the Reflect plug-in.
-  ///  Add or update an individual image source for processing via the AkReflect plug-in.  Use this API for detailed placement of
-  ///  reflection image sources, whose positions have been determined by the client, such as from the results of a ray cast, computation or by manual placement.  One possible
-  ///  use case is generating reflections that originate far enough away that they can be modeled as a static point source, for example, off of a distant mountain.
-  ///  The SpatialAudio API manages image sources added via SetImageSource() and sends them to the AkReflect plug-in that is on the aux bus with ID ``in_AuxBusID``.
-  ///  The image source applies all game objects that have a reflections aux send defined in the authoring tool, or only to a specific game object if ``in_gameObjectID`` is used.
-  ///  The ``AkImageSourceSettings`` struct passed in ``in_info`` must contain a unique image source ID to be able to identify this image source across frames and when updating and/or removing it later.
-  ///  Each instance of AkReflect has its own set of data, so you may reuse ID, if desired, as long as ``in_gameObjectID`` and ``in_AuxBusID`` are different.
-  ///  It is possible for the AkReflect plugin to process reflections from both ``SetImageSource`` and the geometric reflections API on the same aux bus and game object, but be aware that image source ID collisions are possible.
-  ///  The image source IDs used by the geometric reflections API are generated from hashed data that uniquely identifies the reflecting surfaces. If a collision occurs, one of the reflections will not be heard.
-  ///  While collision are rare, to ensure that it never occurs use an aux bus for ``SetImageSource`` that is unique from the aux bus(es) defined in the authoring tool, and from those passed to ``SetEarlyReflectionsAuxSend``.
-  ///
-  ///  For proper operation with AkReflect and the SpatialAudio API, any aux bus using AkReflect should have 'Listener Relative Routing' checked and the 3D Spatialization set to None in the Wwise authoring tool. See \ref spatial_audio_wwiseprojectsetup_businstances for more details.
+  ///  These functions are low-level and useful when your game engine already implements a geometric approach
+  ///  to sound propagation such as an image-source or a ray tracing algorithm.
+  ///  We recommend that you use geometric functions with the Reflect plug-in.
+  ///  Add or update an individual image source for the AkReflect plug-in to process. Use this API for detailed
+  ///  placement of reflection image sources whose positions have been determined by the client, such as from the
+  ///  results of a ray cast, computation, or by manual placement. For example, you could use this API when generating reflections that
+  ///  originate from a great enough distance, such as from a distant mountain, that they can be modeled as a static point source.
+  ///  The Wwise Acoustics API manages image sources added through SetImageSource() and sends them to the AkReflect plug-in
+  ///  on the auxiliary bus with ID ``in_AuxBusID``.
+  ///  The image source applies to all game objects that have a reflection auxiliary send defined in Wwise Authoring, or
+  ///  only to a specific game object if ``in_gameObjectID`` is used.
+  ///  The ``AkImageSourceSettings`` struct passed in ``in_info`` must contain a unique image source ID to be able
+  ///  to identify the image source across frames and when updating or removing it later.
+  ///  Each instance of AkReflect has its own set of data, so you can reuse an ID as long as
+  ///  ``in_gameObjectID`` and ``in_AuxBusID`` are different.
+  ///  The AkReflect plug-in can process reflections from both ``SetImageSource`` and the
+  ///  geometric reflections API on the same auxiliary bus and game object. However, image source ID collisions are
+  ///  possible, even though they are rare. The image source IDs used by the geometric reflections API are generated from hashed data that uniquely
+  ///  identifies the reflecting surfaces. If a collision occurs, one of the reflections is inaudible.
+  ///  To completely prevent collisions, use a different auxiliary bus for ``SetImageSource`` than
+  ///  the auxiliary busses defined in Wwise Authoring or those passed to ``SetEarlyReflectionsAuxSend``.
+  ///  To ensure proper operation with AkReflect and the Wwise Acoustics API, you must set certain configuration options in Wwise Authoring for any auxiliary bus that uses AkReflect: select **Listener Relative Routing** and set 3D Spatialization to **None**. See
+  ///  \ref spatial_audio_wwiseprojectsetup_businstances for more information.
   /// <seealso cref="
-  ///  - \ref AK.SpatialAudio.RemoveImageSource
-  /// 	- \ref AK.SpatialAudio.ClearImageSources
-  ///  - \ref AK.SpatialAudio.SetGameObjectInRoom
-  ///  - \ref AK.SpatialAudio.SetEarlyReflectionsAuxSend"/>
-  /// <param name="in_srcID"> The ID of the image source being added.</param> 
+  ///  - \ref AK.Acoustics.RemoveImageSource
+  /// 	- \ref AK.Acoustics.ClearImageSources
+  ///  - \ref AK.Acoustics.SetGameObjectInRoom
+  ///  - \ref AK.Acoustics.SetEarlyReflectionsAuxSend"/>
+  /// <param name="in_srcID"> The ID of the image source to add.</param> 
   /// <param name="in_info"> Image source information.</param> 
-  /// <param name="in_name"> Name given to image source, can be used to identify the image source in the AK Reflect plugin UI.</param>
+  /// <param name="in_name"> Name of the image source, which can be used to identify the image source in the AK Reflect plug-in user interface.</param>
   public static AKRESULT SetImageSource(uint in_srcID, AkImageSourceSettings in_info, string in_name) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetImageSource__SWIG_2(in_srcID, AkImageSourceSettings.getCPtr(in_info), in_name); }
 
-  ///  Remove an individual reflection image source that was previously added via ``SetImageSource``.
+  ///  Remove an individual reflection image source that was added through ``SetImageSource``.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetImageSource
-  /// 	- \ref AK.SpatialAudio.ClearImageSources"/>
+  /// 	- \ref AK.Acoustics.SetImageSource
+  /// 	- \ref AK.Acoustics.ClearImageSources"/>
   /// <param name="in_srcID"> The ID of the image source to remove.</param> 
-  /// <param name="in_AuxBusID"> Aux bus that was passed to SetImageSource.</param> 
-  /// <param name="in_gameObjectID"> Game object ID that was passed to SetImageSource.</param>
+  /// <param name="in_AuxBusID"> Auxiliary bus that was passed to SetImageSource.</param> 
+  /// <param name="in_gameObjectID"> Game Object ID that was passed to SetImageSource.</param>
   public static AKRESULT RemoveImageSource(uint in_srcID, uint in_AuxBusID, ulong in_gameObjectID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_RemoveImageSource__SWIG_0(in_srcID, in_AuxBusID, in_gameObjectID); }
 
-  ///  Remove an individual reflection image source that was previously added via ``SetImageSource``.
+  ///  Remove an individual reflection image source that was added through ``SetImageSource``.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetImageSource
-  /// 	- \ref AK.SpatialAudio.ClearImageSources"/>
+  /// 	- \ref AK.Acoustics.SetImageSource
+  /// 	- \ref AK.Acoustics.ClearImageSources"/>
   /// <param name="in_srcID"> The ID of the image source to remove.</param> 
-  /// <param name="in_AuxBusID"> Aux bus that was passed to SetImageSource.</param>
+  /// <param name="in_AuxBusID"> Auxiliary bus that was passed to SetImageSource.</param>
   public static AKRESULT RemoveImageSource(uint in_srcID, uint in_AuxBusID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_RemoveImageSource__SWIG_1(in_srcID, in_AuxBusID); }
 
-  ///  Remove an individual reflection image source that was previously added via ``SetImageSource``.
+  ///  Remove an individual reflection image source that was added through ``SetImageSource``.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetImageSource
-  /// 	- \ref AK.SpatialAudio.ClearImageSources"/>
+  /// 	- \ref AK.Acoustics.SetImageSource
+  /// 	- \ref AK.Acoustics.ClearImageSources"/>
   /// <param name="in_srcID"> The ID of the image source to remove.</param>
   public static AKRESULT RemoveImageSource(uint in_srcID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_RemoveImageSource__SWIG_2(in_srcID); }
 
-  ///  Remove all image sources matching ``in_AuxBusID`` and ``in_gameObjectID`` that were previously added via ``SetImageSource``.
-  ///  Both ``in_AuxBusID`` and ``in_gameObjectID`` can be treated as wild cards matching all aux buses and/or all game object, by passing ``AK_INVALID_AUX_ID`` and/or ``AK_INVALID_GAME_OBJECT``, respectively.
+  ///  Remove all image sources matching ``in_AuxBusID`` and ``in_gameObjectID`` that were added through
+  ///  ``SetImageSource``. You can use ``in_AuxBusID`` and ``in_gameObjectID`` as wildcards that match all auxiliary
+  ///  busses or all Game Objects by passing ``AK_INVALID_AUX_ID`` or ``AK_INVALID_GAME_OBJECT``, respectively.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetImageSource
-  ///  - \ref AK.SpatialAudio.RemoveImageSource"/>
-  /// <param name="in_AuxBusID"> Aux bus that was passed to SetImageSource, or AK_INVALID_AUX_ID to match all aux buses.</param> 
-  /// <param name="in_gameObjectID"> Game object ID that was passed to SetImageSource, or AK_INVALID_GAME_OBJECT to match all game objects.</param>
+  /// 	- \ref AK.Acoustics.SetImageSource
+  ///  - \ref AK.Acoustics.RemoveImageSource"/>
+  /// <param name="in_AuxBusID"> Auxiliary bus that was passed to SetImageSource, or AK_INVALID_AUX_ID to match all auxiliary buses.</param> 
+  /// <param name="in_gameObjectID"> Game Object ID that was passed to SetImageSource, or AK_INVALID_GAME_OBJECT to match all Game Objects.</param>
   public static AKRESULT ClearImageSources(uint in_AuxBusID, ulong in_gameObjectID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_ClearImageSources__SWIG_0(in_AuxBusID, in_gameObjectID); }
 
-  ///  Remove all image sources matching ``in_AuxBusID`` and ``in_gameObjectID`` that were previously added via ``SetImageSource``.
-  ///  Both ``in_AuxBusID`` and ``in_gameObjectID`` can be treated as wild cards matching all aux buses and/or all game object, by passing ``AK_INVALID_AUX_ID`` and/or ``AK_INVALID_GAME_OBJECT``, respectively.
+  ///  Remove all image sources matching ``in_AuxBusID`` and ``in_gameObjectID`` that were added through
+  ///  ``SetImageSource``. You can use ``in_AuxBusID`` and ``in_gameObjectID`` as wildcards that match all auxiliary
+  ///  busses or all Game Objects by passing ``AK_INVALID_AUX_ID`` or ``AK_INVALID_GAME_OBJECT``, respectively.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetImageSource
-  ///  - \ref AK.SpatialAudio.RemoveImageSource"/>
-  /// <param name="in_AuxBusID"> Aux bus that was passed to SetImageSource, or AK_INVALID_AUX_ID to match all aux buses.</param>
+  /// 	- \ref AK.Acoustics.SetImageSource
+  ///  - \ref AK.Acoustics.RemoveImageSource"/>
+  /// <param name="in_AuxBusID"> Auxiliary bus that was passed to SetImageSource, or AK_INVALID_AUX_ID to match all auxiliary buses.</param>
   public static AKRESULT ClearImageSources(uint in_AuxBusID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_ClearImageSources__SWIG_1(in_AuxBusID); }
 
-  ///  Remove all image sources matching ``in_AuxBusID`` and ``in_gameObjectID`` that were previously added via ``SetImageSource``.
-  ///  Both ``in_AuxBusID`` and ``in_gameObjectID`` can be treated as wild cards matching all aux buses and/or all game object, by passing ``AK_INVALID_AUX_ID`` and/or ``AK_INVALID_GAME_OBJECT``, respectively.
+  ///  Remove all image sources matching ``in_AuxBusID`` and ``in_gameObjectID`` that were added through
+  ///  ``SetImageSource``. You can use ``in_AuxBusID`` and ``in_gameObjectID`` as wildcards that match all auxiliary
+  ///  busses or all Game Objects by passing ``AK_INVALID_AUX_ID`` or ``AK_INVALID_GAME_OBJECT``, respectively.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetImageSource
-  ///  - \ref AK.SpatialAudio.RemoveImageSource"/>
+  /// 	- \ref AK.Acoustics.SetImageSource
+  ///  - \ref AK.Acoustics.RemoveImageSource"/>
   public static AKRESULT ClearImageSources() { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_ClearImageSources__SWIG_2(); }
 
-  ///  Remove a set of geometry to the SpatialAudio API.
-  ///  Calling ``AK::SpatialAudio::RemoveGeometry`` will remove all instances of the geometry from the scene.
+  ///  Remove a set of geometry from the Wwise Acoustics API.
+  ///  Calling ``AK::Acoustics::RemoveGeometry`` removes all instances of the geometry from the scene.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetGeometry"/>
+  /// 	- \ref AK.Acoustics.SetGeometry"/>
   /// <param name="in_SetID"> ID of geometry set to be removed.</param>
   public static AKRESULT RemoveGeometry(ulong in_SetID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_RemoveGeometry(in_SetID); }
 
-  ///  Remove a geometry instance from the SpatialAudio API.
+  ///  Remove a geometry instance from the Wwise Acoustics API.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetGeometryInstance"/>
-  /// <param name="in_GeometryInstanceID"> ID of geometry set instance to be removed.</param>
+  /// 	- \ref AK.Acoustics.SetGeometryInstance"/>
+  /// <param name="in_GeometryInstanceID"> ID of geometry set instance to remove.</param>
   public static AKRESULT RemoveGeometryInstance(ulong in_GeometryInstanceID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_RemoveGeometryInstance(in_GeometryInstanceID); }
 
-  ///  Remove a room.
+  ///  Remove a Room.
   /// <seealso cref="
   ///  - \ref AkRoomID
-  ///  - \ref AK.SpatialAudio.SetRoom"/>
+  ///  - \ref AK.Acoustics.SetRoom"/>
   /// <param name="in_RoomID"> Room ID that was passed to ``SetRoom``.</param>
   public static AKRESULT RemoveRoom(ulong in_RoomID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_RemoveRoom(in_RoomID); }
 
-  ///  Remove a portal.
+  ///  Remove a Portal.
   /// <seealso cref="
   ///  - \ref AkPortalID
-  ///  - \ref AK.SpatialAudio.SetPortal"/>
-  /// <param name="in_PortalID"> ID of portal to be removed, which was originally passed to SetPortal.</param>
+  ///  - \ref AK.Acoustics.SetPortal"/>
+  /// <param name="in_PortalID"> ID of Portal to remove, which was originally passed to SetPortal.</param>
   public static AKRESULT RemovePortal(ulong in_PortalID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_RemovePortal(in_PortalID); }
 
   ///  Use a Room as a Reverb Zone.
-  ///  AK::SpatialAudio::SetReverbZone establishes a parent-child relationship between two Rooms and allows for sound propagation between them
-  ///  as if they were the same Room, without the need for a connecting Portal. Setting a Room as a Reverb Zone
-  ///  is useful in situations where two or more acoustic environments are not easily modeled as closed rooms connected by portals.
-  ///  Possible uses for Reverb Zones include: a covered area with no walls, a forested area within an outdoor space, or any situation
-  ///  where multiple reverb effects are desired within a common space. Reverb Zones have many advantages compared to standard Game-Defined
-  ///  Auxiliary Sends. They are part of the Diffuse Propagation Path, and form reverb chains with other Rooms; they are spatialized according to their 3D extent;
-  ///  they are also subject to other acoustic phenomena simulated in Wwise Spatial Audio, such as diffraction and transmission.
-  ///  A parent Room may have multiple Reverb Zones, but a Reverb Zone can only have a single Parent. If a Room is already assigned
-  ///  to a parent Room, it will first be removed from the old parent (exactly as if AK::SpatialAudio::RemoveReverbZone were called)
-  ///  before then being assigned to the new parent Room. A Room can not be its own parent.
-  ///  The Reverb Zone and its parent are both Rooms, and as such, must be specified using AK::SpatialAudio::SetRoom.
-  ///  If AK::SpatialAudio::SetReverbZone is called before AK::SpatialAudio::SetRoom, and either of the two rooms do not yet exist,
-  ///  placeholder Rooms with default parameters are created. They should be subsequently parameterized with AK::SpatialAudio::SetRoom.
-  ///  To set which Reverb Zone a Game Object is in, use the AK::SpatialAudio::SetGameObjectInRoom API, and pass the Reverb Zone's Room ID.
-  ///  In Wwise Spatial Audio, a Game Object can only ever be inside a single room, and Reverb Zones are no different in this regard.
+  ///  AK::Acoustics::SetReverbZone establishes a parent-child relationship between two Rooms. Sound
+  ///  propagates between them as if they were the same Room, without the need for a Portal to connect them. Setting a
+  ///  Room as a Reverb Zone is useful in situations in which two or more acoustic environments are not easily modeled as
+  ///  closed Rooms connected by Portals. Possible uses for Reverb Zones include the following: a covered area with no walls, a
+  ///  forested area within an outdoor space, or if you want multiple reverb effects within a
+  ///  common space. Reverb Zones have many advantages over standard game-defined auxiliary sends: they are
+  ///  part of the Diffuse Propagation Path and form reverb chains with other Rooms; they are spatialized according
+  ///  to their 3D extent; and they are also subject to other acoustic phenomena simulated in Wwise Acoustics, such as
+  ///  diffraction and transmission.
+  ///  A parent Room can have multiple Reverb Zones, but a Reverb Zone can only have a single Parent. If a Room is
+  ///  already assigned to a parent Room, it is first removed from the old parent (as if
+  ///  AK::Acoustics::RemoveReverbZone had been called) and is then assigned to the new parent Room. A Room cannot be its own parent.
+  ///  The Reverb Zone and its parent are both Rooms and therefore must be specified with AK::Acoustics::SetRoom.
+  ///  If AK::Acoustics::SetReverbZone is called before AK::Acoustics::SetRoom, and either of the two Rooms do not
+  ///  yet exist, placeholder Rooms with default parameters are created. Use AK::Acoustics::SetRoom to set their parameters.
+  ///  To set which Reverb Zone contains a Game Object, use AK::Acoustics::SetGameObjectInRoom and pass the
+  ///  Reverb Zone's Room ID. In Wwise Acoustics, a Game Object can only be inside a single Room or Reverb
+  ///  Zone.
   ///
-  ///  The automatically created 'outdoors' Room is commonly used as a parent Room for Reverb Zones, since they often model open spaces.
-  ///  To attach a Reverb zone to outdoors, pass AK::SpatialAudio::kOutdoorRoomID as the ``in_ParentRoom`` argument. Like all Rooms, the 'outdoors' Room
-  ///  can be parameterized (for example, to assign a reverb bus) by passing AK::SpatialAudio::kOutdoorRoomID to AK::SpatialAudio::SetRoom.
+  ///  The 'outdoors' Room, which is created automatically, is commonly used as a parent Room for Reverb Zones because they often
+  ///  model open spaces. To attach a Reverb Zone to the outdoors Room, pass AK::Acoustics::kOutdoorRoomID as the
+  ///  ``in_ParentRoom`` argument. Like all Rooms, the outdoors Room can be parameterized (for example, to assign a
+  ///  reverb bus) by passing AK::Acoustics::kOutdoorRoomID to AK::Acoustics::SetRoom.
   /// <seealso cref="
   ///  - \ref AkRoomID
-  /// 	- \ref AK.SpatialAudio.SetRoom
-  /// 	- \ref AK.SpatialAudio.RemoveRoom
-  /// 	- \ref AK.SpatialAudio.RemoveReverbZone
-  ///  - \ref AK.SpatialAudio.kOutdoorRoomID"/>
-  /// <param name="in_ReverbZone"> ID of the Room which will be specified as a Reverb Zone.</param> 
+  /// 	- \ref AK.Acoustics.SetRoom
+  /// 	- \ref AK.Acoustics.RemoveRoom
+  /// 	- \ref AK.Acoustics.RemoveReverbZone
+  ///  - \ref AK.Acoustics.kOutdoorRoomID"/>
+  /// <param name="in_ReverbZone"> ID of the Room to set as a Reverb Zone.</param> 
   /// <param name="in_ParentRoom"> ID of the parent Room.</param> 
-  /// <param name="in_transitionRegionWidth"> Width of the transition region between the Reverb Zone and its parent. The transition region is centered around the Reverb Zone geometry. It only applies where triangle transmission loss is set to 0.</param>
+  /// <param name="in_transitionRegionWidth"> Width of the transition region between the Reverb Zone and its parent. The transition region is centered around the Reverb Zone geometry. It is only applied if triangle transmission loss is set to 0.</param>
   public static AKRESULT SetReverbZone(ulong in_ReverbZone, ulong in_ParentRoom, float in_transitionRegionWidth) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetReverbZone(in_ReverbZone, in_ParentRoom, in_transitionRegionWidth); }
 
   ///  Remove a Reverb Zone from its parent.
-  ///  It will no longer be possible for sound to propagate between the two rooms, unless they are explicitly connected with a Portal.
+  ///  If you remove a Reverb Zone, sound can only propagate between the two Rooms if they are
+  ///  connected with a Portal.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetReverbZone
-  /// 	- \ref AK.SpatialAudio.RemoveRoom
-  /// 	- \ref AK.SpatialAudio.RemoveReverbZone"/>
-  /// <param name="in_ReverbZone"> ID of the Room which has been specified as a Reverb Zone.</param>
+  /// 	- \ref AK.Acoustics.SetReverbZone
+  /// 	- \ref AK.Acoustics.RemoveRoom
+  /// 	- \ref AK.Acoustics.RemoveReverbZone"/>
+  /// <param name="in_ReverbZone"> ID of the Room set as a Reverb Zone.</param>
   public static AKRESULT RemoveReverbZone(ulong in_ReverbZone) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_RemoveReverbZone(in_ReverbZone); }
 
-  ///  Set the room that the game object is currently located in - usually the result of a containment test performed by the client. The room must have been registered with ``SetRoom``.
-  /// 	Setting the room for a game object provides the basis for the sound propagation service, and also sets which room's reverb aux bus to send to.  The sound propagation service traces the path
-  ///  of the sound from the emitter to the listener, and calculates the diffraction as the sound passes through each portal.  The portals are used to define the spatial location of the diffracted and reverberated
-  ///  audio.
+  ///  Set the Room in which the Game Object is currently located, usually the result of a containment test
+  ///  performed by the client. The Room must first be registered with ``SetRoom``.
+  ///  Setting the Room for a Game Object provides the basis for the sound propagation service, and also sets
+  ///  the Room's destination reverb auxiliary bus. The sound propagation service traces the path of the sound from the
+  ///  emitter to the listener and calculates the diffraction as the sound passes through each Portal. The Portals
+  ///  are used to define the spatial location of the diffracted and reverberated audio.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetRoom
-  /// 	- \ref AK.SpatialAudio.RemoveRoom"/>
-  /// <param name="in_gameObjectID"> Game object ID</param> 
-  /// <param name="in_CurrentRoomID"> RoomID that was passed to ``AK::SpatialAudio::SetRoom``</param>
+  /// 	- \ref AK.Acoustics.SetRoom
+  /// 	- \ref AK.Acoustics.RemoveRoom"/>
+  /// <param name="in_gameObjectID"> Game Object ID</param> 
+  /// <param name="in_CurrentRoomID"> RoomID that was passed to ``AK::Acoustics::SetRoom``</param>
   public static AKRESULT SetGameObjectInRoom(ulong in_gameObjectID, ulong in_CurrentRoomID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGameObjectInRoom(in_gameObjectID, in_CurrentRoomID); }
 
-  ///  Unset the room that the game object is currently located in.
-  /// 	When a game object has not been explicitly assigned to a room with \ref AK::SpatialAudio::SetGameObjectInRoom, the room is automatically computed.
+  ///  Unset the Room that currently contains the Game Object.
+  ///  When a Game Object has not been explicitly assigned to a Room with \ref AK::Acoustics::SetGameObjectInRoom,
+  ///  the Room is automatically computed.
   /// <seealso cref="
-  /// 	- \ref AK.SpatialAudio.SetRoom
-  /// 	- \ref AK.SpatialAudio.RemoveRoom"/>
-  /// <param name="in_gameObjectID"> Game object ID</param>
+  /// 	- \ref AK.Acoustics.SetRoom
+  /// 	- \ref AK.Acoustics.RemoveRoom"/>
+  /// <param name="in_gameObjectID"> Game Object ID</param>
   public static AKRESULT UnsetGameObjectInRoom(ulong in_gameObjectID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_UnsetGameObjectInRoom(in_gameObjectID); }
 
-  /// Set a global scaling factor that manipulates reverb send values. AK::SpatialAudio::SetAdjacentRoomBleed affects the proportion of audio sent to adjacent rooms
-  /// versus the proportion sent to the emitter's current room. It updates the initialization setting specified in AkSpatialAudioInitSettings::fAdjacentRoomBleed.
-  /// This value is multiplied by AkPortalParams::AdjacentRoomBleed, which is used to scale reverb bleed for individual portals.
-  /// When calculating reverb send amounts, each portal's aperture is multiplied by fAdjacentRoomBleed, altering its perceived size:
-  /// - 1.0 (default): Maintain portals at its true geometric size (no scaling).
-  /// - &gt; 1.0: Increases the perceived size of all portals, allowing more bleed into adjacent rooms.
-  /// - &lt; 1.0: Decreases the perceived size of all portals, reducing bleed into adjacent rooms.
+  /// Set a global scaling factor that manipulates reverb send values. AK::Acoustics::SetAdjacentRoomBleed affects
+  /// the proportion of audio sent to adjacent Rooms as opposed to the proportion sent to the emitter's current Room. It
+  /// updates the initialization setting specified in AkAcousticsInitSettings::fAdjacentRoomBleed.
+  /// This value is multiplied by AkPortalParams::AdjacentRoomBleed, which is used to scale reverb bleed for
+  /// individual Portals.
+  /// When calculating reverb send amounts, each Portal's aperture is multiplied by fAdjacentRoomBleed, which alters
+  /// its perceived size:
+  /// - 1.0 (default): Maintains Portals at their true geometric sizes (no scaling).
+  /// - &gt; 1.0: Increases the perceived size of all Portals, which increases bleed into adjacent Rooms.
+  /// - &lt; 1.0: Decreases the perceived size of all Portals, which reduces bleed into adjacent Rooms.
   /// Valid range: (0.0 - infinity)
-  /// Note: Values approaching 0 may result in abrupt portal transitions.
+  /// Values close to 0 might cause abrupt Portal transitions.
   public static AKRESULT SetAdjacentRoomBleed(float in_fAdjacentRoomBleed) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetAdjacentRoomBleed(in_fAdjacentRoomBleed); }
 
-  ///  Set the early reflections order for reflection calculation. The reflections order indicates the number of times sound can bounce off of a surface.
-  ///  A higher number requires more CPU resources but results in denser early reflections. Set to 0 to globally disable reflections processing.
+  ///  Set the early reflections order for reflection calculation. The reflections order indicates the number of
+  ///  times sound can bounce off of a surface. High numbers require more CPU resources but result in denser
+  ///  early reflections. Set to 0 to globally deactivate reflection processing.
   /// <param name="in_uReflectionsOrder"> Number of reflections to calculate. Valid range [0,4]</param> 
-  /// <param name="in_bUpdatePaths"> Set to true to clear existing higher-order paths and to force the re-computation of new paths. If false, existing paths will remain and new paths will be computed when the emitter or listener moves.</param>
+  /// <param name="in_bUpdatePaths"> Set to true to clear existing higher-order paths and force the computation of new paths. If false, existing paths remain and new paths are computed when the emitter or listener moves.</param>
   public static AKRESULT SetReflectionsOrder(uint in_uReflectionsOrder, bool in_bUpdatePaths) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetReflectionsOrder(in_uReflectionsOrder, in_bUpdatePaths); }
 
-  ///  Set the diffraction order for geometric path calculation. The diffraction order indicates the number of edges a sound can diffract around.
-  ///  A higher number requires more CPU resources but results in paths found around more complex geometry. Set to 0 to globally disable geometric diffraction processing.
+  ///  Set the diffraction order for geometric path calculation. The diffraction order indicates the number of edges
+  ///  around which a sound can diffract. High numbers require more CPU resources but find paths around more
+  ///  complex geometry. Set to 0 to globally deactivate geometric diffraction processing.
   /// <seealso cref="
-  ///  - \ref AkSpatialAudioInitSettings.uMaxDiffractionOrder"/>
-  /// <param name="in_uDiffractionOrder"> Number of diffraction edges to consider in path calculations. Valid range [0,8]</param> 
-  /// <param name="in_bUpdatePaths"> Set to true to clear existing diffraction paths and to force the re-computation of new paths. If false, existing paths will remain and new paths will be computed when the emitter or listener moves.</param>
+  ///  - \ref AkAcousticsInitSettings.uMaxDiffractionOrder"/>
+  /// <param name="in_uDiffractionOrder"> Number of diffraction edges to evaluate in path calculations. Valid range [0,8].</param> 
+  /// <param name="in_bUpdatePaths"> Set to true to clear existing diffraction paths and force the computation of new paths. If false, existing paths remain and new paths are computed when the emitter or listener moves.</param>
   public static AKRESULT SetDiffractionOrder(uint in_uDiffractionOrder, bool in_bUpdatePaths) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetDiffractionOrder(in_uDiffractionOrder, in_bUpdatePaths); }
 
-  ///  Set the maximum number of computed reflection paths
-  ///
+  ///  Set the maximum number of computed reflection paths.
   /// <param name="in_uMaxGlobalReflectionPaths"> Maximum number of reflection paths. Valid range [0..[</param>
   public static AKRESULT SetMaxGlobalReflectionPaths(uint in_uMaxGlobalReflectionPaths) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetMaxGlobalReflectionPaths(in_uMaxGlobalReflectionPaths); }
 
-  ///  Set the maximum number of computed diffraction paths.
-  ///  Pass a valid Game Object ID to to ``in_gameObjectID`` to affect a specific game object and override the value set in AkSpatialAudioInitSettings::uMaxDiffractionPaths.
-  ///  Pass ``AK_INVALID_GAME_OBJECT`` to apply the same limit to all Game Objects (that have not previously been passed to SetMaxDiffractionPaths),
-  ///  updating the value set for AkSpatialAudioInitSettings::uMaxDiffractionPaths.
+  ///  Set the reflection path search effort
   ///
+  /// <param name="in_fReflectionPathSearchEffort"> Reflection path search effort. Valid range [0..1].</param>
+  public static AKRESULT SetReflectionPathSearchEffort(float in_fReflectionPathSearchEffort) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetReflectionPathSearchEffort(in_fReflectionPathSearchEffort); }
+
+  ///  Set the maximum number of computed diffraction paths.
+  ///  Pass a valid Game Object ID to ``in_gameObjectID`` to affect a specific Game Object and override the value set
+  ///  in AkAcousticsInitSettings::uMaxDiffractionPaths.
+  ///  Pass ``AK_INVALID_GAME_OBJECT`` to apply the same limit to all Game Objects that have not already been
+  ///  passed to SetMaxDiffractionPaths, and update the value set for AkAcousticsInitSettings::uMaxDiffractionPaths.
   /// <seealso cref="
-  ///  - \ref AkSpatialAudioInitSettings.uMaxDiffractionPaths"/>
-  /// <param name="in_uMaxDiffractionPaths"> Maximum number of reflection paths. Valid range [0..32]</param> 
-  /// <param name="in_gameObjectID"> Game Object ID. Pass AK_INVALID_GAME_OBJECT to affect all Game Objects, effectivly updating AkSpatialAudioInitSettings::uMaxDiffractionPaths. Pass a valid Game Object ID to override the init setting for a specific Game Object.</param>
+  ///  - \ref AkAcousticsInitSettings.uMaxDiffractionPaths"/>
+  /// <param name="in_uMaxDiffractionPaths"> Maximum number of diffraction paths. Valid range [0..32].</param> 
+  /// <param name="in_gameObjectID"> Game Object ID. Pass AK_INVALID_GAME_OBJECT to affect all Game Objects, which updates AkAcousticsInitSettings::uMaxDiffractionPaths. Pass a valid Game Object ID to override the init setting for a specific Game Object.</param>
   public static AKRESULT SetMaxDiffractionPaths(uint in_uMaxDiffractionPaths, ulong in_gameObjectID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetMaxDiffractionPaths__SWIG_0(in_uMaxDiffractionPaths, in_gameObjectID); }
 
   ///  Set the maximum number of computed diffraction paths.
-  ///  Pass a valid Game Object ID to to ``in_gameObjectID`` to affect a specific game object and override the value set in AkSpatialAudioInitSettings::uMaxDiffractionPaths.
-  ///  Pass ``AK_INVALID_GAME_OBJECT`` to apply the same limit to all Game Objects (that have not previously been passed to SetMaxDiffractionPaths),
-  ///  updating the value set for AkSpatialAudioInitSettings::uMaxDiffractionPaths.
-  ///
+  ///  Pass a valid Game Object ID to ``in_gameObjectID`` to affect a specific Game Object and override the value set
+  ///  in AkAcousticsInitSettings::uMaxDiffractionPaths.
+  ///  Pass ``AK_INVALID_GAME_OBJECT`` to apply the same limit to all Game Objects that have not already been
+  ///  passed to SetMaxDiffractionPaths, and update the value set for AkAcousticsInitSettings::uMaxDiffractionPaths.
   /// <seealso cref="
-  ///  - \ref AkSpatialAudioInitSettings.uMaxDiffractionPaths"/>
-  /// <param name="in_uMaxDiffractionPaths"> Maximum number of reflection paths. Valid range [0..32]</param>
+  ///  - \ref AkAcousticsInitSettings.uMaxDiffractionPaths"/>
+  /// <param name="in_uMaxDiffractionPaths"> Maximum number of diffraction paths. Valid range [0..32].</param>
   public static AKRESULT SetMaxDiffractionPaths(uint in_uMaxDiffractionPaths) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetMaxDiffractionPaths__SWIG_1(in_uMaxDiffractionPaths); }
 
-  ///  Set the maximum number of game-defined auxiliary sends that can originate from a single emitter.
-  ///  Set to 1 to only allow emitters to send directly to their current room. Set to 0 to disable the limit.
+  ///  Set the maximum number of Automatic Room Sends that can originate from a single emitter.
+  ///  Set to 1 to constrain emitters to send directly to their current Rooms. Set to 0 to remove the limit.
   /// <seealso cref="
-  ///  - \ref AkSpatialAudioInitSettings.uMaxEmitterRoomAuxSends"/>
-  /// <param name="in_uMaxEmitterRoomAuxSends"> The maximum number of room aux send connections.</param>
+  ///  - \ref AkAcousticsInitSettings.uMaxEmitterRoomAuxSends"/>
+  /// <param name="in_uMaxEmitterRoomAuxSends"> The maximum number of Room auxiliary send connections.</param>
   public static AKRESULT SetMaxEmitterRoomAuxSends(uint in_uMaxEmitterRoomAuxSends) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetMaxEmitterRoomAuxSends(in_uMaxEmitterRoomAuxSends); }
 
   ///  Set the number of rays cast from the listener by the stochastic ray casting engine.
-  ///  A higher number requires more CPU resources but provides more accurate results. Default value (35) should be good for most applications.
-  ///
-  /// <param name="in_uNbPrimaryRays"> Number of rays cast from the listener</param>
+  ///  High numbers require more CPU resources but provide more accurate results. The default value (35) is likely
+  ///  sufficient for most applications.
+  /// <param name="in_uNbPrimaryRays"> Number of rays cast from the listener.</param>
   public static AKRESULT SetNumberOfPrimaryRays(uint in_uNbPrimaryRays) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetNumberOfPrimaryRays(in_uNbPrimaryRays); }
 
-  ///  Set the number of frames on which the path validation phase will be spread. Value between [1..[
-  ///  High values delay the validation of paths. A value of 1 indicates no spread at all.
-  ///
-  /// <param name="in_uNbFrames"> Number of spread frames</param>
+  ///  Set the number of frames over which to spread the path validation phase. Value between [1..[
+  ///  High values delay path validation. A value of 1 indicates no spread at all.
+  /// <param name="in_uNbFrames"> Number of spread frames.</param>
   public static AKRESULT SetLoadBalancingSpread(uint in_uNbFrames) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetLoadBalancingSpread(in_uNbFrames); }
 
-  ///  [\ref Experimental]  Enable parameter smoothing on the diffraction paths output from the Acoustics Engine, either globally or for a specific game object. Set fSmoothingConstantMs to a value greater than 0 to define the time constant (in milliseconds) for parameter smoothing.
+  ///  [\ref Experimental] Enable parameter smoothing on the diffraction paths output
+  ///  from the Acoustics Engine, either globally or for a specific Game Object. Set fSmoothingConstantMs to a value
+  ///  greater than 0 to define the time constant (in milliseconds) for parameter smoothing.
   /// <seealso cref="
-  ///  - \ref AkSpatialAudioInitSettings.fSmoothingConstantMs"/>
-  /// <param name="in_fSmoothingConstantMs"> Smoothing constant (ms)</param> 
-  /// <param name="in_gameObjectID"> Game Object ID. Pass AK_INVALID_GAME_OBJECT to set the global smoothing constant, affecting all Spatial Audio Emitters and Rooms.</param>
+  ///  - \ref AkAcousticsInitSettings.fSmoothingConstantMs"/>
+  /// <param name="in_fSmoothingConstantMs"> Smoothing constant (ms).</param> 
+  /// <param name="in_gameObjectID"> Game Object ID. Pass AK_INVALID_GAME_OBJECT to set the global smoothing constant, affecting all Acoustics Emitters and Rooms.</param>
   public static AKRESULT SetSmoothingConstant(float in_fSmoothingConstantMs, ulong in_gameObjectID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetSmoothingConstant__SWIG_0(in_fSmoothingConstantMs, in_gameObjectID); }
 
-  ///  [\ref Experimental]  Enable parameter smoothing on the diffraction paths output from the Acoustics Engine, either globally or for a specific game object. Set fSmoothingConstantMs to a value greater than 0 to define the time constant (in milliseconds) for parameter smoothing.
+  ///  [\ref Experimental] Enable parameter smoothing on the diffraction paths output
+  ///  from the Acoustics Engine, either globally or for a specific Game Object. Set fSmoothingConstantMs to a value
+  ///  greater than 0 to define the time constant (in milliseconds) for parameter smoothing.
   /// <seealso cref="
-  ///  - \ref AkSpatialAudioInitSettings.fSmoothingConstantMs"/>
-  /// <param name="in_fSmoothingConstantMs"> Smoothing constant (ms)</param>
+  ///  - \ref AkAcousticsInitSettings.fSmoothingConstantMs"/>
+  /// <param name="in_fSmoothingConstantMs"> Smoothing constant (ms).</param>
   public static AKRESULT SetSmoothingConstant(float in_fSmoothingConstantMs) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetSmoothingConstant__SWIG_1(in_fSmoothingConstantMs); }
 
-  ///  Set an early reflections auxiliary bus for a particular game object.
-  ///  Geometrical reflection calculation inside spatial audio is enabled for a game object if any sound playing on the game object has a valid early reflections aux bus specified in the authoring tool,
-  ///  or if an aux bus is specified via ``SetEarlyReflectionsAuxSend``.
-  ///  The ``in_auxBusID`` parameter of SetEarlyReflectionsAuxSend applies to sounds playing on the game object ``in_gameObjectID`` which have not specified an early reflection bus in the authoring tool -
-  ///  the parameter specified on individual sounds' reflection bus takes priority over the value passed in to ``SetEarlyReflectionsAuxSend``.
+  ///  Set an early reflections auxiliary bus for a particular Game Object.
+  ///  Geometric reflection calculation inside Wwise Acoustics is activated for a Game Object if any sound playing on
+  ///  the Game Object has a valid early reflection auxiliary bus configured in Wwise Authoring, or if an auxiliary bus is
+  ///  specified through ``SetEarlyReflectionsAuxSend``.
+  ///  The ``in_auxBusID`` parameter of SetEarlyReflectionsAuxSend applies to sounds playing on the Game Object
+  ///  ``in_gameObjectID`` that do not have early reflection busses in Wwise Authoring. The parameter
+  ///  specified on individual sounds' reflection busses takes priority over the value passed in to
+  ///  ``SetEarlyReflectionsAuxSend``.
   ///
-  ///  Users may apply this function to avoid duplicating sounds in the Containers hierarchy solely for the sake of specifying a unique early reflection bus, or in any situation where the same
-  ///  sound should be played on different game objects with different early reflection aux buses (the early reflection bus must be left blank in the authoring tool if the user intends to specify it through the API).
-  /// <param name="in_gameObjectID"> Game object ID</param> 
-  /// <param name="in_auxBusID"> Auxiliary bus ID. Applies only to sounds which have not specified an early reflection bus in the authoring tool. Pass ``AK_INVALID_AUX_ID`` to set only the send volume.</param>
+  ///  You can use this function to avoid duplicating sounds in the Containers hierarchy for the purpose of
+  ///  specifying a unique early reflection bus, or in any situation in which the same sound has to be played on
+  ///  different Game Objects with different early reflection auxiliary busses (the early reflection bus must be left blank
+  ///  in Wwise Authoring if you intend to set it through the API).
+  /// <param name="in_gameObjectID"> Game Object ID</param> 
+  /// <param name="in_auxBusID"> Auxiliary bus ID. Applies only to sounds do not have an early reflection bus in Wwise Authoring. Pass ``AK_INVALID_AUX_ID`` to set only the send volume.</param>
   public static AKRESULT SetEarlyReflectionsAuxSend(ulong in_gameObjectID, uint in_auxBusID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetEarlyReflectionsAuxSend(in_gameObjectID, in_auxBusID); }
 
-  ///  Set an early reflections send volume for a particular game object.
-  ///  The ``in_fSendVolume`` parameter is used to control the volume of the early reflections send. It is combined with the early reflections volume specified in the authoring tool, and is applied to all sounds
-  ///  playing on the game object.
-  ///  Setting ``in_fSendVolume`` to 0.f will disable all reflection processing for this game object.
-  /// <param name="in_gameObjectID"> Game object ID</param> 
-  /// <param name="in_fSendVolume"> Send volume (linear) for auxiliary send. Set 0.f to disable reflection processing. Valid range 0.f-1.f.</param>
+  ///  Set an early reflection send volume for a Game Object.
+  ///  The ``in_fSendVolume`` parameter controls the volume of the early reflection send. It is combined
+  ///  with the early reflection volume specified in Wwise Authoring and is applied to all sounds playing on the
+  ///  Game Object. Setting ``in_fSendVolume`` to 0.f deactivates all reflection processing for this Game Object.
+  /// <param name="in_gameObjectID"> Game Object ID</param> 
+  /// <param name="in_fSendVolume"> Send volume (linear) for auxiliary send. Set 0.f to deactivate reflection processing. Valid range 0.f-1.f.</param>
   public static AKRESULT SetEarlyReflectionsVolume(ulong in_gameObjectID, float in_fSendVolume) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetEarlyReflectionsVolume(in_gameObjectID, in_fSendVolume); }
 
-  ///  Set the obstruction and occlusion value for a portal that has been registered with Spatial Audio.
-  ///  Portal obstruction simulates objects that block the direct sound path between the portal and the listener, but
-  ///  allows indirect sound to pass around the obstacle. For example, use portal obstruction
-  ///  when a piece of furniture blocks the line of sight of the portal opening.
-  ///  Portal obstruction is applied to the connection between the emitter and the listener, and only affects the dry signal path.
-  ///  Portal occlusion simulates a complete blockage of both the direct and indirect sound through a portal. For example, use portal occlusion for
-  ///  opening or closing a door or window.
-  ///  Portal occlusion is applied to the connection between the emitter and the first room in the chain, as well as the connection between the emitter and listener.
-  ///  Portal occlusion affects both the dry and wet (reverberant) signal paths.
-  ///  If you are using built-in game parameters to drive RTPCs, the obstruction and occlusion values set here
-  ///  do not affect the RTPC values. This behavior is intentional and occurs because RTPCs only provide one
-  ///  value per game object, but a single game object can have multiple paths through different Portals,
-  ///  each with different obstruction and occlusion values.
-  ///  To apply detailed obstruction to specific sound paths but not others, use ``AK::SpatialAudio::SetGameObjectToPortalObstruction`` and ``AK::SpatialAudio::SetPortalToPortalObstruction``.
-  ///  To apply occlusion and obstruction to the direct line of sight between the emitter and listener use ``AK::SoundEngine::SetObjectObstructionAndOcclusion``.
+  ///  Set the obstruction and occlusion values for a Portal registered with Wwise Acoustics.
+  ///  Portal obstruction simulates objects that block the direct sound path between the Portal and the listener, but
+  ///  allows indirect sound to pass around the obstacle. For example, use Portal obstruction when a piece of
+  ///  furniture blocks the line of sight of the Portal opening.
+  ///  Portal obstruction is applied to the connection between the emitter and the listener, and only affects the dry
+  ///  signal path.
+  ///  Portal occlusion simulates a complete blockage of both the direct and indirect sound through a Portal. For
+  ///  example, use Portal occlusion for opening or closing a door or window.
+  ///  Portal occlusion is applied to the connection between the emitter and the first Room in the chain, as well as
+  ///  the connection between the emitter and listener. Portal occlusion affects both the dry and wet (reverberant)
+  ///  signal paths.
+  ///  If you are using built-in game parameters to drive RTPCs, the obstruction and occlusion values set here do not
+  ///  affect the RTPC values. This behavior is intentional and occurs because RTPCs only provide one value per game
+  ///  object, but a single game object can have multiple paths through different Portals, each with different
+  ///  obstruction and occlusion values.
+  ///  To apply obstruction to specific sound paths but not others, use
+  ///  ``AK::Acoustics::SetGameObjectToPortalObstruction`` and ``AK::Acoustics::SetPortalToPortalObstruction``.
+  ///  To apply occlusion and obstruction to the direct line of sight between the emitter and listener, use
+  ///  ``AK::SoundEngine::SetObjectObstructionAndOcclusion``.
   /// <seealso cref="
-  ///  - \ref AK.SpatialAudio.SetGameObjectToPortalObstruction
-  ///  - \ref AK.SpatialAudio.SetPortalToPortalObstruction
+  ///  - \ref AK.Acoustics.SetGameObjectToPortalObstruction
+  ///  - \ref AK.Acoustics.SetPortalToPortalObstruction
   ///  - \ref AK.SoundEngine.SetObjectObstructionAndOcclusion"/>
   /// <param name="in_PortalID"> Portal ID.</param> 
-  /// <param name="in_fObstruction"> Obstruction value.  Valid range 0.f-1.f</param> 
-  /// <param name="in_fOcclusion"> Occlusion value.  Valid range 0.f-1.f</param> 
-  /// <param name="in_bTransition"> Transition obstruction and occlusion through portals.  Default false</param>
+  /// <param name="in_fObstruction"> Obstruction value. Valid range 0.f-1.f</param> 
+  /// <param name="in_fOcclusion"> Occlusion value. Valid range 0.f-1.f</param> 
+  /// <param name="in_bTransition"> Transition obstruction and occlusion through Portals. Default false.</param>
   public static AKRESULT SetPortalObstructionAndOcclusion(ulong in_PortalID, float in_fObstruction, float in_fOcclusion, bool in_bTransition) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetPortalObstructionAndOcclusion__SWIG_0(in_PortalID, in_fObstruction, in_fOcclusion, in_bTransition); }
 
-  ///  Set the obstruction and occlusion value for a portal that has been registered with Spatial Audio.
-  ///  Portal obstruction simulates objects that block the direct sound path between the portal and the listener, but
-  ///  allows indirect sound to pass around the obstacle. For example, use portal obstruction
-  ///  when a piece of furniture blocks the line of sight of the portal opening.
-  ///  Portal obstruction is applied to the connection between the emitter and the listener, and only affects the dry signal path.
-  ///  Portal occlusion simulates a complete blockage of both the direct and indirect sound through a portal. For example, use portal occlusion for
-  ///  opening or closing a door or window.
-  ///  Portal occlusion is applied to the connection between the emitter and the first room in the chain, as well as the connection between the emitter and listener.
-  ///  Portal occlusion affects both the dry and wet (reverberant) signal paths.
-  ///  If you are using built-in game parameters to drive RTPCs, the obstruction and occlusion values set here
-  ///  do not affect the RTPC values. This behavior is intentional and occurs because RTPCs only provide one
-  ///  value per game object, but a single game object can have multiple paths through different Portals,
-  ///  each with different obstruction and occlusion values.
-  ///  To apply detailed obstruction to specific sound paths but not others, use ``AK::SpatialAudio::SetGameObjectToPortalObstruction`` and ``AK::SpatialAudio::SetPortalToPortalObstruction``.
-  ///  To apply occlusion and obstruction to the direct line of sight between the emitter and listener use ``AK::SoundEngine::SetObjectObstructionAndOcclusion``.
+  ///  Set the obstruction and occlusion values for a Portal registered with Wwise Acoustics.
+  ///  Portal obstruction simulates objects that block the direct sound path between the Portal and the listener, but
+  ///  allows indirect sound to pass around the obstacle. For example, use Portal obstruction when a piece of
+  ///  furniture blocks the line of sight of the Portal opening.
+  ///  Portal obstruction is applied to the connection between the emitter and the listener, and only affects the dry
+  ///  signal path.
+  ///  Portal occlusion simulates a complete blockage of both the direct and indirect sound through a Portal. For
+  ///  example, use Portal occlusion for opening or closing a door or window.
+  ///  Portal occlusion is applied to the connection between the emitter and the first Room in the chain, as well as
+  ///  the connection between the emitter and listener. Portal occlusion affects both the dry and wet (reverberant)
+  ///  signal paths.
+  ///  If you are using built-in game parameters to drive RTPCs, the obstruction and occlusion values set here do not
+  ///  affect the RTPC values. This behavior is intentional and occurs because RTPCs only provide one value per game
+  ///  object, but a single game object can have multiple paths through different Portals, each with different
+  ///  obstruction and occlusion values.
+  ///  To apply obstruction to specific sound paths but not others, use
+  ///  ``AK::Acoustics::SetGameObjectToPortalObstruction`` and ``AK::Acoustics::SetPortalToPortalObstruction``.
+  ///  To apply occlusion and obstruction to the direct line of sight between the emitter and listener, use
+  ///  ``AK::SoundEngine::SetObjectObstructionAndOcclusion``.
   /// <seealso cref="
-  ///  - \ref AK.SpatialAudio.SetGameObjectToPortalObstruction
-  ///  - \ref AK.SpatialAudio.SetPortalToPortalObstruction
+  ///  - \ref AK.Acoustics.SetGameObjectToPortalObstruction
+  ///  - \ref AK.Acoustics.SetPortalToPortalObstruction
   ///  - \ref AK.SoundEngine.SetObjectObstructionAndOcclusion"/>
   /// <param name="in_PortalID"> Portal ID.</param> 
-  /// <param name="in_fObstruction"> Obstruction value.  Valid range 0.f-1.f</param> 
-  /// <param name="in_fOcclusion"> Occlusion value.  Valid range 0.f-1.f</param>
+  /// <param name="in_fObstruction"> Obstruction value. Valid range 0.f-1.f</param> 
+  /// <param name="in_fOcclusion"> Occlusion value. Valid range 0.f-1.f</param>
   public static AKRESULT SetPortalObstructionAndOcclusion(ulong in_PortalID, float in_fObstruction, float in_fOcclusion) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetPortalObstructionAndOcclusion__SWIG_1(in_PortalID, in_fObstruction, in_fOcclusion); }
 
-  ///  Set the obstruction value of the path between a game object and a portal that has been created by Spatial Audio.
-  ///  The obstruction value is applied on one of the path segments of the sound between the emitter and the listener.
-  ///  Diffraction must be enabled on the sound for a diffraction path to be created.
-  ///  Also, there should not be any portals between the provided game object and portal ID parameters.
-  ///  The obstruction value is used to simulate objects between the portal and the game object that are obstructing the sound.
-  ///  Send an obstruction value of 0 to ensure the value is removed from the internal data structure.
+  ///  Set the obstruction value of the path between a Game Object and a Portal created by Wwise
+  ///  Acoustics. The obstruction value is applied to one of the path segments of the sound between the emitter and
+  ///  the listener. Diffraction must be enabled on the sound for a diffraction path to be created.
+  ///  There must be no Portals between the provided Game Object and Portal ID parameters.
+  ///  The obstruction value is used to simulate objects between the Portal and the Game Object that obstruct
+  ///  the sound. To remove the value from the internal data structure, send a value of 0.
   /// <seealso cref="
-  ///  - \ref AK.SpatialAudio.SetPortalObstructionAndOcclusion"/>
-  /// <param name="in_gameObjectID"> Game object ID</param> 
+  ///  - \ref AK.Acoustics.SetPortalObstructionAndOcclusion"/>
+  /// <param name="in_gameObjectID"> Game Object ID</param> 
   /// <param name="in_PortalID"> Portal ID</param> 
-  /// <param name="in_fObstruction"> Obstruction value.  Valid range 0.f-1.f</param>
+  /// <param name="in_fObstruction"> Obstruction value. Valid range 0.f-1.f</param>
   public static AKRESULT SetGameObjectToPortalObstruction(ulong in_gameObjectID, ulong in_PortalID, float in_fObstruction) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGameObjectToPortalObstruction(in_gameObjectID, in_PortalID, in_fObstruction); }
 
-  ///  Set the obstruction value of the path between two portals that has been created by Spatial Audio.
-  ///  The obstruction value is applied on one of the path segments of the sound between the emitter and the listener.
+  ///  Set the obstruction value of the path between two Portals created by Wwise Acoustics.
+  ///  The obstruction value is applied to one of the path segments of the sound between the emitter and the listener.
   ///  Diffraction must be enabled on the sound for a diffraction path to be created.
-  ///  Also, there should not be any portals between the two provided ID parameters.
-  ///  The obstruction value is used to simulate objects between the portals that are obstructing the sound.
-  ///  Send an obstruction value of 0 to ensure the value is removed from the internal data structure.
+  ///  There must be no Portals between the two provided ID parameters.
+  ///  The obstruction value is used to simulate objects between the Portals that obstruct the sound.
+  ///  To remove the value from the internal data structure, send a value of 0.
   /// <seealso cref="
-  ///  - \ref AK.SpatialAudio.SetPortalObstructionAndOcclusion"/>
+  ///  - \ref AK.Acoustics.SetPortalObstructionAndOcclusion"/>
   /// <param name="in_PortalID0"> Portal ID</param> 
   /// <param name="in_PortalID1"> Portal ID</param> 
-  /// <param name="in_fObstruction"> Obstruction value.  Valid range 0.f-1.f</param>
+  /// <param name="in_fObstruction"> Obstruction value. Valid range 0.f-1.f</param>
   public static AKRESULT SetPortalToPortalObstruction(ulong in_PortalID0, ulong in_PortalID1, float in_fObstruction) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetPortalToPortalObstruction(in_PortalID0, in_PortalID1, in_fObstruction); }
 
-  ///  Query information about the wet diffraction amount for the portal ``in_portal``, returned as a normalized value ``out_wetDiffraction`` in the range [0,1].
-  ///  The wet diffraction is calculated from how far into the 'shadow region' the listener is from the portal.  Unlike dry diffraction, the
-  ///  wet diffraction does not depend on the incident angle, but only the normal of the portal.
-  ///  This value is applied by spatial audio, to the Diffraction value and built-in game parameter of the room game object that is
-  ///  on the other side of the portal (relative to the listener).
-  ///  This function must acquire the global sound engine lock and therefore, may block waiting for the lock.
+  ///  Query information about the wet diffraction amount for the Portal ``in_portal``, returned as a normalized
+  ///  value ``out_wetDiffraction`` in the range [0,1]. The wet diffraction is calculated from the listener's position in the 'shadow region' and their distance from the Portal.
+  ///  Unlike dry diffraction, wet diffraction does not depend
+  ///  on the incident angle, but the normal of the Portal.
+  ///  Wwise Acoustics applies this value to the Diffraction value and built-in game parameter of the Room
+  ///  Game Object on the other side of the Portal (relative to the listener).
+  ///  This function must acquire the global sound engine lock and therefore might be blocked while waiting for the lock.
   /// <seealso cref="
-  ///  - \ref AkSpatialAudioInitSettings"/>
-  /// <param name="in_portal"> The ID of the game object that the client wishes to query.</param> 
-  /// <param name="out_wetDiffraction"> The number of slots in ``out_aPaths``, after returning the number of valid elements written.</param>
+  ///  - \ref AkAcousticsInitSettings"/>
+  /// <param name="in_portal"> The ID of the Portal that the client wishes to query.</param> 
+  /// <param name="out_wetDiffraction"> The wet diffraction amount for the Portal, in the range [0,1].</param>
   public static AKRESULT QueryWetDiffraction(ulong in_portal, out float out_wetDiffraction) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_QueryWetDiffraction(in_portal, out out_wetDiffraction); }
 
   ///  Set the operation used to calculate transmission loss on a direct path between emitter and listener.
-  ///
-  /// <param name="in_eOperation"> The operation to be used on all transmission paths.</param>
+  /// <param name="in_eOperation"> The operation to use on all transmission paths.</param>
   public static AKRESULT SetTransmissionOperation(AkTransmissionOperation in_eOperation) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetTransmissionOperation((int)in_eOperation); }
 
   ///  Reset the stochastic engine state by re-initializing the random seeds.
@@ -5908,11 +6018,7 @@ public partial class AkUnitySoundEngine {
 
   public static void SetAudioInputCallbacks(AkAudioInputManager.AudioSamplesInteropDelegate getAudioSamples, AkAudioInputManager.AudioFormatInteropDelegate getAudioFormat) { AkUnitySoundEnginePINVOKE.CSharp_SetAudioInputCallbacks(getAudioSamples, getAudioFormat); }
 
-  public static AKRESULT Init(AkInitializationSettings settings) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_Init(AkInitializationSettings.getCPtr(settings)); }
-
-  public static AKRESULT InitSpatialAudio(AkSpatialAudioInitSettings settings) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_InitSpatialAudio(AkSpatialAudioInitSettings.getCPtr(settings)); }
-
-  public static AKRESULT InitCommunication(AkCommunicationSettings settings) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_InitCommunication(AkCommunicationSettings.getCPtr(settings)); }
+  public static AKRESULT Init(AkInitializationSettings settings, AkSpatialAudioInitSettings spatialAudioSettings, AkCommunicationSettings communicationSettings) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_Init(AkInitializationSettings.getCPtr(settings), AkSpatialAudioInitSettings.getCPtr(spatialAudioSettings), AkCommunicationSettings.getCPtr(communicationSettings)); }
 
   public static void Term() { AkUnitySoundEnginePINVOKE.CSharp_Term(); }
 
@@ -6000,9 +6106,13 @@ public partial class AkUnitySoundEngine {
 
   public static AKRESULT UnregisterSpatialAudioListener(ulong in_gameObjectID) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_UnregisterSpatialAudioListener(in_gameObjectID); }
 
-  public static AKRESULT SetGeometry(ulong in_GeomSetID, AkTriangleArray Triangles, uint NumTriangles, UnityEngine.Vector3[] Vertices, uint NumVertices, AkAcousticSurfaceArray Surfaces, uint NumSurfaces, bool EnableDiffraction, bool EnableDiffractionOnBoundaryEdges) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGeometry(in_GeomSetID, Triangles.GetBuffer(), NumTriangles, Vertices, NumVertices, Surfaces.GetBuffer(), NumSurfaces, EnableDiffraction, EnableDiffractionOnBoundaryEdges); }
+  public static AKRESULT SetGeometry(ulong in_GeomSetID, AkTriangleArray Triangles, uint NumTriangles, UnityEngine.Vector3[] Vertices, uint NumVertices, AkAcousticSurfaceArray Surfaces, uint NumSurfaces, bool EnableDiffraction, bool EnableDiffractionOnBoundaryEdges, string in_pName) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGeometry__SWIG_0(in_GeomSetID, Triangles.GetBuffer(), NumTriangles, Vertices, NumVertices, Surfaces.GetBuffer(), NumSurfaces, EnableDiffraction, EnableDiffractionOnBoundaryEdges, in_pName); }
 
-  public static AKRESULT SetGeometryInstance(ulong in_GeomInstanceID, AkTransform Transform, UnityEngine.Vector3 Scale, ulong GeometrySetID, bool UseForReflectionAndDiffraction, bool BypassPortalSubtraction, bool Solid) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGeometryInstance(in_GeomInstanceID, AkTransform.getCPtr(Transform), Scale, GeometrySetID, UseForReflectionAndDiffraction, BypassPortalSubtraction, Solid); }
+  public static AKRESULT SetGeometry(ulong in_GeomSetID, AkTriangleArray Triangles, uint NumTriangles, UnityEngine.Vector3[] Vertices, uint NumVertices, AkAcousticSurfaceArray Surfaces, uint NumSurfaces, bool EnableDiffraction, bool EnableDiffractionOnBoundaryEdges) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGeometry__SWIG_1(in_GeomSetID, Triangles.GetBuffer(), NumTriangles, Vertices, NumVertices, Surfaces.GetBuffer(), NumSurfaces, EnableDiffraction, EnableDiffractionOnBoundaryEdges); }
+
+  public static AKRESULT SetGeometryInstance(ulong in_GeomInstanceID, AkTransform Transform, UnityEngine.Vector3 Scale, ulong GeometrySetID, bool UseForReflectionAndDiffraction, bool BypassPortalSubtraction, bool Solid, string in_pName) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGeometryInstance__SWIG_0(in_GeomInstanceID, AkTransform.getCPtr(Transform), Scale, GeometrySetID, UseForReflectionAndDiffraction, BypassPortalSubtraction, Solid, in_pName); }
+
+  public static AKRESULT SetGeometryInstance(ulong in_GeomInstanceID, AkTransform Transform, UnityEngine.Vector3 Scale, ulong GeometrySetID, bool UseForReflectionAndDiffraction, bool BypassPortalSubtraction, bool Solid) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_SetGeometryInstance__SWIG_1(in_GeomInstanceID, AkTransform.getCPtr(Transform), Scale, GeometrySetID, UseForReflectionAndDiffraction, BypassPortalSubtraction, Solid); }
 
   public static AKRESULT QueryReflectionPaths(ulong in_gameObjectID, uint in_positionIndex, ref UnityEngine.Vector3 out_listenerPos, ref UnityEngine.Vector3 out_emitterPos, AkReflectionPathInfoArray out_aPaths, out uint io_uArraySize) { return (AKRESULT)AkUnitySoundEnginePINVOKE.CSharp_QueryReflectionPaths(in_gameObjectID, in_positionIndex, ref out_listenerPos, ref out_emitterPos, out_aPaths.GetBuffer(), out io_uArraySize); }
 
@@ -6400,7 +6510,7 @@ public partial class AkUnitySoundEngine {
   public const int AK_STANDARD_MAX_NUM_CHANNELS = (8);
   public const int AK_MAX_AMBISONICS_ORDER = (5);
   public const float AK_DEFAULT_HEIGHT_ANGLE = (30.0f);
-  ///  Spatial audio data type definitions.
+  ///  Wwise Acoustics data type definitions.
   public const int AK_MAX_NUM_TEXTURE = 4;
   public const int AK_MAX_REFLECT_ORDER = 4;
   public const int AK_MAX_REFLECTION_PATH_LENGTH = (4+4);

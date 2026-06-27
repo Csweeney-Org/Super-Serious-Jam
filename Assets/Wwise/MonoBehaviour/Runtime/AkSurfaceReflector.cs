@@ -177,13 +177,14 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 				geometryData.surfaces,
 				geometryData.numSurfaces,
 				enableDiffraction,
-				enableDiffractionOnBoundaryEdges);
+				enableDiffractionOnBoundaryEdges,
+				name);
 
 			return result == AKRESULT.AK_Success;
 		}
 		else
 		{
-			WwiseLogger.LogFormat("SetGeometry({0}): No valid triangle was found. Geometry was not set", mesh.name);
+			WwiseLogger.LogFormat("SetGeometry({0}): No valid triangle was found. Geometry was not set", name);
 			return false;
 		}
 	}
@@ -311,24 +312,26 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 		geometryData.numSurfaces = (uint)geometryData.surfaces.Count();
 	}
 
-    /// <summary>
-    /// Add or update an instance of the geometry by sending the transform of this component to Wwise.
-    /// A geometry instance is a unique instance of a geometry set with a specified transform (position, rotation and scale).
-    /// It is necessary to create at least one geometry instance for each geometry set that is to be used for diffraction and reflection simulation.
-    /// </summary>
-    /// <param name="geometryInstanceID">A unique ID to for the geometry instance. It must be unique amongst all geometry instances, including geometry instances referencing different geometries.</param>
-    /// <param name="geometryID">The ID of the geometry referenced by this instance.</param>
-    /// <param name="transform">The transform to be applied to the geometry to convert it in world positions.</param>
-    /// <param name="useForReflectionAndDiffraction">When enabled, the geometry instance triangles are used to compute reflection and diffraction. Set to false when using a geometry instance only to describe a room, and not for reflection and diffraction calculation.</param>
-    /// <param name="bypassPortalSubtraction">When set to false (default), the intersection of the geometry instance with any portal bounding box is subtracted from the geometry.In effect, an opening is created at the portal location through which sound can pass. When set to true, portals cannot create openings in the geometry instance.</param>
-    /// <param name="solid">A solid geometry instance applies transmission loss once, over its volume. A non-solid geometry instance is one where each surface is infinitely thin, applying transmission loss at each surface.</param>
-    public static void SetGeometryInstance(
+	/// <summary>
+	/// Add or update an instance of the geometry by sending the transform of this component to Wwise.
+	/// A geometry instance is a unique instance of a geometry set with a specified transform (position, rotation and scale).
+	/// It is necessary to create at least one geometry instance for each geometry set that is to be used for diffraction and reflection simulation.
+	/// </summary>
+	/// <param name="geometryInstanceID">A unique ID to for the geometry instance. It must be unique amongst all geometry instances, including geometry instances referencing different geometries.</param>
+	/// <param name="geometryID">The ID of the geometry referenced by this instance.</param>
+	/// <param name="transform">The transform to be applied to the geometry to convert it in world positions.</param>
+	/// <param name="useForReflectionAndDiffraction">When enabled, the geometry instance triangles are used to compute reflection and diffraction. Set to false when using a geometry instance only to describe a room, and not for reflection and diffraction calculation.</param>
+	/// <param name="bypassPortalSubtraction">When set to false (default), the intersection of the geometry instance with any portal bounding box is subtracted from the geometry.In effect, an opening is created at the portal location through which sound can pass. When set to true, portals cannot create openings in the geometry instance.</param>
+	/// <param name="solid">A solid geometry instance applies transmission loss once, over its volume. A non-solid geometry instance is one where each surface is infinitely thin, applying transmission loss at each surface.</param>
+	/// <param name="name">A name for the geometry instance.</param>
+	public static void SetGeometryInstance(
 		ulong geometryInstanceID,
 		ulong geometryID,
 		UnityEngine.Transform transform,
 		bool useForReflectionAndDiffraction,
 		bool bypassPortalSubtraction,
-		bool solid)
+		bool solid,
+		string name = "")
 	{
 		if (!AkUnitySoundEngine.IsInitialized())
 		{
@@ -341,7 +344,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 
 		AkTransform geometryTransform = new AkTransform();
 		geometryTransform.Set(transform.position, transform.forward, transform.up);
-		AkUnitySoundEngine.SetGeometryInstance(geometryInstanceID, geometryTransform, transform.lossyScale, geometryID, useForReflectionAndDiffraction, bypassPortalSubtraction, solid);
+		AkUnitySoundEngine.SetGeometryInstance(geometryInstanceID, geometryTransform, transform.lossyScale, geometryID, useForReflectionAndDiffraction, bypassPortalSubtraction, solid, name);
 	}
 
 	/// <summary>
@@ -384,7 +387,8 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 			transform,
 			true,
 			BypassPortalSubtraction,
-			Solid);
+			Solid,
+			gameObject.name + " Instance");
 	}
 
 	/// <summary>
@@ -615,7 +619,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 			OcclusionValues,
 			meshFilter.name);
 
-		SetGeometryInstance(GetAkGeometrySetID(meshFilter), GetAkGeometrySetID(meshFilter), meshFilter.transform, enableTriangles, false, false);
+		SetGeometryInstance(GetAkGeometrySetID(meshFilter), GetAkGeometrySetID(meshFilter), meshFilter.transform, enableTriangles, false, false, meshFilter.name + " Instance");
 	}
 
 	// for migration purpose, have a single acoustic texture parameter as a setter
@@ -682,9 +686,9 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 		enableDiffractionOnBoundaryEdges,
 		acousticTextures,
 		transmissionLossValues,
-		"");
+		name);
 
-		SetGeometryInstance(geometryID, geometryID, transform, enableTriangles, false, false);
+		SetGeometryInstance(geometryID, geometryID, transform, enableTriangles, false, false, name + " Instance");
 	}
 
 	[System.Obsolete(AkUnitySoundEngine.Deprecation_2023_1_0)]
@@ -704,7 +708,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 		enableDiffractionOnBoundaryEdges,
 		acousticTextures,
 		transmissionLossValues,
-		"");
+		name);
 	}
 
 	[System.Obsolete(AkUnitySoundEngine.Deprecation_2023_1_0)]

@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "174",
+  "SoundBanks": [
+   {
+    "Id": "1733917715",
+    "Type": "Event",
+    "GUID": "{775B9DD1-3003-40C5-B8A2-C466473F3C04}",
+    "Language": "SFX",
+    "Hash": "{5E42D2F8-9494-874C-2F8B-5FC6C75C8976}",
+    "ObjectPath": "Play_Spin_Loop",
+    "ShortName": "Play_Spin_Loop",
+    "Path": "Event/Play_Spin_Loop.bnk",
+    "Media": [
+     {
+      "Id": "403704571",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_HDGM_Cinematic_FX_whoosh_twirl_long_spin_air_thin_punch_weapon_dry_02.wav",
+      "Path": "Media/403704571.wem",
+      "CachePath": "9A/{9A4DE903-A8A7-B33C-3BD9-0F08856CDA67}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1733917715",
+      "Name": "Play_Spin_Loop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Spin_Loop",
+      "GUID": "{775B9DD1-3003-40C5-B8A2-C466473F3C04}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "403704571"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{30175AFE-C187-D4F7-0894-FA2E8098FA4B}"
+ }
+}

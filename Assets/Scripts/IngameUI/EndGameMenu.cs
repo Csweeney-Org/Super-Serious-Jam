@@ -5,6 +5,10 @@ namespace Assets.Scripts.IngameUI
 {
     public class EndGameMenu : MonoBehaviour
     {
+        //Making the music triggers public
+        public AK.Wwise.Event Win_State;
+        public AK.Wwise.Event Lose_State;
+    
         public TextMeshProUGUI PanelText;
         public void Awake()
         {
@@ -15,6 +19,7 @@ namespace Assets.Scripts.IngameUI
         public void ShowEndScreen(bool gameIsWon)
         {
             this.gameObject.SetActive(true);
+            AkUnitySoundEngine.PostEvent("Mus_Battle_WinState", gameObject);
             PanelText.text = gameIsWon
                 ? "You have toppled the enemy! You Win!"
                 : "You have toppled! Game Over!";

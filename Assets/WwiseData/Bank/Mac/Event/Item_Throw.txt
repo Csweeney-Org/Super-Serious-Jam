@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3051433909	Item_Throw			\Default Work Unit\Item_Throw	
+

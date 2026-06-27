@@ -165,6 +165,8 @@ public enum AKRESULT {
   AK_FilePathTooLong = 108,
   ///  This method should not be called when the object is in its current state.
   AK_InvalidState = 109,
+  ///  Spatial Audio module is not linked with the application, so it cannot be initialized.
+  AK_SpatialAudioUnavailable = 110,
   ///  End of enum, invalid value.
   AKRESULT_Last
 }
