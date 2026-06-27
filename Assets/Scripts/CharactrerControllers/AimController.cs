@@ -43,6 +43,7 @@ namespace Assets.Scripts.CharactrerControllers
             float distance = Vector3.Distance(shooter.transform.position, target.transform.position);
             //TODO: Add reference to launch speed defined in Projectile instead of magic number (carfull division by 0)
             float timeToImpact = distance / 10f;
+            timeToImpact = Mathf.Min(timeToImpact, 1f);
 
             // Predict new target position
             Vector3 predictedTargetPos = target.transform.position + (relativeVelocity * timeToImpact);
@@ -97,8 +98,6 @@ namespace Assets.Scripts.CharactrerControllers
                     return rotationSpeed * 0.5f; 
                 
             }
-            
-            // Assign normal speed if anything except a character is hit
             return rotationSpeed;
         }
     }
