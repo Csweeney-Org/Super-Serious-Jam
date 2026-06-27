@@ -1,0 +1,76 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "174",
+  "SoundBanks": [
+   {
+    "Id": "2392886571",
+    "Type": "Event",
+    "GUID": "{596B79E9-9638-45DE-AA9E-E7F82686F498}",
+    "Language": "SFX",
+    "Hash": "{E983CA0D-EABB-EFCA-5513-46BD18A6FC35}",
+    "ObjectPath": "Mus_Battle_LooseState",
+    "ShortName": "Mus_Battle_LooseState",
+    "Path": "Event/Mus_Battle_LooseState.bnk",
+    "Events": [
+     {
+      "Id": "2392886571",
+      "Name": "Mus_Battle_LooseState",
+      "ObjectPath": "\\Events\\Default Work Unit\\Mus_Battle_LooseState",
+      "GUID": "{596B79E9-9638-45DE-AA9E-E7F82686F498}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "1208172739",
+        "Id": "174960569",
+        "Name": "Loose",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\Loose",
+        "GUID": "{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"
+       }
+      ]
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1208172739",
+      "Name": "States",
+      "ObjectPath": "\\States\\Default Work Unit\\States",
+      "GUID": "{C938D3FA-7C43-479C-B715-A04EE888D162}",
+      "States": [
+       {
+        "Id": "174960569",
+        "Name": "Loose",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\Loose",
+        "GUID": "{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\None",
+        "GUID": "{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"
+       },
+       {
+        "Id": "979765101",
+        "Name": "Win",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\Win",
+        "GUID": "{BCECF0BB-276B-44F4-A045-5B632923B198}"
+       },
+       {
+        "Id": "1611212405",
+        "Name": "Full_Mix",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\Full_Mix",
+        "GUID": "{CEF02D89-E20E-4199-A554-A8706E525FA0}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{092457B9-6A7B-41F6-99CF-DDC218A45750}"
+ }
+}

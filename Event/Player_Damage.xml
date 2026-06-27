@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="174">
+	<SoundBanks>
+		<SoundBank Id="2074073782" Type="Event" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" Language="SFX" Hash="{7C0BE53F-92D2-9D01-BAEC-8CAD220761E4}">
+			<ObjectPath>Player_Damage</ObjectPath>
+			<ShortName>Player_Damage</ShortName>
+			<Path>Event/Player_Damage.bnk</Path>
+			<Media>
+				<File Id="47205287" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>ESM_TDG_FX_hit_one_shot_magic_damage_flame_03.wav</ShortName>
+					<Path>Media/47205287.wem</Path>
+					<CachePath>5E/{5E855D70-7281-BEE4-DC2E-2255A0BB91B6}.wem</CachePath>
+				</File>
+				<File Id="704774677" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>snd_damage.wav</ShortName>
+					<Path>Media/704774677.wem</Path>
+					<CachePath>B2/{B249FE6F-3F76-838A-4268-8DAE5F019D33}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2074073782" Name="Player_Damage" ObjectPath="\Events\Default Work Unit\Player_Damage" GUID="{46FB6F2B-381E-4369-90C2-FCC4F9369650}" DurationType="OneShot" DurationMin="0.66152084" DurationMax="0.66152084">
+					<MediaRefs>
+						<MediaRef Id="47205287"/>
+						<MediaRef Id="704774677"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{E23E2F88-D648-D3D3-3EB2-77B07798BD26}</FileHash>
+</SoundBanksInfo>
