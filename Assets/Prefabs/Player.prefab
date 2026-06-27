@@ -639,8 +639,8 @@ MonoBehaviour:
   <CurrentToppleHealth>k__BackingField: 100
   <RegenDelay>k__BackingField: 10
   <RegenRate>k__BackingField: 10
-  <WeightDefenseFactor>k__BackingField: 0.05
-  <WeightSpeedPenalty>k__BackingField: 0.2
+  <WeightDefenseFactor>k__BackingField: 0.03
+  <WeightSpeedPenalty>k__BackingField: 0.05
   <CharacterSpinner>k__BackingField: {fileID: 114878073427203624}
   <MaxVisualSpinSpeed>k__BackingField: 720
   <BaseCrashDamage>k__BackingField: 15
@@ -648,6 +648,7 @@ MonoBehaviour:
   <MinimumCrashDamage>k__BackingField: 5
   <CrashCooldown>k__BackingField: 0.5
   <VelocityDamageMultiplier>k__BackingField: 1.5
+  isToppled: 0
   healthSlider: {fileID: 6697371080492124989}
   sliderTransform: {fileID: 7686371831036612703}
 --- !u!114 &1148754605795818559
