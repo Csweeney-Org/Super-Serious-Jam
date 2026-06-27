@@ -44,7 +44,8 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
 
     private float lastCrashTime = -100f;
     private float timeSinceLastHit = 0f;
-    private bool isToppled = false;
+
+    [SerializeField] private bool isToppled = false;
 
 
     [Header("UI Health Bar")]
@@ -202,6 +203,7 @@ public class SpinCharacterController : MonoBehaviour, ICollidable
     {
         this.CurrentToppleHealth = this.MaxToppleHealth;
         this.rigidBody.position = originalPosition;
+        this.rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
         this.isToppled = false;
     }
 
