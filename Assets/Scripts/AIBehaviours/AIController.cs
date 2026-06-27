@@ -86,7 +86,7 @@ namespace Assets.Scripts.AIBehaviours
             stuckTimer += Time.fixedDeltaTime;
             if (stuckTimer >= 0.5f) 
             {
-                if (Vector3.Distance(selfUnit.transform.position, lastPosition) < 0.2f)
+                if (Vector3.Distance(selfUnit.transform.position, lastPosition) < 0.1f)
                 {
                     Debug.LogWarning($"{selfUnit.name} got stuck! Nudging and picking new target.");
                     
@@ -150,69 +150,64 @@ namespace Assets.Scripts.AIBehaviours
 
         private void EvaluateStateAndStrategy()
         {
-            if (playerUnit == null || selfUnit.CurrentToppleHealth <= 0)
-                return;
+            if (playerUnit == null || selfUnit.CurrentToppleHealth <= 0) return;
 
             AIState previousState = CurrentState;
+            bool isFull = selfUnit.Inventory.IsFull;
+            float currentWeight = selfUnit.Inventory.TotalWeight;
+            float playerWeight = playerUnit.Inventory.TotalWeight;
 
-            if (selfUnit.CurrentToppleHealth < selfUnit.MaxToppleHealth ||
-                selfUnit.Inventory.TotalWeight <= CriticalWeightThreshold)
-            {
-                CurrentState = AIState.Survival;
-                Strategy = new SurvivalStrategy(playerUnit.transform);
-            }
-            else if (selfUnit.Inventory.TotalWeight > playerUnit.Inventory.TotalWeight + 
-                                                        SteamrollWeightAdvantage)
+            if (currentWeight > playerWeight + SteamrollWeightAdvantage)
             {
                 CurrentState = AIState.Steamroll;
                 Strategy = new SteamrollStrategy(playerUnit);
             }
-            else if (selfUnit.Inventory.TotalWeight >= OverweightThreshold)
+            else if (currentWeight >= OverweightThreshold)
             {
                 CurrentState = AIState.Strafe;
                 Strategy = new StrafeStrategy(playerUnit.transform);
+            }
+            else if (!isFull && (selfUnit.CurrentToppleHealth < selfUnit.MaxToppleHealth || currentWeight <= CriticalWeightThreshold))
+            {
+                CurrentState = AIState.Survival;
+                Strategy = new SurvivalStrategy(playerUnit.transform);
             }
             else
             {
                 CurrentState = AIState.Allrounder;
                 Strategy = new AllrounderStrategy(playerUnit.transform);
             }
-
-            // Force new calculation immediatly after state change
             if (previousState != CurrentState)
                 AssessNewTarget();
         }
 
         private void HandleCombat()
         {
-            if (selfUnit.Inventory.TotalWeight <= 0) 
-                return;
+            if (selfUnit.Inventory.TotalWeight <= 0) return;
 
             AimController aim = selfUnit.Inventory.aimController;
 
             switch (CurrentState)
-            { // TODO: Get rid of magic numbers and include variables
+            { 
                 case AIState.Strafe:
-                    // EvaluateTarget checks line of sight as well as predicting next player position
-                    if(aim.EvaluateTarget(selfUnit, playerUnit, 0.85f))
+                    // Relaxed from 0.85f to 0.75f (approx 41 degree cone)
+                    if(aim.EvaluateTarget(selfUnit, playerUnit, 0.75f))
                         selfUnit.Inventory.ThrowItemFromInventory();
                     break;
                 
                 case AIState.Steamroll:
-                    // Throw if player runs away
                     Vector3 dirToPlayer = (playerUnit.transform.position - selfUnit.transform.position).normalized;
-                    bool playerIsEscaping = Vector3.Dot(playerUnit.rigidBody.linearVelocity,
-                                                        dirToPlayer) > 0.5f;
-                    if (playerIsEscaping && aim.EvaluateTarget(selfUnit, playerUnit, 0.90f)) 
+                    bool playerIsEscaping = Vector3.Dot(playerUnit.rigidBody.linearVelocity, dirToPlayer) > 0.5f;
+                    
+                    // Relaxed from 0.90f to 0.80f
+                    if (playerIsEscaping && aim.EvaluateTarget(selfUnit, playerUnit, 0.80f)) 
                         selfUnit.Inventory.ThrowItemFromInventory();
                     break;
                 
                 case AIState.Allrounder:
-                    if (aim.EvaluateTarget(selfUnit, playerUnit, 0.90f)) 
+                    // Relaxed from 0.90f to 0.80f (approx 36 degree cone)
+                    if (aim.EvaluateTarget(selfUnit, playerUnit, 0.80f)) 
                         selfUnit.Inventory.ThrowItemFromInventory();
-                    break;
-                
-                case AIState.Survival:
                     break;
             }
         }

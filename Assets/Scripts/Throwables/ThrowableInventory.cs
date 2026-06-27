@@ -19,6 +19,8 @@ public class ThrowableInventory : MonoBehaviour
     public AK.Wwise.Event Player_Damage;
     [field: SerializeField] public float TotalWeight { get; private set; } = 0f;
 
+    public bool IsFull => throwableQueue.Count >= CarryPositions.Length;
+
     private void Start()
     {
         projectilePool ??= GameObject.FindAnyObjectByType<ProjectilePool>();
