@@ -4,7 +4,7 @@ namespace Assets.Scripts.Throwables
 {
     public class ItemPickup : MonoBehaviour
     {
-        public BoingData BoingProperties = new BoingData(5, 3, 5, true, 50, 20); // BounceStrength, HorizontalForce, RotationForce, CanBounce, Damage, Weight
+        public BoingData BoingProperties = new BoingData(10, 5, 5, true, 50, 50); // BounceStrength, HorizontalForce, RotationForce, CanBounce, Damage, Weight
         public MeshFilter Mesh;
         public Collider PickupCollider;
         public bool IsAvailableToPickUp { get; private set; } = true;

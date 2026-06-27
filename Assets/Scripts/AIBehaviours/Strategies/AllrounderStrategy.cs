@@ -1,18 +1,14 @@
-﻿using Assets.Scripts.AIBehaviours.Strategies;
-using Assets.Scripts.Throwables;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Throwables;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets.Scripts.AIBehaviours
+namespace Assets.Scripts.AIBehaviours.Strategies
 {
     public class AllrounderStrategy : IStrategy
     {
         private Transform playerTransform;
-        
-        // Just like the other magic numbers chosen by pure chance
-        private const float PreferredEngagementDistance = 7f;
 
         public AllrounderStrategy(Transform player) 
         {
@@ -21,43 +17,28 @@ namespace Assets.Scripts.AIBehaviours
 
         public IPointOfInterest Execute(Dictionary<IPointOfInterest, NavMeshPath> possibleTargets, SpinCharacterController self)
         {
-            IPointOfInterest bestTarget = null;
-            float bestScore = float.MaxValue; 
+            var playerTarget = possibleTargets.Keys.FirstOrDefault(t => t.Type == typeof(SpinCharacterController));
+            var items = possibleTargets.Keys.OfType<PointOfInterest<ItemPickup>>().ToList();
 
-            foreach (var kvp in possibleTargets) // kvp = key-value-pair
+            // Rule 1: If our inventory is full, or there are no items left, hunt the player immediately.
+            if (self.Inventory.IsFull || items.Count == 0) 
+                return playerTarget;
+
+            // Rule 2: Find the absolute closest item to us
+            var closestItem = items.OrderBy(i => Vector3.Distance(self.transform.position, i.Position)).First();
+
+            // Rule 3: Compare distances. 
+            float distanceToPlayer = Vector3.Distance(self.transform.position, playerTransform.position);
+            float distanceToItem = Vector3.Distance(self.transform.position, closestItem.Position);
+
+            // If the player is dangerously close (within 6 units), prioritize engaging the player. 
+            // Otherwise, safely collect the closest item.
+            if (distanceToPlayer < 6f && distanceToPlayer < distanceToItem)
             {
-                var target = kvp.Key;
-                float distanceToSelf = Vector3.Distance(self.transform.position, target.Position);
-                
-                float score = distanceToSelf;
-
-                if (target.Type == typeof(ItemPickup))
-                    //TODO: Remove magic number
-                    score *= 0.7f; 
-
-                else if (target.Type == typeof(SpinCharacterController))
-                {
-                    if (self.Inventory.TotalWeight <= 0)
-                        // Not much weight -> we do not want to engage close up (might be ok toleave out)
-                        //TODO: Remove magic number
-                        score *= 5.0f; 
-                    else
-                    {
-                        // Apply some pressure to the player but keep collecting items
-                        if (distanceToSelf < PreferredEngagementDistance)
-                        //TODO: Remove magic number
-                            score *= 2.0f;
-                    }
-                }
-                // Keep track of the lowest score
-                if (score < bestScore)
-                {
-                    bestScore = score;
-                    bestTarget = target;
-                }
+                return playerTarget;
             }
-            // Fallback
-            return bestTarget ?? possibleTargets.Keys.FirstOrDefault();
+
+            return closestItem;
         }
     }
 }
