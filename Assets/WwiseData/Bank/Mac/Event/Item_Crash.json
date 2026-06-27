@@ -1,0 +1,120 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "174",
+  "SoundBanks": [
+   {
+    "Id": "945135624",
+    "Type": "Event",
+    "GUID": "{47B3F079-BA98-469C-AA64-962EBC254F0D}",
+    "Language": "SFX",
+    "Hash": "{197F71BF-A410-EB92-6FAB-AF25969B3F70}",
+    "ObjectPath": "Item_Crash",
+    "ShortName": "Item_Crash",
+    "Path": "Event/Item_Crash.bnk",
+    "Media": [
+     {
+      "Id": "52878928",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Gym Barbell Heavy Drop 3.wav",
+      "Path": "Media/52878928.wem",
+      "CachePath": "F7/{F77BEC34-C5D9-A781-64AD-95C0AD3DCD22}.wem"
+     },
+     {
+      "Id": "203619646",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Broken Plastic Drop 1.wav",
+      "Path": "Media/203619646.wem",
+      "CachePath": "D8/{D8036E91-D757-DADE-2F7E-BF9A0087F136}.wem"
+     },
+     {
+      "Id": "515382230",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_metlimpt_can_several_drop_02_metal_bounce_fall.wav",
+      "Path": "Media/515382230.wem",
+      "CachePath": "03/{0346B403-11AE-FA05-A5FA-1333A22E5FA8}.wem"
+     },
+     {
+      "Id": "567395332",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodcrsh_smash_box_wood_02_impact_destroy_scatter.wav",
+      "Path": "Media/567395332.wem",
+      "CachePath": "E5/{E5829631-86F1-DFD3-6C19-ABBC333404CE}.wem"
+     },
+     {
+      "Id": "950344998",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodimpt_smash_door_01_impact_broke_invade.wav",
+      "Path": "Media/950344998.wem",
+      "CachePath": "47/{476BB060-A371-51C8-1832-B2CB812C66BC}.wem"
+     },
+     {
+      "Id": "979411635",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ESM_GB_fx_foley_one_shot_woodcrsh_wood_single_big_stick_drop_01_stick_fall_impact.wav",
+      "Path": "Media/979411635.wem",
+      "CachePath": "40/{403BF2A3-17CD-EF41-A705-3ECEF2175484}.wem"
+     },
+     {
+      "Id": "991405809",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Cloths, Bags, Fabrics, Drop 3.wav",
+      "Path": "Media/991405809.wem",
+      "CachePath": "BD/{BD7D77BD-F067-A36C-41AA-06E346982441}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "945135624",
+      "Name": "Item_Crash",
+      "ObjectPath": "\\Events\\Default Work Unit\\Item_Crash",
+      "GUID": "{47B3F079-BA98-469C-AA64-962EBC254F0D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.58146",
+      "DurationMax": "1.5219687",
+      "MediaRefs": [
+       {
+        "Id": "52878928"
+       },
+       {
+        "Id": "203619646"
+       },
+       {
+        "Id": "515382230"
+       },
+       {
+        "Id": "567395332"
+       },
+       {
+        "Id": "950344998"
+       },
+       {
+        "Id": "979411635"
+       },
+       {
+        "Id": "991405809"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{1961F355-65DA-AE41-0593-DB9527F1BA6E}"
+ }
+}

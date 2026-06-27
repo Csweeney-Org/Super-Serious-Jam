@@ -27,24 +27,23 @@ MonoBehaviour:
     LocalizedStreamingMediaValues:
       localizedMediaList:
       - media:
-        - m_AssetGUID: 0987b10468e7f5a468c0d1a107d0cc0e
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 47205287
         - m_AssetGUID: 1e6dee4539f19854fb223561024008c2
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
           id: 704774677
-  currentPlatformAssets:
-    WwisePlatform: Windows
+        - m_AssetGUID: 0987b10468e7f5a468c0d1a107d0cc0e
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 47205287
+  - WwisePlatform: Mac
     LocalizedBankKeys:
     - SFX
     LocalizedBanksValues:
-    - m_AssetGUID: 332938962abe27145845ffc9abe9da02
+    - m_AssetGUID: 2250bf7f703c2406cbc6b9a3fbb59e3c
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
@@ -54,15 +53,42 @@ MonoBehaviour:
     LocalizedStreamingMediaValues:
       localizedMediaList:
       - media:
-        - m_AssetGUID: 0987b10468e7f5a468c0d1a107d0cc0e
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 47205287
-        - m_AssetGUID: 1e6dee4539f19854fb223561024008c2
+        - m_AssetGUID: a604653a868af44569c3beb7ecd34563
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
           id: 704774677
+        - m_AssetGUID: a7d74dc4f13a1487192ccff4206ebbd7
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 47205287
+  currentPlatformAssets:
+    WwisePlatform: Mac
+    LocalizedBankKeys:
+    - SFX
+    LocalizedBanksValues:
+    - m_AssetGUID: 2250bf7f703c2406cbc6b9a3fbb59e3c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    LocalizedStreamingMediaKeys:
+    - SFX
+    LocalizedStreamingMediaValues:
+      localizedMediaList:
+      - media:
+        - m_AssetGUID: a604653a868af44569c3beb7ecd34563
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 704774677
+        - m_AssetGUID: a7d74dc4f13a1487192ccff4206ebbd7
+          m_SubObjectName: 
+          m_SubObjectType: 
+          m_SubObjectGUID: 
+          m_EditorAssetChanged: 0
+          id: 47205287

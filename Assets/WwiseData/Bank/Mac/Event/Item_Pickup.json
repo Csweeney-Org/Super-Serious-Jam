@@ -1,0 +1,85 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "174",
+  "SoundBanks": [
+   {
+    "Id": "566396871",
+    "Type": "Event",
+    "GUID": "{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}",
+    "Language": "SFX",
+    "Hash": "{EF9FA657-0DB6-8F38-BEA1-A572E48AA187}",
+    "ObjectPath": "Item_Pickup",
+    "ShortName": "Item_Pickup",
+    "Path": "Event/Item_Pickup.bnk",
+    "Media": [
+     {
+      "Id": "290165397",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Corporate Pop - REC.wav",
+      "Path": "Media/290165397.wem",
+      "CachePath": "61/{613271F9-8BA1-2211-9143-C100C3B148A0}.wem"
+     },
+     {
+      "Id": "305937602",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Corporate Pop - REC_2.wav",
+      "Path": "Media/305937602.wem",
+      "CachePath": "8C/{8CA7B852-F996-A229-9B11-8807E6E7A742}.wem"
+     },
+     {
+      "Id": "404749359",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Corporate Pop - REC_4.wav",
+      "Path": "Media/404749359.wem",
+      "CachePath": "01/{01AD0562-A014-E774-2AD6-468A0C33FC99}.wem"
+     },
+     {
+      "Id": "865441247",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Corporate Pop - REC_3.wav",
+      "Path": "Media/865441247.wem",
+      "CachePath": "20/{209618BA-2DA6-BF9A-1EF2-A310FA1E129F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "566396871",
+      "Name": "Item_Pickup",
+      "ObjectPath": "\\Events\\Default Work Unit\\Item_Pickup",
+      "GUID": "{2495DBCF-D3C0-434C-AD82-BBC88AA76F0B}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.11539584",
+      "DurationMax": "0.11539584",
+      "MediaRefs": [
+       {
+        "Id": "290165397"
+       },
+       {
+        "Id": "305937602"
+       },
+       {
+        "Id": "404749359"
+       },
+       {
+        "Id": "865441247"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F6AEE02B-F6D1-80FA-4482-5DB8AFFB5154}"
+ }
+}

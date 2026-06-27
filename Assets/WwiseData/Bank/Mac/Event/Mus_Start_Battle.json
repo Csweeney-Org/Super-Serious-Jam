@@ -1,0 +1,194 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "174",
+  "SoundBanks": [
+   {
+    "Id": "3123435120",
+    "Type": "Event",
+    "GUID": "{28113991-471F-44B4-9574-3AE50F64448E}",
+    "Language": "SFX",
+    "Hash": "{F1470DED-641C-F987-7993-B60F224A3289}",
+    "ObjectPath": "Mus_Start_Battle",
+    "ShortName": "Mus_Start_Battle",
+    "Path": "Event/Mus_Start_Battle.bnk",
+    "Media": [
+     {
+      "Id": "46024639",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "CorporateBattleSTEM1.wav",
+      "Path": "Media/46024639.wem",
+      "CachePath": "57/{5751A17D-5C2F-FBFB-CA8E-3F44E439D6BA}.wem"
+     },
+     {
+      "Id": "82041006",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "CorporateWIN.wav",
+      "Path": "Media/82041006.wem",
+      "CachePath": "45/{450FCE19-AB59-04B9-F2CE-8AEB62733635}.wem"
+     },
+     {
+      "Id": "184658772",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "CorporateBattleSTEM3.wav",
+      "Path": "Media/184658772.wem",
+      "CachePath": "11/{11389C27-A280-2540-077E-17CF70516E6A}.wem"
+     },
+     {
+      "Id": "207157016",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "CorporateBattleINTRO.wav",
+      "Path": "Media/207157016.wem",
+      "CachePath": "57/{576E7BA3-C8B5-6E97-CAC0-F8E0DDA0CD66}.wem"
+     },
+     {
+      "Id": "265090331",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "CorporateBattleSTEM2.wav",
+      "Path": "Media/265090331.wem",
+      "CachePath": "13/{13B55BFC-2F7F-6511-861C-46EC556B3D8F}.wem"
+     },
+     {
+      "Id": "994666764",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "CorporateLOSE.wav",
+      "Path": "Media/994666764.wem",
+      "CachePath": "2A/{2AB2C609-3860-9501-AFB5-F8D8FA347BA3}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3123435120",
+      "Name": "Mus_Start_Battle",
+      "ObjectPath": "\\Events\\Default Work Unit\\Mus_Start_Battle",
+      "GUID": "{28113991-471F-44B4-9574-3AE50F64448E}",
+      "DurationType": "Mixed",
+      "DurationMin": "8.971958",
+      "DurationMax": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1208172739",
+         "Id": "1611212405",
+         "GUID": "{CEF02D89-E20E-4199-A554-A8706E525FA0}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "46024639"
+         },
+         {
+          "Id": "184658772"
+         },
+         {
+          "Id": "207157016"
+         },
+         {
+          "Id": "265090331"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1208172739",
+         "Id": "979765101",
+         "GUID": "{BCECF0BB-276B-44F4-A045-5B632923B198}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "46024639"
+         },
+         {
+          "Id": "82041006"
+         },
+         {
+          "Id": "265090331"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1208172739",
+         "Id": "174960569",
+         "GUID": "{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "46024639"
+         },
+         {
+          "Id": "265090331"
+         },
+         {
+          "Id": "994666764"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "1208172739",
+        "Id": "1611212405",
+        "Name": "Full_Mix",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\Full_Mix",
+        "GUID": "{CEF02D89-E20E-4199-A554-A8706E525FA0}"
+       }
+      ]
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1208172739",
+      "Name": "States",
+      "ObjectPath": "\\States\\Default Work Unit\\States",
+      "GUID": "{C938D3FA-7C43-479C-B715-A04EE888D162}",
+      "States": [
+       {
+        "Id": "174960569",
+        "Name": "Loose",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\Loose",
+        "GUID": "{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\None",
+        "GUID": "{11D7E567-EBE5-4025-AF59-1FD3E7596B4B}"
+       },
+       {
+        "Id": "979765101",
+        "Name": "Win",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\Win",
+        "GUID": "{BCECF0BB-276B-44F4-A045-5B632923B198}"
+       },
+       {
+        "Id": "1611212405",
+        "Name": "Full_Mix",
+        "ObjectPath": "\\States\\Default Work Unit\\States\\Full_Mix",
+        "GUID": "{CEF02D89-E20E-4199-A554-A8706E525FA0}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{05401A27-F48C-3197-A0B2-C3D7D6BC7380}"
+ }
+}

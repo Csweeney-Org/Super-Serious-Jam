@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1851218498	Mus_Stop_Battle			\Default Work Unit\Mus_Stop_Battle	
+
