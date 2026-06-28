@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="174">
 	<SoundBanks>
-		<SoundBank Id="1851218498" Type="Event" GUID="{F31A439F-E21F-431E-9512-40DAED22C14C}" Language="SFX" Hash="{36024F32-9D34-CE4E-FF88-89524572B7AD}">
+		<SoundBank Id="1851218498" Type="Event" GUID="{F31A439F-E21F-431E-9512-40DAED22C14C}" Language="SFX" Hash="{84211D1A-5478-F431-EE05-0419ACAF6374}">
 			<ObjectPath>Mus_Stop_Battle</ObjectPath>
 			<ShortName>Mus_Stop_Battle</ShortName>
 			<Path>Event/Mus_Stop_Battle.bnk</Path>
@@ -10,5 +10,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5C547CEB-E4F5-1C27-17C1-667391B0D7AA}</FileHash>
+	<FileHash>{01EF7562-50CC-80EB-8160-8671DA2A5051}</FileHash>
 </SoundBanksInfo>

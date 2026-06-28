@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{F31A439F-E21F-431E-9512-40DAED22C14C}",
     "Language": "SFX",
-    "Hash": "{36024F32-9D34-CE4E-FF88-89524572B7AD}",
+    "Hash": "{84211D1A-5478-F431-EE05-0419ACAF6374}",
     "ObjectPath": "Mus_Stop_Battle",
     "ShortName": "Mus_Stop_Battle",
     "Path": "Event/Mus_Stop_Battle.bnk",
@@ -28,6 +28,6 @@
     ]
    }
   ],
-  "FileHash": "{3708951F-8559-E8FB-EA87-0D0BCAFF66F4}"
+  "FileHash": "{2F1A7A6E-C125-4412-C784-21EC5787CD93}"
  }
 }

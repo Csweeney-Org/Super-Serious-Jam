@@ -20,16 +20,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 078bccd493b0e4398be02f178359ac9b
-    m_Address: Assets/WwiseData/Bank/Mac/Media/265090331.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 078e28632cd8245e0abc42f5e22913f9
-    m_Address: Assets/WwiseData/Bank/Mac/Media/46024639.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0c130851db9004de5942181c5fa3d991
     m_Address: Assets/WwiseData/Bank/Mac/Media/52878928.wem
     m_ReadOnly: 0
@@ -70,18 +60,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 43e8f5c262c784dbdb3abd89d0ff6dc1
-    m_Address: Assets/WwiseData/Bank/Mac/Media/994666764.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55ad2a7d7dfa64bdd8537ae1b8b570d1
     m_Address: Assets/WwiseData/Bank/Mac/Media/991405809.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 58bbda158abef4382a980502d23a988b
-    m_Address: Assets/WwiseData/Bank/Mac/Media/82041006.wem
+  - m_GUID: 63bde3be92e6f4e508241d3e3c865035
+    m_Address: Assets/WwiseData/Bank/Mac/Media/700793320.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -97,11 +82,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 80f7818a844834ba0bf980c2ca0c3d4e
     m_Address: Assets/WwiseData/Bank/Mac/Event/Stop_Spin_Loop.bnk
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8bb0db2c63b95423daf6bbd28a7647a1
-    m_Address: Assets/WwiseData/Bank/Mac/Media/184658772.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -152,11 +132,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e627f88aa91e04452bb18544b4dbc612
     m_Address: Assets/WwiseData/Bank/Mac/Media/275128577.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ea032c7f622714597ab8b28d3ef4c61b
-    m_Address: Assets/WwiseData/Bank/Mac/Media/207157016.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

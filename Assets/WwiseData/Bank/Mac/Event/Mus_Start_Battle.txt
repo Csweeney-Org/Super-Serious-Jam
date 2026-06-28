@@ -1,15 +1,3 @@
 Event	ID	Name			Wwise Object Path	Notes
 	3123435120	Mus_Start_Battle			\Default Work Unit\Mus_Start_Battle	
 
-State Group	ID	Name			Wwise Object Path	Notes
-	1208172739	States			\Default Work Unit\States	
-	3298531235	Layers			\Default Work Unit\Layers	
-
-State	ID	Name	State Group			Notes
-	174960569	Loose	States			
-	748895195	None	States			
-	979765101	Win	States			
-	1611212405	Full_Mix	States			
-	748895195	None	Layers			
-	1125500713	Intro	Layers			
-

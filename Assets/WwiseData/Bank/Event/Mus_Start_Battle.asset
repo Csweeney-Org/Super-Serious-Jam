@@ -27,42 +27,12 @@ MonoBehaviour:
     LocalizedStreamingMediaValues:
       localizedMediaList:
       - media:
-        - m_AssetGUID: 96f1b673db6c04805ab5e93a5867a1f5
+        - m_AssetGUID: 14e01e6fb5cfe4682a6268ff28b1ac3d
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
-          id: 994666764
-        - m_AssetGUID: 7a7a9132a6a174575a167e7337068b04
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 265090331
-        - m_AssetGUID: 1e5d5aafdd1c746419f6eb3a6a043017
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 184658772
-        - m_AssetGUID: 2861a887e215d46a1972078e76326126
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 82041006
-        - m_AssetGUID: 0b12acfc30b4c4589a1b216ec6c70caa
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 207157016
-        - m_AssetGUID: 9cbbc897dd8a14ac59981d08ccfc94fa
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 46024639
+          id: 700793320
   - WwisePlatform: Mac
     LocalizedBankKeys:
     - SFX
@@ -77,42 +47,12 @@ MonoBehaviour:
     LocalizedStreamingMediaValues:
       localizedMediaList:
       - media:
-        - m_AssetGUID: 43e8f5c262c784dbdb3abd89d0ff6dc1
+        - m_AssetGUID: 63bde3be92e6f4e508241d3e3c865035
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
-          id: 994666764
-        - m_AssetGUID: 078bccd493b0e4398be02f178359ac9b
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 265090331
-        - m_AssetGUID: 8bb0db2c63b95423daf6bbd28a7647a1
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 184658772
-        - m_AssetGUID: 58bbda158abef4382a980502d23a988b
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 82041006
-        - m_AssetGUID: ea032c7f622714597ab8b28d3ef4c61b
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 207157016
-        - m_AssetGUID: 078e28632cd8245e0abc42f5e22913f9
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 46024639
+          id: 700793320
   currentPlatformAssets:
     WwisePlatform: Mac
     LocalizedBankKeys:
@@ -128,39 +68,9 @@ MonoBehaviour:
     LocalizedStreamingMediaValues:
       localizedMediaList:
       - media:
-        - m_AssetGUID: 43e8f5c262c784dbdb3abd89d0ff6dc1
+        - m_AssetGUID: 63bde3be92e6f4e508241d3e3c865035
           m_SubObjectName: 
           m_SubObjectType: 
           m_SubObjectGUID: 
           m_EditorAssetChanged: 0
-          id: 994666764
-        - m_AssetGUID: 078bccd493b0e4398be02f178359ac9b
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 265090331
-        - m_AssetGUID: 8bb0db2c63b95423daf6bbd28a7647a1
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 184658772
-        - m_AssetGUID: 58bbda158abef4382a980502d23a988b
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 82041006
-        - m_AssetGUID: ea032c7f622714597ab8b28d3ef4c61b
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 207157016
-        - m_AssetGUID: 078e28632cd8245e0abc42f5e22913f9
-          m_SubObjectName: 
-          m_SubObjectType: 
-          m_SubObjectGUID: 
-          m_EditorAssetChanged: 0
-          id: 46024639
+          id: 700793320

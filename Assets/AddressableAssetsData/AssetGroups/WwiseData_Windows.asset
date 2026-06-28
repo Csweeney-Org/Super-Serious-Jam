@@ -20,18 +20,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0b12acfc30b4c4589a1b216ec6c70caa
-    m_Address: Assets/WwiseData/Bank/Windows/Media/207157016.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0ff2e5703b3875e4297f27a1600efc07
     m_Address: Assets/WwiseData/Bank/Windows/Media/515382230.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1e5d5aafdd1c746419f6eb3a6a043017
-    m_Address: Assets/WwiseData/Bank/Windows/Media/184658772.wem
+  - m_GUID: 14e01e6fb5cfe4682a6268ff28b1ac3d
+    m_Address: Assets/WwiseData/Bank/Windows/Media/700793320.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -42,11 +37,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e757d4c488393442915bb514298f28d
     m_Address: Assets/WwiseData/Bank/Windows/Media/305937602.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2861a887e215d46a1972078e76326126
-    m_Address: Assets/WwiseData/Bank/Windows/Media/82041006.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -75,11 +65,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7a7a9132a6a174575a167e7337068b04
-    m_Address: Assets/WwiseData/Bank/Windows/Media/265090331.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8dceba2f9a80a1144b5570eb6f99e808
     m_Address: Assets/WwiseData/Bank/Windows/Event/Item_Crash.bnk
     m_ReadOnly: 0
@@ -92,16 +77,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9572ab0c82ca9fb47860b9a0edcfd0d7
     m_Address: Assets/WwiseData/Bank/Windows/Media/203619646.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 96f1b673db6c04805ab5e93a5867a1f5
-    m_Address: Assets/WwiseData/Bank/Windows/Media/994666764.wem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9cbbc897dd8a14ac59981d08ccfc94fa
-    m_Address: Assets/WwiseData/Bank/Windows/Media/46024639.wem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

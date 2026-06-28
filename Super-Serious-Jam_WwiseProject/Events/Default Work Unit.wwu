@@ -90,7 +90,7 @@
 						<Action Name="" ID="{06B23625-0364-4CB4-B4F9-E1F870F7FB76}" ShortID="759770608">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Battle Music" ID="{6E5ABD12-621B-4C9D-8CB8-293B7E228B86}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
+									<ObjectRef Name="CorporateBattleFULLMIX" ID="{C9287B64-5F7E-4E2B-950D-E781DF420C99}" WorkUnitID="{35DC6F01-4231-4337-9EAD-4D1A65A3A89F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

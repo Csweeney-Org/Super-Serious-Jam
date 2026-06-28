@@ -158,7 +158,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1851218498" Type="Event" GUID="{F31A439F-E21F-431E-9512-40DAED22C14C}" Language="SFX" Hash="{36024F32-9D34-CE4E-FF88-89524572B7AD}">
+		<SoundBank Id="1851218498" Type="Event" GUID="{F31A439F-E21F-431E-9512-40DAED22C14C}" Language="SFX" Hash="{84211D1A-5478-F431-EE05-0419ACAF6374}">
 			<ObjectPath>Mus_Stop_Battle</ObjectPath>
 			<ShortName>Mus_Stop_Battle</ShortName>
 			<Path>Event/Mus_Stop_Battle.bnk</Path>
@@ -254,71 +254,22 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3123435120" Type="Event" GUID="{28113991-471F-44B4-9574-3AE50F64448E}" Language="SFX" Hash="{F1470DED-641C-F987-7993-B60F224A3289}">
+		<SoundBank Id="3123435120" Type="Event" GUID="{28113991-471F-44B4-9574-3AE50F64448E}" Language="SFX" Hash="{BD91F359-4821-480A-CBE3-ECF6D95EF3BF}">
 			<ObjectPath>Mus_Start_Battle</ObjectPath>
 			<ShortName>Mus_Start_Battle</ShortName>
 			<Path>Event/Mus_Start_Battle.bnk</Path>
 			<Media>
-				<File Id="46024639" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>CorporateBattleSTEM1.wav</ShortName>
-					<Path>Media/46024639.wem</Path>
-					<CachePath>57/{5751A17D-5C2F-FBFB-CA8E-3F44E439D6BA}.wem</CachePath>
-				</File>
-				<File Id="82041006" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>CorporateWIN.wav</ShortName>
-					<Path>Media/82041006.wem</Path>
-					<CachePath>45/{450FCE19-AB59-04B9-F2CE-8AEB62733635}.wem</CachePath>
-				</File>
-				<File Id="184658772" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>CorporateBattleSTEM3.wav</ShortName>
-					<Path>Media/184658772.wem</Path>
-					<CachePath>11/{11389C27-A280-2540-077E-17CF70516E6A}.wem</CachePath>
-				</File>
-				<File Id="207157016" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>CorporateBattleINTRO.wav</ShortName>
-					<Path>Media/207157016.wem</Path>
-					<CachePath>57/{576E7BA3-C8B5-6E97-CAC0-F8E0DDA0CD66}.wem</CachePath>
-				</File>
-				<File Id="265090331" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>CorporateBattleSTEM2.wav</ShortName>
-					<Path>Media/265090331.wem</Path>
-					<CachePath>13/{13B55BFC-2F7F-6511-861C-46EC556B3D8F}.wem</CachePath>
-				</File>
-				<File Id="994666764" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>CorporateLOSE.wav</ShortName>
-					<Path>Media/994666764.wem</Path>
-					<CachePath>2A/{2AB2C609-3860-9501-AFB5-F8D8FA347BA3}.wem</CachePath>
+				<File Id="700793320" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>CorporateBattleFULLMIX.wav</ShortName>
+					<Path>Media/700793320.wem</Path>
+					<CachePath>57/{575C8135-F125-7334-FF73-4570318D1339}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3123435120" Name="Mus_Start_Battle" ObjectPath="\Events\Default Work Unit\Mus_Start_Battle" GUID="{28113991-471F-44B4-9574-3AE50F64448E}" DurationType="Mixed" DurationMin="8.971958" DurationMax="Infinite">
-					<SwitchContainers>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="1208172739" Id="1611212405" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}" Default="true"/>
-							<MediaRefs>
-								<MediaRef Id="46024639"/>
-								<MediaRef Id="184658772"/>
-								<MediaRef Id="207157016"/>
-								<MediaRef Id="265090331"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="1208172739" Id="979765101" GUID="{BCECF0BB-276B-44F4-A045-5B632923B198}"/>
-							<MediaRefs>
-								<MediaRef Id="46024639"/>
-								<MediaRef Id="82041006"/>
-								<MediaRef Id="265090331"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="1208172739" Id="174960569" GUID="{70AD3FE6-B069-43F1-A91E-D34EA33975BC}"/>
-							<MediaRefs>
-								<MediaRef Id="46024639"/>
-								<MediaRef Id="265090331"/>
-								<MediaRef Id="994666764"/>
-							</MediaRefs>
-						</SwitchContainer>
-					</SwitchContainers>
+				<Event Id="3123435120" Name="Mus_Start_Battle" ObjectPath="\Events\Default Work Unit\Mus_Start_Battle" GUID="{28113991-471F-44B4-9574-3AE50F64448E}" DurationType="OneShot" DurationMin="103.64065" DurationMax="103.64065">
+					<MediaRefs>
+						<MediaRef Id="700793320"/>
+					</MediaRefs>
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="1208172739" Id="1611212405" Name="Full_Mix" ObjectPath="\States\Default Work Unit\States\Full_Mix" GUID="{CEF02D89-E20E-4199-A554-A8706E525FA0}"/>
 					</ActionSetState>
@@ -336,5 +287,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1F05DD26-565E-416F-12D6-195FEC310DCF}</FileHash>
+	<FileHash>{FF848AF5-E02C-893F-503C-0C8EEE634860}</FileHash>
 </SoundBanksInfo>
